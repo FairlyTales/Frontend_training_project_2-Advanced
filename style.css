@@ -1,0 +1,18 @@
+/* базовые (самые частые на странице) настройки текста, цвета. Плюс зануление margin и padding, чтобы затем каждому элементу задавать их отдельно */
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: "PT Sans Narrow", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  /* text-transform: uppercase; - потому что почти весь текст на макете страницы написан капсом */
+  text-transform: uppercase;
+
+  background-color: #000000;
+  background-image: url("img/background.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+}
