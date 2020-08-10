@@ -9,7 +9,7 @@ body {
   font-weight: 700;
   color: #ffffff;
   /* text-transform: uppercase; - потому что почти весь текст на макете страницы написан капсом */
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 
   background-color: #000000;
   background-image: url("img/background.jpg");
