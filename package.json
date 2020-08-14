@@ -1,14 +1,17 @@
 {
   "name": "barbershop_adaptive",
   "version": "1.0.0",
-  "description": "",
+  "description": "Training project",
   "main": "gulpfile.js",
   "dependencies": {
     "gulp-sass": "^4.1.0",
     "node-sass": "^4.14.1"
   },
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "gulp-stylelint": "^13.0.0",
+    "prettier": "2.0.5",
+    "stylelint": "^13.6.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
