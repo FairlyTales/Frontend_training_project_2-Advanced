@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../sass/blocks/reviews.scss"
+    ],
+    "names": [],
+    "file": "reviews.css"
+}

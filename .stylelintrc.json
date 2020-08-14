@@ -1,10 +1,12 @@
 {
   "extends": [
     "stylelint-config-sass-guidelines",
-    "stylelint-config-rational-order",
+    "stylelint-config-recess-order",
     "stylelint-config-prettier"
   ],
+  "plugins": ["stylelint-order"],
   "rules": {
-    "indentation": 2
+    "indentation": 2,
+    "order/properties-alphabetical-order": null
   }
 }

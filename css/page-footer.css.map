@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../sass/blocks/page-footer.scss"
+    ],
+    "names": [],
+    "file": "page-footer.css"
+}
