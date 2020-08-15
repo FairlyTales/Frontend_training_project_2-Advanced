@@ -1,0 +1,68 @@
+.stats {
+  width: 320px;
+  margin: 0 auto;
+
+  color: #000;
+  background-color: #fff;
+}
+
+.stats__header {
+  box-sizing: border-box;
+  padding-top: 30px;
+  padding-right: 38px;
+  padding-bottom: 25px;
+  padding-left: 38px;
+
+  text-align: center;
+}
+
+.stats__slogan {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 25px;
+
+  font-size: 30px;
+  line-height: 30px;
+
+  text-transform: uppercase;
+}
+
+.stats__intro {
+  padding: 0;
+  margin: 0;
+
+  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
+  font-size: 20px;
+}
+
+// table don't stretch to 100% of his parent by default, so we use width: 100%;
+.stats__list {
+  width: 100%;
+}
+
+@media (min-width: $tablet-width) {
+  .stats {
+    width: 640px;
+    margin-top: -185px;
+  }
+
+  .stats__list {
+    display: flex;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .stats {
+    display: flex;
+    width: 960px;
+    margin-top: -160px;
+  }
+
+  .stats__header {
+    width: 240px;
+  }
+
+  .stats__list {
+    width: 640px;
+  }
+}

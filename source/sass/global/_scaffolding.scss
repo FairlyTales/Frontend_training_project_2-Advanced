@@ -1,0 +1,39 @@
+body {
+  min-width: 320px;
+  padding: 0;
+  margin: 0;
+
+  font-family: 'PT Sans Narrow Bold', 'Arial', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 27px;
+  color: #f7f4f1;
+
+  background-color: $bg-verydarkgrey;
+}
+
+// to make the image of any size fit
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+
+  white-space: nowrap;
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+}

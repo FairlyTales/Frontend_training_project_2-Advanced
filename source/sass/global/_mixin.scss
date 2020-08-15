@@ -1,8 +1,17 @@
-@mixin no-outline() {
+// remove outline
+@mixin no-outline {
   background: transparent;
   outline: none;
 
   &::before {
     display: none;
   }
+}
+
+// reset list style
+@mixin reset-list {
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
 }

@@ -1,0 +1,27 @@
+.page-header {
+  display: flex;
+  flex-direction: column;
+
+  background-color: #242424;
+}
+
+.page-header__logo {
+  box-sizing: border-box;
+  height: 85px;
+  padding-top: 29px;
+  padding-bottom: 26px;
+  margin: auto;
+}
+
+@media (min-width: $tablet-width) {
+  .page-header__logo {
+    order: 2;
+    height: 400px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .page-header__logo {
+    height: 648px;
+  }
+}
