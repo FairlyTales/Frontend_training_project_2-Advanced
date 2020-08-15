@@ -1,18 +1,18 @@
 // c+c, c+v from https://www.npmjs.com/package/gulp-sass to run sass
-"use strict";
+'use strict'
 
-var gulp = require("gulp");
-var sass = require("gulp-sass");
+var gulp = require('gulp')
+var sass = require('gulp-sass')
 
-sass.compiler = require("node-sass");
+sass.compiler = require('node-sass')
 
-gulp.task("sass", function () {
+gulp.task('sass', function () {
   return gulp
-    .src("./sass/**/*.scss")
-    .pipe(sass().on("error", sass.logError))
-    .pipe(gulp.dest("./css"));
-});
+    .src('./sass/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('.source/css'))
+})
 
-gulp.task("sass:watch", function () {
-  gulp.watch("./sass/**/*.scss", ["sass"]);
-});
+gulp.task('sass:watch', function () {
+  gulp.watch('./sass/**/*.scss', ['sass'])
+})

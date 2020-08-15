@@ -1,0 +1,6 @@
+@import './global/variables', './global/mixin', './global/normalize',
+  './global/scaffolding';
+
+body {
+  background-color: $bg-darkgrey;
+}

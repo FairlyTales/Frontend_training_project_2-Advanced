@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "AAAA,OAAO,CAAP,mHAAO,CAGP,AAAA,IAAI,AAAC,CACH,gBAAgB,CCJJ,OAAO,CDKpB",
+    "sources": [
+        "../sass/style.scss",
+        "../sass/global/_variables.scss",
+        "../sass/global/_mixin.scss",
+        "../sass/global/_scaffolding.scss"
+    ],
+    "names": [],
+    "file": "style.css"
+}
