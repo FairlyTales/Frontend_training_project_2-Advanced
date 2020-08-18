@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./sass/global/normalize.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <title>Барбершоп Бородинский</title>
@@ -63,28 +67,28 @@
         <header class="stats__header">
           <h2 class="visually-hidden">Статистика барбершопа</h2>
           <p class="stats__slogan">Стрижка у нас это выгодно!</p>
-          <p class="stats__intro">
-            Мужская стрижка требует точного подхода. Обратимся к статистике:
-          </p>
           <small class="stats__legend stats__legend--top">
             <sup>*</sup> - приведённые данные ложь
           </small>
+          <p class="stats__intro">
+            Мужская стрижка требует точного подхода. Обратимся к статистике:
+          </p>
         </header>
         <table class="stats__list">
-          <tr>
+          <tr class="stats__row stats__row--dark">
             <td class="stats__value">1 500 <sup>*</sup></td>
             <td class="stats__field">рублей<br />вложений</td>
           </tr>
-          <tr>
+          <tr class="stats__row">
             <td class="stats__value">7 200</td>
             <td class="stats__field">секунд<br />времени мастера</td>
           </tr>
-          <tr>
+          <tr class="stats__row stats__row--dark">
             <td class="stats__value">90 000</td>
             <td class="stats__field">постриженных<br />волос</td>
           </tr>
-          <tr>
-            <td class="stats__value">500 000 <sup>*</sup></td>
+          <tr class="stats__row">
+            <td class="stats__value">500 000<sup>*</sup></td>
             <td class="stats__field">лайков и<br />комментов</td>
           </tr>
         </table>
@@ -99,6 +103,7 @@
           <ul class="advantages__list slider__list">
             <li class="advantages__item advantages__item--fast slider__item">
               <h3 class="advantages__title">Быстро</h3>
+
               <p class="advantages__description">
                 Мы делаем свою работу быстро! Два часа пролетят незаметно и вы -
                 счастливый обладатель стильной стрижки-минутки.

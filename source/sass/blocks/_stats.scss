@@ -3,23 +3,24 @@
   margin: 0 auto;
 
   color: #000;
-  background-color: #fff;
 }
 
 .stats__header {
   box-sizing: border-box;
   padding-top: 30px;
-  padding-right: 38px;
   padding-bottom: 25px;
-  padding-left: 38px;
 
   text-align: center;
+
+  background-color: #fff;
 }
 
 .stats__slogan {
-  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 25px;
   margin: 0;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 
   font-size: 30px;
   line-height: 30px;
@@ -28,7 +29,9 @@
 }
 
 .stats__intro {
-  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 20px;
   margin: 0;
 
   font-family: 'PT Sans Narrow', 'Arial', sans-serif;
@@ -38,6 +41,57 @@
 // table don't stretch to 100% of his parent by default, so we use width: 100%;
 .stats__list {
   width: 100%;
+  padding: 0;
+  margin: 0;
+
+  line-height: 18px;
+
+  color: #f7f4f1;
+  border-collapse: collapse;
+  background-color: #4e4e4e;
+}
+
+.stats__row--dark {
+  background-color: #404040;
+}
+
+.stats__value {
+  width: 160px;
+  padding: 21px 0;
+  padding-left: 20px;
+
+  font-size: 40px;
+}
+
+.stats__field {
+  width: 120px;
+  padding: 21px 0;
+  padding-right: 20px;
+
+  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  text-align: right;
+}
+
+.stats__legend {
+  display: block;
+
+  font-family: 'PT Sans Narrow', Arial, sans-serif;
+  font-size: 20px;
+  line-height: 27px;
+}
+
+.stats__legend--top {
+  padding: 0;
+  margin: 0;
+
+  color: #b2b2b2;
+}
+
+.stats__legend--bottom {
+  padding-top: 15px;
+
+  color: #666;
+  text-align: center;
 }
 
 @media (min-width: $tablet-width) {
