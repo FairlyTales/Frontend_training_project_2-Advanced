@@ -1,0 +1,49 @@
+.reviews {
+  color: #000;
+  background-color: #f8f5f2;
+}
+
+.reviews__wrapper {
+  // width: 320px;
+  // margin: 0 auto;
+}
+
+.reviews__title {
+  padding: 0;
+  padding-top: 49px;
+  margin: 0;
+  margin-bottom: 40px;
+
+  font-size: 30px;
+  line-height: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.reviews__list {
+}
+
+.reviews__item {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.reviews__author-picture {
+  min-width: 48px;
+  min-height: 46px;
+}
+
+.reviews__text-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviews__autrhor-name {
+}
+
+.reviews__text {
+  width: 195px;
+  margin: 0;
+  margin-bottom: 30px;
+}
