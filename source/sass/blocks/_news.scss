@@ -9,12 +9,29 @@
 }
 
 .news__title {
-  margin-bottom: 40px;
+  position: relative;
+  padding: 0 40px;
+  padding-top: 66px;
+  margin: 0;
+  margin-bottom: 30px;
 
   font-size: 30px;
   line-height: 30px;
   text-align: center;
   text-transform: uppercase;
+}
+
+// dark triangle above the title for decoration
+.news__title::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  content: '';
+
+  border-top: 35px solid #242424;
+  border-right: 160px solid transparent;
+  border-left: 160px solid transparent;
 }
 
 .news__list {
@@ -27,14 +44,15 @@
   margin-bottom: 50px;
 }
 
+// black box with date and month
 .news__item-wrapper {
   position: relative;
   box-sizing: border-box;
-
   align-self: center;
   min-width: 50px;
   min-height: 50px;
 
+  margin-top: -41px;
   margin-right: 20px;
 
   color: #fff;
@@ -44,11 +62,12 @@
 // triangle at the bottom of the date
 .news__item-wrapper::after {
   position: absolute;
-
+  top: 50px;
   width: 0;
   height: 0;
 
   content: '';
+
   border-top: 10px solid #000;
   border-right: 25px solid transparent;
   border-left: 25px solid transparent;
@@ -59,8 +78,9 @@
 
 .news__day {
   display: block;
+  padding-top: 5px;
 
-  font-size: 24px;
+  font-size: 30px;
   line-height: 30px;
   text-align: center;
 }
@@ -69,17 +89,17 @@
   display: block;
 
   font-family: 'PT Sans Narrow', 'Arial', sans-serif;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 11px;
+  font-weight: lighter;
+  line-height: 12px;
   text-align: center;
   text-transform: uppercase;
 }
 
 .news__text {
   display: block;
+  padding: 0;
   margin: 0;
-
-  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
 }
 
 .news__to-all {

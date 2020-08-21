@@ -1,0 +1,45 @@
+.slider {
+}
+
+.slider__list {
+}
+
+.slider__item {
+}
+
+.slider__toggles {
+  display: flex;
+  justify-content: center;
+}
+
+.slider__label {
+  display: block;
+  width: 5px;
+  height: 5px;
+  margin: 0 13px;
+
+  content: '';
+
+  border: 1px solid #a5a5a5;
+  transform: rotate(45deg);
+}
+
+// turning off standard radio buttons
+.slider__input {
+  display: none;
+}
+
+// this selector choose all pseudo-elements standing right after the checked radio button, we use it to create the "checked" symbol
+.slider__input:checked + .slider__label::after {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+
+  width: 5px;
+  height: 5px;
+
+  content: '';
+
+  background-color: #fff;
+  border: 1px solid #fff;
+}

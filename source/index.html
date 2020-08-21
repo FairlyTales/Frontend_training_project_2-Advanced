@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./sass/global/normalize.css" />
@@ -68,32 +72,32 @@
           <h2 class="visually-hidden">Статистика барбершопа</h2>
           <p class="stats__slogan">Стрижка у нас это выгодно!</p>
           <small class="stats__legend stats__legend--top">
-            <sup>*</sup> - приведённые данные ложь
+            <sup>&lowast;</sup> &mdash; приведённые данные ложь
           </small>
           <p class="stats__intro">
             Мужская стрижка требует точного подхода. Обратимся к статистике:
           </p>
         </header>
         <table class="stats__list">
-          <tr class="stats__row stats__row--dark">
+          <tr class="stats__row stats__row--color-1">
             <td class="stats__value">1 500 <sup>*</sup></td>
             <td class="stats__field">рублей<br />вложений</td>
           </tr>
-          <tr class="stats__row">
+          <tr class="stats__row stats__row--color-2">
             <td class="stats__value">7 200</td>
             <td class="stats__field">секунд<br />времени мастера</td>
           </tr>
-          <tr class="stats__row stats__row--dark">
+          <tr class="stats__row stats__row--color-3">
             <td class="stats__value">90 000</td>
             <td class="stats__field">постриженных<br />волос</td>
           </tr>
-          <tr class="stats__row">
+          <tr class="stats__row stats__row--color-4">
             <td class="stats__value">500 000<sup>*</sup></td>
             <td class="stats__field">лайков и<br />комментов</td>
           </tr>
         </table>
         <small class="stats__legend stats__legend--bottom">
-          <sup>*</sup> - приведённые данные ложь
+          <sup>&lowast;</sup> &mdash; приведённые данные ложь
         </small>
       </section>
 
@@ -103,20 +107,25 @@
           <ul class="advantages__list slider__list">
             <li class="advantages__item advantages__item--fast slider__item">
               <h3 class="advantages__title">Быстро</h3>
-
               <p class="advantages__description">
                 Мы делаем свою работу быстро! Два часа пролетят незаметно и вы -
                 счастливый обладатель стильной стрижки-минутки.
               </p>
             </li>
-            <li class="advantages__item advantages__item--cool slider__item">
+
+            <li
+              class="advantages__item advantages__item--cool slider__item visually-hidden"
+            >
               <h3 class="advantages__title">Круто</h3>
               <p class="advantages__description">
                 Забудьте, как вы стриглись раньше. Мы сделаем из вас звезду
                 футбола или кино. Во всякому случае внешне.
               </p>
             </li>
-            <li class="advantages__item advantages__item--price slider__item">
+
+            <li
+              class="advantages__item advantages__item--price slider__item visually-hidden"
+            >
               <h3 class="advantages__title">Дорого</h3>
               <p class="advantages__description">
                 Наши мастера - профессионалы своего дела и не могут стоить
@@ -124,11 +133,33 @@
               </p>
             </li>
           </ul>
-          <p class="advantages__toggles slider__toggles">
-            <button class="slider__toggle" type="button">1</button>
-            <button class="slider__toggle" type="button">2</button>
-            <button class="slider__toggle" type="button">3</button>
-          </p>
+
+          <div class="advantages__toggles slider__toggles">
+            <input
+              class="visually-hidden slider__input"
+              type="radio"
+              name="slider-name"
+              id="slide-1"
+              checked
+            />
+            <label for="slide-1" class="slider__label"></label>
+
+            <input
+              class="visually-hidden slider__input"
+              type="radio"
+              name="slider-name"
+              id="slide-2"
+            />
+            <label for="slide-2" class="slider__label"></label>
+
+            <input
+              class="visually-hidden slider__input"
+              type="radio"
+              name="slider-name"
+              id="slide-3"
+            />
+            <label for="slide-3" class="slider__label"></label>
+          </div>
         </div>
       </section>
 
@@ -186,18 +217,17 @@
           <a class="reviews__write button" href="#">Оставить свой</a>
           <div class="reviews__list slider__list">
             <blockquote class="reviews__item slider__item">
-              <p class="reviews__author-picture">
-                <picture>
-                  <source srcset="img/picture-travis.webp" type="image/webp" />
-                  <img
-                    class="reviews__author-image"
-                    src="img/picture-travis.jpg"
-                    width="50"
-                    height="33"
-                    alt="Фотография Трэвиса Баркера"
-                  />
-                </picture>
-              </p>
+              <picture class="reviews__author-picture">
+                <source srcset="img/picture-travis.webp" type="image/webp" />
+                <img
+                  class="reviews__author-image"
+                  src="img/picture-travis.jpg"
+                  width="50"
+                  height="51"
+                  alt="Фотография Трэвиса Баркера"
+                />
+              </picture>
+
               <div class="reviews__text-wrapper">
                 <cite class="reviews__autrhor-name">Трэвис Баркер</cite>
                 <p class="reviews__text">
@@ -208,18 +238,17 @@
             </blockquote>
 
             <blockquote class="reviews__item slider__item">
-              <p class="reviews__author-picture">
-                <picture>
-                  <source srcset="img/picture-john.webp" type="image/webp" />
-                  <img
-                    class="reviews__author-image"
-                    src="img/picture-john.jpg"
-                    width="50"
-                    height="33"
-                    alt="Фотография Джона Смита"
-                  />
-                </picture>
-              </p>
+              <picture class="reviews__author-picture">
+                <source srcset="img/picture-john.webp" type="image/webp" />
+                <img
+                  class="reviews__author-image"
+                  src="img/picture-john.jpg"
+                  width="50"
+                  height="33"
+                  alt="Фотография Джона Смита"
+                />
+              </picture>
+
               <div class="reviews__text-wrapper">
                 <cite class="reviews__autrhor-name">Джон Смит</cite>
                 <p class="reviews__text">
@@ -229,18 +258,16 @@
             </blockquote>
 
             <blockquote class="reviews__item slider__item">
-              <p class="reviews__author-picture">
-                <picture>
-                  <source srcset="img/picture-ivan.webp" type="image/webp" />
-                  <img
-                    class="reviews__author-image"
-                    src="img/picture-ivan.jpg"
-                    width="50"
-                    height="33"
-                    alt="Фотография Ивана Бородайло"
-                  />
-                </picture>
-              </p>
+              <picture class="reviews__author-picture">
+                <source srcset="img/picture-ivan.webp" type="image/webp" />
+                <img
+                  class="reviews__author-image"
+                  src="img/picture-ivan.jpg"
+                  width="50"
+                  height="33"
+                  alt="Фотография Ивана Бородайло"
+                />
+              </picture>
 
               <div class="reviews__text-wrapper">
                 <cite class="reviews__autrhor-name">Иван Бородайло</cite>
@@ -307,5 +334,6 @@
         </div>
       </div>
     </footer>
+    <script src="/source/js/slider.js"></script>
   </body>
 </html>
