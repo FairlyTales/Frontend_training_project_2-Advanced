@@ -1,18 +1,19 @@
 .reviews {
   color: #000;
-  background-color: #f8f5f2;
+  background-color: $bg-light;
 }
 
 .reviews__wrapper {
   width: 320px;
+  padding-bottom: 20px;
   margin: 0 auto;
 }
 
 .reviews__title {
   padding: 0;
-  padding-top: 55px;
+  padding-top: 57px;
   margin: 0;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 
   font-size: 30px;
   font-weight: bold;
@@ -26,6 +27,9 @@
 }
 
 .reviews__item {
+  min-height: 175px;
+  padding: 0;
+  padding-bottom: 5px;
 }
 
 .reviews__container {
@@ -33,25 +37,38 @@
   justify-content: space-between;
 
   padding: 0;
+  padding-top: 7px;
   margin: 0;
 }
 
 .reviews__author-picture {
-  display: block;
-  min-width: 50px;
-  min-height: 51px;
-
   padding: 0;
+  padding-top: 10px;
   margin: 0;
+  margin-left: 20px;
+}
+
+//  "object-fit" property sets how the content of a replaced element, such as an <img> or <video>, should be resized to fit its container. We use it here to crop and center the image to the desired size.
+.reviews__author-image {
+  display: block;
+  min-width: 49px;
+  min-height: 47px;
+  object-fit: cover;
+
+  // to make Alt look good
+  font-size: 10px;
+  line-height: 12px;
+
+  border: 1px solid #eae4dd;
 }
 
 .reviews__text-wrapper {
-  display: flex;
-  flex-direction: column;
+  padding-right: 36px;
 }
 
 .reviews__autrhor-name {
-  margin-bottom: 15px;
+  display: block;
+  margin-bottom: 10px;
 
   font-size: 24px;
   font-style: normal;
@@ -59,9 +76,25 @@
 }
 
 .reviews__text {
-  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
-  font-size: 18px;
   width: 195px;
   margin: 0;
-  margin-bottom: 30px;
+
+  font-size: 18px;
+}
+
+.reviews__toggles {
+  position: relative;
+}
+
+// light triangle above the title, for decoration
+.reviews__toggles::after {
+  position: absolute;
+  top: 27px;
+  left: 0;
+
+  content: '';
+
+  border-top: 34px solid $bg-light;
+  border-right: 160px solid transparent;
+  border-left: 160px solid transparent;
 }

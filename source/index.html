@@ -138,27 +138,27 @@
             <input
               class="visually-hidden slider__input"
               type="radio"
-              name="slider-name"
-              id="slide-1"
+              name="advantages-slider"
+              id="advantages-slide-1"
               checked
             />
-            <label for="slide-1" class="slider__label"></label>
+            <label for="advantages-slide-1" class="slider__label"></label>
 
             <input
               class="visually-hidden slider__input"
               type="radio"
-              name="slider-name"
-              id="slide-2"
+              name="advantages-slider"
+              id="advantages-slide-2"
             />
-            <label for="slide-2" class="slider__label"></label>
+            <label for="advantages-slide-2" class="slider__label"></label>
 
             <input
               class="visually-hidden slider__input"
               type="radio"
-              name="slider-name"
-              id="slide-3"
+              name="advantages-slider"
+              id="advantages-slide-3"
             />
-            <label for="slide-3" class="slider__label"></label>
+            <label for="advantages-slide-3" class="slider__label"></label>
           </div>
         </div>
       </section>
@@ -207,28 +207,27 @@
             </li>
             <li class="news__item visually-hidden">
               <div class="news__date-box">
-                <time class="news__date" datetime="2020-09-19">
-                  <b class="news__day">19</b>
-                  <b class="news__month">Сент</b>
+                <time class="news__date" datetime="2020-08-26">
+                  <b class="news__day">26</b>
+                  <b class="news__month">Авг</b>
                 </time>
               </div>
               <p class="news__text">
-                4 В нашей команде пополнение, Борис «Бритва» Стригунец,
-                обладатель множества титулов и наград пополнил наши стройные
-                ряды. Спешите записаться!
+                Lorem ipsum dolor sit amet
               </p>
             </li>
             <li class="news__item visually-hidden">
               <div class="news__date-box">
-                <time class="news__date" datetime="2020-09-19">
-                  <b class="news__day">19</b>
-                  <b class="news__month">Сент</b>
+                <time class="news__date" datetime="2020-08-20">
+                  <b class="news__day">20</b>
+                  <b class="news__month">Авг</b>
                 </time>
               </div>
               <p class="news__text">
-                5 В нашей команде пополнение, Борис «Бритва» Стригунец,
-                обладатель множества титулов и наград пополнил наши стройные
-                ряды. Спешите записаться!
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo,
+                quas voluptatum labore veritatis, pariatur accusamus incidunt
+                natus aspernatur ducimus dignissimos ea omnis. Molestias minus
+                error aliquam culpa cumque voluptas a?
               </p>
             </li>
           </ul>
@@ -250,8 +249,8 @@
                   <img
                     class="reviews__author-image"
                     src="img/picture-travis.jpg"
-                    width="50"
-                    height="51"
+                    width="49"
+                    height="48"
                     alt="Фотография Трэвиса Баркера"
                   />
                 </picture>
@@ -265,15 +264,18 @@
               </blockquote>
             </li>
 
-            <li class="reviews__item slider__item">
-              <blockquote>
+            <li class="reviews__item slider__item visually-hidden">
+              <blockquote class="reviews__container">
                 <picture class="reviews__author-picture">
-                  <source srcset="img/picture-john.webp" type="image/webp" />
+                  <source
+                    srcset="img/picture-John_Smith.webp"
+                    type="image/webp"
+                  />
                   <img
                     class="reviews__author-image"
-                    src="img/picture-john.jpg"
-                    width="50"
-                    height="33"
+                    src="img/picture-John_Smith.jpg"
+                    width="49"
+                    height="48"
                     alt="Фотография Джона Смита"
                   />
                 </picture>
@@ -286,19 +288,21 @@
               </blockquote>
             </li>
 
-            <li class="reviews__item slider__item">
-              <blockquote>
+            <li class="reviews__item slider__item visually-hidden">
+              <blockquote class="reviews__container">
                 <picture class="reviews__author-picture">
-                  <source srcset="img/picture-ivan.webp" type="image/webp" />
+                  <source
+                    srcset="img/picture-Ivan_Borodaylo.webp"
+                    type="image/webp"
+                  />
                   <img
                     class="reviews__author-image"
-                    src="img/picture-ivan.jpg"
-                    width="50"
-                    height="33"
+                    src="img/picture-Ivan_Borodaylo.jpg"
+                    width="49"
+                    height="48"
                     alt="Фотография Ивана Бородайло"
                   />
                 </picture>
-
                 <div class="reviews__text-wrapper">
                   <cite class="reviews__autrhor-name">Иван Бородайло</cite>
                   <p class="reviews__text">
@@ -309,18 +313,48 @@
             </li>
           </ul>
 
-          <button class="reviews__prev" type="button">
+          <button class="reviews__prev visually-hidden" type="button">
             Предыдущий отзыв
           </button>
-          <button class="reviews__next" type="button">
+          <button class="reviews__next visually-hidden" type="button">
             Следующий отзыв
           </button>
 
-          <p class="reviews__toggles slider__toggles">
-            <button class="slider__toggle" type="button">1</button>
-            <button class="slider__toggle" type="button">2</button>
-            <button class="slider__toggle" type="button">3</button>
-          </p>
+          <div class="reviews__toggles slider__toggles">
+            <input
+              class="visually-hidden slider__input slider__input--dark"
+              type="radio"
+              name="reviews-slider"
+              id="reviews-slide-1"
+              checked
+            />
+            <label
+              for="reviews-slide-1"
+              class="slider__label slider__label--dark"
+            ></label>
+
+            <input
+              class="visually-hidden slider__input slider__input--dark"
+              type="radio"
+              name="reviews-slider"
+              id="reviews-slide-2"
+            />
+            <label
+              for="reviews-slide-2"
+              class="slider__label slider__label--dark"
+            ></label>
+
+            <input
+              class="visually-hidden slider__input slider__input--dark"
+              type="radio"
+              name="reviews-slider"
+              id="reviews-slide-3"
+            />
+            <label
+              for="reviews-slide-3"
+              class="slider__label slider__label--dark"
+            ></label>
+          </div>
         </div>
       </section>
     </main>
@@ -332,36 +366,38 @@
           <p class="contacts__text">
             г. Санкт-Петербург, ул. Большая Конюшенная 19/8
           </p>
-          <a class="contacts__phone" href="tel:+78125556666">
-            <span class="contacts__phone-mobile">Тел.:</span>
-            +7(812)555-66-66
+          <a class="contacts__phone button" href="tel:+78125556666">
+            <span class="contacts__phone-mobile visually-hidden">Тел.:</span>
+            +7 (812) 555-66-66
           </a>
         </div>
 
         <div class="page-footer__social social">
-          <b class="social__title">Давайте Дружить!</b>
+          <b class="social__title visually-hidden">Давайте Дружить!</b>
           <ul class="social__list">
-            <li class="social__item">
-              <a class="social__link social__link--vkontakte" href="#"
-                >Вконтакте</a
-              >
+            <li class="social__item social__item--left">
+              <a class="social__link social__link--vkontakte" href="#">
+                <span class="visually-hidden">Вконтакте</span>
+              </a>
             </li>
-            <li class="social__item">
-              <a class="social__link social__link--facebook" href="#"
-                >Фейсбук</a
-              >
+            <li class="social__item social__item--center">
+              <a class="social__link social__link--facebook" href="#">
+                <span class="visually-hidden">Фейсбук</span>
+              </a>
             </li>
-            <li class="social__item">
-              <a class="social__link social__link--instagram" href="#"
-                >Инстаграм</a
-              >
+            <li class="social__item social__item--right">
+              <a class="social__link social__link--instagram" href="#">
+                <span class="visually-hidden">Инстаграм</span>
+              </a>
             </li>
           </ul>
         </div>
 
         <div class="page-footer__copyright copyright">
-          <b class="copyright__text">Раработанно:</b>
-          <a class="copyright__link button" href="#">HTML Academy</a>
+          <span class="copyright__text">Разработанно:</span>
+          <a class="copyright__link button button--copyright" href="#"
+            >HTML Academy</a
+          >
         </div>
       </div>
     </footer>

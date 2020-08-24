@@ -12,16 +12,22 @@
   justify-content: center;
 }
 
+// making label into the styled radio-button (in rhombus created by border)
 .slider__label {
   display: block;
   width: 5px;
   height: 5px;
   margin: 0 13px;
 
+  cursor: pointer;
   content: '';
 
   border: 1px solid #a5a5a5;
   transform: rotate(45deg);
+}
+
+.slider__label--dark {
+  border: 1px solid #000;
 }
 
 // turning off standard radio buttons
@@ -29,7 +35,7 @@
   display: none;
 }
 
-// this selector choose all pseudo-elements standing right after the checked radio button, we use it to create the "checked" symbol
+// this selector choose all pseudo-elements standing right after the checked radio button, we use it to create the "checked" symbol by filling the insides of the border
 .slider__input:checked + .slider__label::after {
   position: absolute;
   top: -1px;
@@ -42,4 +48,9 @@
 
   background-color: #fff;
   border: 1px solid #fff;
+}
+
+.slider__input--dark:checked + .slider__label--dark::after {
+  background-color: #000;
+  border: 1px solid #000;
 }

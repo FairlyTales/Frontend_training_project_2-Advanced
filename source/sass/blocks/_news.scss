@@ -20,7 +20,7 @@
   text-transform: uppercase;
 }
 
-// dark triangle above the title for decoration
+// dark triangle above the title, for decoration
 .news__title::after {
   position: absolute;
   top: 0;
@@ -40,6 +40,8 @@
 .news__item {
   position: relative;
   display: flex;
+  min-height: 100px;
+
   padding: 0 19px;
   padding-bottom: 5px;
   margin-top: 30px;

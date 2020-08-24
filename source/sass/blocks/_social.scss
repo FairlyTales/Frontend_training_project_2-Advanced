@@ -1,0 +1,52 @@
+.social {
+}
+
+.social__title {
+}
+
+.social__list {
+  @include reset-list;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+// in order to make borders between the items 1px wide we use this 4 selectors
+.social__item {
+  border-top: 1px solid #3e3e3e;
+  border-bottom: 1px solid #3e3e3e;
+}
+
+.social__item--left {
+  border-left: 1px solid #3e3e3e;
+}
+
+.social__item--center {
+  border-right: 1px solid #3e3e3e;
+  border-left: 1px solid #3e3e3e;
+}
+
+.social__item--right {
+  border-right: 1px solid #3e3e3e;
+}
+
+.social__link {
+  display: block;
+  width: 106px;
+  height: 100px;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.social__link--vkontakte {
+  background-image: url('/source/img/vk-icon-big.png');
+}
+
+.social__link--facebook {
+  background-image: url('/source/img/facebook-icon-big.png');
+}
+
+.social__link--instagram {
+  background-image: url('/source/img/insta-icon-big.png');
+}
