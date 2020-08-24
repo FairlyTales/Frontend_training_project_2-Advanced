@@ -10,7 +10,7 @@
 
 .reviews__title {
   padding: 0;
-  padding-top: 49px;
+  padding-top: 55px;
   margin: 0;
   margin-bottom: 40px;
 
@@ -22,9 +22,13 @@
 }
 
 .reviews__list {
+  @include reset-list;
 }
 
 .reviews__item {
+}
+
+.reviews__container {
   display: flex;
   justify-content: space-between;
 

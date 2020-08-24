@@ -13,7 +13,6 @@
   padding: 0 40px;
   padding-top: 66px;
   margin: 0;
-  margin-bottom: 30px;
 
   font-size: 30px;
   line-height: 30px;
@@ -29,7 +28,7 @@
 
   content: '';
 
-  border-top: 35px solid #242424;
+  border-top: 34px solid #242424;
   border-right: 160px solid transparent;
   border-left: 160px solid transparent;
 }
@@ -39,28 +38,48 @@
 }
 
 .news__item {
+  position: relative;
   display: flex;
-  padding: 0 20px;
-  margin-bottom: 50px;
+  padding: 0 19px;
+  padding-bottom: 5px;
+  margin-top: 30px;
+  margin-bottom: 17px;
+}
+
+// grey line under each news article
+.news__item--with-underline::after {
+  position: absolute;
+  bottom: -13px;
+  left: 20px;
+
+  width: 280px;
+  height: 1px;
+
+  content: '';
+
+  background-color: #c6c4c1;
+}
+
+.news__date {
 }
 
 // black box with date and month
-.news__item-wrapper {
+.news__date-box {
   position: relative;
   box-sizing: border-box;
-  align-self: center;
+  align-self: flex-start;
   min-width: 50px;
   min-height: 50px;
 
-  margin-top: -41px;
-  margin-right: 20px;
+  margin-top: 11px;
+  margin-right: 21px;
 
   color: #fff;
   background-color: #000;
 }
 
-// triangle at the bottom of the date
-.news__item-wrapper::after {
+// triangle at the bottom of the date-box
+.news__date-box::after {
   position: absolute;
   top: 50px;
   width: 0;
@@ -71,9 +90,6 @@
   border-top: 10px solid #000;
   border-right: 25px solid transparent;
   border-left: 25px solid transparent;
-}
-
-.news__date {
 }
 
 .news__day {
@@ -102,5 +118,20 @@
   margin: 0;
 }
 
-.news__to-all {
+.news__button-to-all {
+  position: relative;
+}
+
+// grey line under each news article
+.news__button-to-all::after {
+  position: absolute;
+  bottom: -30px;
+  left: -20px;
+
+  width: 320px;
+  height: 1px;
+
+  content: '';
+
+  background-color: #c6c4c1;
 }

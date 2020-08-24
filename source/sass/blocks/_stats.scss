@@ -20,7 +20,7 @@
   width: 100%;
   padding: 0 68px;
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 
   font-size: 30px;
   font-weight: bold;
@@ -66,7 +66,10 @@
 }
 
 .stats__value {
+  box-sizing: border-box;
   width: 160px;
+  height: 80px;
+
   padding: 21px 0;
   padding-left: 20px;
 
@@ -97,7 +100,7 @@
 }
 
 .stats__legend--bottom {
-  padding-top: 19px;
+  padding-top: 14px;
 
   color: #666;
   text-align: center;

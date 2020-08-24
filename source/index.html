@@ -13,7 +13,7 @@
     />
     <link rel="stylesheet" href="./sass/global/normalize.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <title>Барбершоп Бородинский</title>
+    <title>Барбершоп «Бородинский»</title>
   </head>
 
   <body>
@@ -71,7 +71,7 @@
         <header class="stats__header">
           <h2 class="visually-hidden">Статистика барбершопа</h2>
           <p class="stats__slogan">Стрижка у нас это выгодно!</p>
-          <small class="stats__legend stats__legend--top">
+          <small class="stats__legend stats__legend--top visually-hidden">
             <sup>&lowast;</sup> &mdash; приведённые данные ложь
           </small>
           <p class="stats__intro">
@@ -167,8 +167,8 @@
         <div class="news__wrapper">
           <h2 class="news__title">Новости и акции</h2>
           <ul class="news__list">
-            <li class="news__item">
-              <div class="news__item-wrapper">
+            <li class="news__item news__item--with-underline">
+              <div class="news__date-box">
                 <time class="news__date" datetime="2020-09-29">
                   <b class="news__day">29</b>
                   <b class="news__month">Сент</b>
@@ -179,23 +179,22 @@
                 стаканчик во время стрижки.
               </p>
             </li>
-          </ul>
-          <ul class="news__list">
+
             <li class="news__item">
-              <div class="news__item-wrapper">
+              <div class="news__date-box">
                 <time class="news__date" datetime="2020-09-19">
                   <b class="news__day">19</b>
                   <b class="news__month">Сент</b>
                 </time>
               </div>
               <p class="news__text">
-                В нашей команде пополнение, Борис "Бритва", Стригунец,
-                обладатель множества титулов и наград пополнил наши стройные
-                ряды. Спешите записаться!
+                В нашей команде пополнение, Борис «Бритва» Стригунец, обладатель
+                множества титулов и наград пополнил наши стройные ряды. Спешите
+                записаться!
               </p>
             </li>
-            <li class="news__item">
-              <div class="news__item-wrapper">
+            <li class="news__item visually-hidden">
+              <div class="news__date-box">
                 <time class="news__date" datetime="2020-09-09">
                   <b class="news__day">9</b>
                   <b class="news__month">Сент</b>
@@ -206,84 +205,116 @@
                 подстригитесь и узнаете, в чём здесь подвох!
               </p>
             </li>
+            <li class="news__item visually-hidden">
+              <div class="news__date-box">
+                <time class="news__date" datetime="2020-09-19">
+                  <b class="news__day">19</b>
+                  <b class="news__month">Сент</b>
+                </time>
+              </div>
+              <p class="news__text">
+                4 В нашей команде пополнение, Борис «Бритва» Стригунец,
+                обладатель множества титулов и наград пополнил наши стройные
+                ряды. Спешите записаться!
+              </p>
+            </li>
+            <li class="news__item visually-hidden">
+              <div class="news__date-box">
+                <time class="news__date" datetime="2020-09-19">
+                  <b class="news__day">19</b>
+                  <b class="news__month">Сент</b>
+                </time>
+              </div>
+              <p class="news__text">
+                5 В нашей команде пополнение, Борис «Бритва» Стригунец,
+                обладатель множества титулов и наград пополнил наши стройные
+                ряды. Спешите записаться!
+              </p>
+            </li>
           </ul>
-          <a class="news__to-all button" href="#">Показать все</a>
+          <a class="button news__button-to-all" href="#">Показать все</a>
         </div>
       </section>
 
       <section class="reviews">
         <div class="reviews__wrapper slider">
           <h2 class="reviews__title">Отзывы о нас</h2>
-          <a class="reviews__write button" href="#">Оставить свой</a>
-          <div class="reviews__list slider__list">
-            <blockquote class="reviews__item slider__item">
-              <picture class="reviews__author-picture">
-                <source srcset="img/picture-travis.webp" type="image/webp" />
-                <img
-                  class="reviews__author-image"
-                  src="img/picture-travis.jpg"
-                  width="50"
-                  height="51"
-                  alt="Фотография Трэвиса Баркера"
-                />
-              </picture>
+          <a class="reviews__write button visually-hidden" href="#"
+            >Оставить свой</a
+          >
+          <ul class="reviews__list slider__list">
+            <li class="reviews__item slider__item">
+              <blockquote class="reviews__container">
+                <picture class="reviews__author-picture">
+                  <source srcset="img/picture-travis.webp" type="image/webp" />
+                  <img
+                    class="reviews__author-image"
+                    src="img/picture-travis.jpg"
+                    width="50"
+                    height="51"
+                    alt="Фотография Трэвиса Баркера"
+                  />
+                </picture>
+                <div class="reviews__text-wrapper">
+                  <cite class="reviews__autrhor-name">Трэвис Баркер</cite>
+                  <p class="reviews__text">
+                    Спасибо за лысину! Был проездом в Москве, заскочил
+                    побриться, чтобы было видно новую татуировку!
+                  </p>
+                </div>
+              </blockquote>
+            </li>
 
-              <div class="reviews__text-wrapper">
-                <cite class="reviews__autrhor-name">Трэвис Баркер</cite>
-                <p class="reviews__text">
-                  Спасибо за лысину! Был проездом в Москве, заскочил побриться,
-                  чтобы было видно новую татуировку!
-                </p>
-              </div>
-            </blockquote>
+            <li class="reviews__item slider__item">
+              <blockquote>
+                <picture class="reviews__author-picture">
+                  <source srcset="img/picture-john.webp" type="image/webp" />
+                  <img
+                    class="reviews__author-image"
+                    src="img/picture-john.jpg"
+                    width="50"
+                    height="33"
+                    alt="Фотография Джона Смита"
+                  />
+                </picture>
+                <div class="reviews__text-wrapper">
+                  <cite class="reviews__autrhor-name">Джон Смит</cite>
+                  <p class="reviews__text">
+                    Отличную стрижку мне сделали ребята.
+                  </p>
+                </div>
+              </blockquote>
+            </li>
 
-            <blockquote class="reviews__item slider__item">
-              <picture class="reviews__author-picture">
-                <source srcset="img/picture-john.webp" type="image/webp" />
-                <img
-                  class="reviews__author-image"
-                  src="img/picture-john.jpg"
-                  width="50"
-                  height="33"
-                  alt="Фотография Джона Смита"
-                />
-              </picture>
+            <li class="reviews__item slider__item">
+              <blockquote>
+                <picture class="reviews__author-picture">
+                  <source srcset="img/picture-ivan.webp" type="image/webp" />
+                  <img
+                    class="reviews__author-image"
+                    src="img/picture-ivan.jpg"
+                    width="50"
+                    height="33"
+                    alt="Фотография Ивана Бородайло"
+                  />
+                </picture>
 
-              <div class="reviews__text-wrapper">
-                <cite class="reviews__autrhor-name">Джон Смит</cite>
-                <p class="reviews__text">
-                  Отличную стрижку мне сделали ребята.
-                </p>
-              </div>
-            </blockquote>
+                <div class="reviews__text-wrapper">
+                  <cite class="reviews__autrhor-name">Иван Бородайло</cite>
+                  <p class="reviews__text">
+                    В Бородинском ваша борода в надёжных руках!
+                  </p>
+                </div>
+              </blockquote>
+            </li>
+          </ul>
 
-            <blockquote class="reviews__item slider__item">
-              <picture class="reviews__author-picture">
-                <source srcset="img/picture-ivan.webp" type="image/webp" />
-                <img
-                  class="reviews__author-image"
-                  src="img/picture-ivan.jpg"
-                  width="50"
-                  height="33"
-                  alt="Фотография Ивана Бородайло"
-                />
-              </picture>
-
-              <div class="reviews__text-wrapper">
-                <cite class="reviews__autrhor-name">Иван Бородайло</cite>
-                <p class="reviews__text">
-                  В Бородинском ваша борода в надёжных руках!
-                </p>
-              </div>
-            </blockquote>
-
-            <button class="reviews__prev" type="button">
-              Предыдущий отзыв
-            </button>
-            <button class="reviews__next" type="button">
-              Следующий отзыв
-            </button>
-          </div>
+          <button class="reviews__prev" type="button">
+            Предыдущий отзыв
+          </button>
+          <button class="reviews__next" type="button">
+            Следующий отзыв
+          </button>
 
           <p class="reviews__toggles slider__toggles">
             <button class="slider__toggle" type="button">1</button>
@@ -334,6 +365,6 @@
         </div>
       </div>
     </footer>
-    <script src="/source/js/slider.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>

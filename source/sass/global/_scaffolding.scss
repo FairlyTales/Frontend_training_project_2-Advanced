@@ -1,3 +1,8 @@
+// keep it disabled during the development process (if "on" - scrolls to the start of the page after each reload of the page, irritating)
+html {
+  // scroll-behavior: smooth;
+}
+
 body {
   min-width: 320px;
   padding: 0;
