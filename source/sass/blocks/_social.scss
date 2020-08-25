@@ -11,23 +11,20 @@
   justify-content: space-around;
 }
 
-// in order to make borders between the items 1px wide we use this 4 selectors
 .social__item {
-  border-top: 1px solid #3e3e3e;
-  border-bottom: 1px solid #3e3e3e;
+  border: 1px solid #3e3e3e;
 }
 
-.social__item--left {
-  border-left: 1px solid #3e3e3e;
+.social__item:focus,
+.social__item:hover {
+  border-color: #545454;
 }
 
-.social__item--center {
-  border-right: 1px solid #3e3e3e;
-  border-left: 1px solid #3e3e3e;
-}
-
-.social__item--right {
-  border-right: 1px solid #3e3e3e;
+.social__item:active {
+  color: #808080;
+  background-color: #252525;
+  border-color: transparent;
+  opacity: 0.4;
 }
 
 .social__link {

@@ -1,0 +1,50 @@
+.user-list {
+  @include reset-list;
+}
+
+.user-list__item {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 48px;
+  line-height: 24px;
+}
+
+.user-list__login {
+  position: relative;
+  color: #fff;
+}
+
+.user-list__login:active {
+  color: #917d6f;
+}
+
+.user-list__login::after {
+  position: absolute;
+  top: 4px;
+  left: -30px;
+
+  width: 16px;
+  height: 16px;
+
+  content: '';
+
+  background-image: url('/source/img/login.svg');
+}
+
+// one of the ways to change the color of the svg background-image (we can use "fill" only when svg is in the HTML). Other way is to use "filter".
+.user-list__login:active::after {
+  opacity: 0.2;
+}
+
+@media (min-width: $tablet-width) {
+  .user-list {
+    display: flex;
+    width: 60px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .user-list {
+    width: 160px;
+  }
+}
