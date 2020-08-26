@@ -26,9 +26,11 @@
   }
 }
 
+// prevent site-list__item--active (page on which we currently are) from changing state
 .site-list__item--active {
   &:hover,
-  &:focus {
+  &:focus,
+  &:active {
     color: #fff;
     cursor: default;
     background-color: #826550;
