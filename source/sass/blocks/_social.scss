@@ -1,7 +1,9 @@
 .social {
 }
 
+// hide "Давайте дружить!" in mobile version
 .social__title {
+  display: none;
 }
 
 .social__list {
@@ -45,4 +47,14 @@
 
 .social__link--instagram {
   background-image: url('/source/img/insta-icon-big.png');
+}
+
+@media (min-width: $tablet-width) {
+}
+
+@media (min-width: $desktop-width) {
+  // show "Давайте дружить!"
+  .social__title {
+    display: block;
+  }
 }

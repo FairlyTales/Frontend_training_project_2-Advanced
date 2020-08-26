@@ -22,6 +22,11 @@
   text-transform: uppercase;
 }
 
+// don't show this button in mobile version
+.reviews__write {
+  display: none;
+}
+
 .reviews__list {
   @include reset-list;
 }
@@ -82,6 +87,12 @@
   font-size: 18px;
 }
 
+// hide "previous/next review" buttons in mobile version
+.reviews__prev-button,
+.reviews__next-button {
+  display: none;
+}
+
 .reviews__toggles {
   position: relative;
 }
@@ -97,4 +108,20 @@
   border-top: 34px solid $bg-light;
   border-right: 160px solid transparent;
   border-left: 160px solid transparent;
+}
+
+@media (min-width: $tablet-width) {
+  // show "write a review button"
+  .reviews__write {
+    display: block;
+  }
+
+  // show"previous/next review" buttons in mobile version
+  .reviews__prev-button,
+  .reviews__next-button {
+    display: block;
+  }
+}
+
+@media (min-width: $desktop-width) {
 }

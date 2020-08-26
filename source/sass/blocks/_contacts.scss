@@ -33,5 +33,17 @@
   }
 }
 
-.contacts__phone-mobile {
+// hide "Тел." in mobile version
+.contacts__phone-legend {
+  display: none;
+}
+
+@media (min-width: $tablet-width) {
+  // show "Тел."
+  .contacts__phone-legend {
+    display: block;
+  }
+}
+
+@media (min-width: $desktop-width) {
 }

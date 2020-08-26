@@ -1,16 +1,11 @@
-//* --------------Variables --------------------
+//* --------------Variables--------------
 // variables for checking the user's screen width
 var tabletWidth = window.matchMedia('(min-width: 768px)')
 var desktopWidth = window.matchMedia('(min-width: 1200px)')
 
-// variables for hiding/showing elements depending on the user's screen width
-var smallTextTop = document.querySelector('.stats__legend--top')
-var smallTextBottom = document.querySelector('.stats__legend--bottom')
-var writeReviewButton = document.querySelector('.reviews__write')
-var prevReviewButton = document.querySelector('.reviews__prev')
-var nextReviewButton = document.querySelector('.reviews__next')
-var contactsPhoneMobile = document.querySelector('.contacts__phone-mobile')
-var socialTitle = document.querySelector('.social__title')
+// variables for opening/closing navigation menu in the mobile version
+var NavMenu = document.querySelector('.main-nav')
+var toggleNavMenu = document.querySelector('.main-nav__toggle')
 
 // variables for slider toggles; block: advantages, news; mobile version;
 var slide = document.querySelectorAll('.slider__item')
@@ -22,17 +17,34 @@ var sliderButtonReviews2 = document.querySelector('#reviews-slide-2')
 var sliderButtonReviews3 = document.querySelector('#reviews-slide-3')
 
 // variables for button "show all news"; block: news; mobile version
-var newsToggleStatus = 0
 var newsItems = document.querySelectorAll('.news__item')
 var newsButton = document.querySelector('.news__button-to-all')
+var newsToggleStatus = 0
 
-//* -------------------------------------------
+//* -------------------------------------
+
+//* --------------Functions--------------
+
+// we have a fallback is our CSS for the case where user got HTML and CSS, but didn't get JS. This fallback makes shure that the navigation menu is constantly openned. But if user downloaded the JS we must disable this fallback by removing class "main-nav--no-js" from the <nav> to make everything work according to "Plan A"
+function removeNoJsFallback() {
+  NavMenu.classList.remove('main-nav--no-js')
+}
 
 // enables/disables mobile/tablet/desktop features depending on the width of the user's screen
-
 function activateMobileFeatures() {
   // TODO: remove console.logs after script is finished
   console.log('mobile version')
+
+  // navigation menu opening/closing
+  toggleNavMenu.addEventListener('click', function (evt) {
+    if (NavMenu.classList.contains('main-nav--closed')) {
+      NavMenu.classList.remove('main-nav--closed')
+      NavMenu.classList.add('main-nav--opened')
+    } else {
+      NavMenu.classList.add('main-nav--closed')
+      NavMenu.classList.remove('main-nav--opened')
+    }
+  })
 
   // TODO: maybe make the slides change after click/touch on the whole element?
   // slider toggles; block: advantages;
@@ -109,24 +121,11 @@ function activateMobileFeatures() {
 function activateTabletFeatures() {
   // TODO: remove console.logs after script is finished
   console.log('tablet version')
-
-  // change position of the .stats_legend element
-  smallTextTop.classList.remove('visually-hidden')
-  smallTextBottom.classList.add('visually-hidden')
-
-  // add "tablet elements" which are hidden in the mobile version
-  writeReviewButton.classList.remove('visually-hidden')
-  prevReviewButton.classList.remove('visually-hidden')
-  nextReviewButton.classList.remove('visually-hidden')
-  contactsPhoneMobile.classList.remove('visually-hidden')
 }
 
 function activateDesktopFeatures() {
   // TODO: remove console.logs after script is finished
   console.log('desktop version')
-
-  // add "desktop elements" which are hidden in the mobile & tablet versions
-  socialTitle.classList.remove('visually-hidden')
 }
 
 function checkDeviceWidth() {
@@ -136,6 +135,7 @@ function checkDeviceWidth() {
   }
   // if screen is wider than 1200px: also enable desktop version features
   if (desktopWidth.matches) {
+    activateDesktopFeatures()
   }
   // if screen is smaller than 768px: enable only mobile version features
   else {
@@ -143,4 +143,5 @@ function checkDeviceWidth() {
   }
 }
 
+removeNoJsFallback()
 checkDeviceWidth()

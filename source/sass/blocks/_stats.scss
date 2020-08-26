@@ -72,8 +72,8 @@
   padding-left: 20px;
 
   font-size: 40px;
-  line-height: 42px;
   font-weight: bold;
+  line-height: 42px;
 }
 
 .stats__field {
@@ -93,6 +93,7 @@
 }
 
 .stats__legend--top {
+  display: none;
   padding: 0;
   margin: 0;
 
@@ -100,6 +101,7 @@
 }
 
 .stats__legend--bottom {
+  display: block;
   padding-top: 14px;
 
   color: #666;
@@ -114,6 +116,16 @@
 
   .stats__list {
     display: flex;
+  }
+
+  // show legend on top
+  .stats__legend--top {
+    display: block;
+  }
+
+  // hide legend on the bottom
+  .stats__legend--bottom {
+    display: none;
   }
 }
 

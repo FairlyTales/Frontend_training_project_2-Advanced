@@ -2,26 +2,35 @@
   @include reset-list;
 }
 
+// we made <a> fully fill our <li> to make the whole space ocupied by <li> clickable. Thats why the in nothing in this selector besides hover/focus/active (but they can be also applied to the user-list__login, result will be the same)
 .user-list__item {
-  padding-top: 13px;
-  padding-bottom: 13px;
-  padding-left: 48px;
-  line-height: 24px;
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+  &:active {
+    background-color: #523b2b;
+    opacity: 0.3;
+  }
 }
 
 .user-list__login {
   position: relative;
-  color: #fff;
 
-  &:active {
-    color: #917d6f;
-  }
+  display: block;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 48px;
+
+  line-height: 24px;
+  color: inherit;
 }
 
+// login icon
 .user-list__login::after {
   position: absolute;
-  top: 4px;
-  left: -30px;
+  top: 17px;
+  left: 18px;
 
   width: 16px;
   height: 16px;
@@ -29,12 +38,6 @@
   content: '';
 
   background-image: url('/source/img/login.svg');
-}
-
-// we can't use &:active inside the previous selector because we need :active::after in exactly this order
-.user-list__login:active::after {
-  // one of the ways to change the color of the svg background-image (we can use "fill" only when svg is in the HTML). Second way is to use "filter" property
-  opacity: 0.2;
 }
 
 @media (min-width: $tablet-width) {

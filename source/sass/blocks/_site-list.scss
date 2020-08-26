@@ -1,5 +1,6 @@
 .site-list {
   @include reset-list;
+  font-weight: bold;
 }
 
 .site-list__item {
@@ -19,7 +20,6 @@
     cursor: pointer;
     background-color: #755a46;
   }
-
   &:active {
     color: #978374;
     background-color: #6a4d38;
