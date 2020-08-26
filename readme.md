@@ -1,1 +1,1 @@
-First training project with adaptive layout & graphics, css preprocessors, gulp and npm
+First training project with adaptive layout & graphics, css preprocessors, gulp and npm.
