@@ -21,17 +21,16 @@
 .contacts__phone {
   color: #fff;
   border-color: #3e3e3e;
-}
 
-.contacts__phone:hover,
-.contacts__phone:focus {
-  border-color: #515151;
-}
-
-.contacts__phone:active {
-  color: #515151;
-  background-color: #252525;
-  border-color: #252525;
+  &:hover,
+  &:focus {
+    border-color: #515151;
+  }
+  &:active {
+    color: #515151;
+    background-color: #252525;
+    border-color: #252525;
+  }
 }
 
 .contacts__phone-mobile {

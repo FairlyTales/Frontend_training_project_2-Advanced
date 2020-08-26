@@ -1,6 +1,25 @@
-// keep it disabled during the development process (if "on" - scrolls to the start of the page after each reload of the page, irritating)
+// local fonts. We use woff2 and woff because not all browsers support the woff2
+@font-face {
+  font-family: 'PT Sans Narrow';
+  font-style: normal;
+  font-weight: normal;
+
+  src: url('/source/fonts/PTSansNarrow/PTSansNarrow-Regular.woff2')
+      format('woff2'),
+    url('/source/fonts/PTSansNarrow/PTSansNarrow-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'PT Sans Narrow';
+  font-style: normal;
+  font-weight: bold;
+
+  src: url('/source/fonts/PTSansNarrow/PTSansNarrow-Bold.woff2') format('woff2'),
+    url('/source/fonts/PTSansNarrow/PTSansNarrow-Bold.woff') format('woff');
+}
+
 html {
-  // scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {

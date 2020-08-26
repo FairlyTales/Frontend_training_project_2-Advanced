@@ -3,14 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@700&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="./sass/global/normalize.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <title>Барбершоп «Бородинский»</title>
@@ -23,19 +15,19 @@
           class="page-header__logo-image"
           src="img/logotype-mobile.svg"
           width="226"
-          height="30"
+          height="85"
           alt="Логотип барбершопа Бородинский"
         />
       </a>
 
       <nav class="main-nav">
         <button class="main-nav__toggle" type="button">
-          Открыть меню
+          <span class="visually-hidden">Открыть меню</span>
         </button>
         <div class="main-nav__wrapper">
-          <ul class="main-nav__list site-list">
+          <ul class="main-nav__list main-nav__list--site site-list">
             <li class="site-list__item site-list__item--active">
-              <a>Главная</a>
+              <a class="site-list__link">Главная</a>
             </li>
             <li class="site-list__item">
               <a class="site-list__link" href="photo.html">Наши работы</a>
@@ -51,7 +43,7 @@
             </li>
           </ul>
 
-          <ul class="main-nav__list user-list">
+          <ul class="main-nav__list main-nav__list--user user-list">
             <li class="user-list__item">
               <a class="user-list__login" href="login.html">
                 Войти

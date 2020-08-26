@@ -12,10 +12,10 @@
 .user-list__login {
   position: relative;
   color: #fff;
-}
 
-.user-list__login:active {
-  color: #917d6f;
+  &:active {
+    color: #917d6f;
+  }
 }
 
 .user-list__login::after {
@@ -31,8 +31,9 @@
   background-image: url('/source/img/login.svg');
 }
 
-// one of the ways to change the color of the svg background-image (we can use "fill" only when svg is in the HTML). Other way is to use "filter".
+// we can't use &:active inside the previous selector because we need :active::after in exactly this order
 .user-list__login:active::after {
+  // one of the ways to change the color of the svg background-image (we can use "fill" only when svg is in the HTML). Second way is to use "filter" property
   opacity: 0.2;
 }
 

@@ -12,25 +12,27 @@
   text-transform: uppercase;
 
   background-color: #826550;
+
+  // hmm... why do we create focus and hover states for mobile version? This version is for phones, we use our fingers to tap on the screen. Normal and active states are indeed needed, but hover and focus? Well, they are in the styleguide for the project...
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    background-color: #755a46;
+  }
+
+  &:active {
+    color: #978374;
+    background-color: #6a4d38;
+  }
 }
 
-// hmm... why do we create focus and hover states for mobile version? This version is for phones, we use our fingers to tap on the phone screen. Normal and active states is needed, but hover and focus? Well, they are in the styleguide for the project...
-.site-list__item:hover,
-.site-list__item:focus {
-  cursor: pointer;
-  background-color: #755a46;
-}
-
-.site-list__item:active {
-  color: #978374;
-  background-color: #6a4d38;
-}
-
-.site-list__item--active:hover,
-.site-list__item--active:focus {
-  color: #fff;
-  cursor: default;
-  background-color: #826550;
+.site-list__item--active {
+  &:hover,
+  &:focus {
+    color: #fff;
+    cursor: default;
+    background-color: #826550;
+  }
 }
 
 .site-list__link {

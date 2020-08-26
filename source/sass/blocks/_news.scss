@@ -46,36 +46,35 @@
   padding-bottom: 5px;
   margin-top: 30px;
   margin-bottom: 17px;
-}
 
-// change the style of the .news__text and news__date-box if the .news__item is hovered/focused/active. It's kinda against BEM, but this way I can make this state change happen without any JS
-.news__item:hover .news__text,
-.news__item:focus .news__text {
-  color: #826550;
-  text-decoration: underline;
-}
+  // change style of the news__text, news__date-box & news__date-box::after if the news__item is hovered/focused/active. It's kinda against BEM, but this way we can make this state change happen without any JS
+  &:hover .news__text,
+  &:focus .news__text {
+    color: #826550;
+    text-decoration: underline;
+  }
+  &:active .news__text {
+    color: #725743;
+  }
 
-.news__item:active .news__text {
-  color: #725743;
-}
+  // black box with date and month
+  &:hover .news__date-box,
+  &:focus .news__date-box {
+    background-color: #826550;
+  }
+  &:active .news__date-box {
+    color: #978374;
+    background-color: #6a4d38;
+  }
 
-.news__item:hover .news__date-box,
-.news__item:focus .news__date-box {
-  background-color: #826550;
-}
-
-.news__item:hover .news__date-box::after,
-.news__item:focus .news__date-box::after {
-  border-top-color: #826550;
-}
-
-.news__item:active .news__date-box {
-  color: #978374;
-  background-color: #6a4d38;
-}
-
-.news__item:active .news__date-box::after {
-  border-top-color: #6a4d38;
+  // triangle at the bottom of the date-box
+  &:hover .news__date-box::after,
+  &:focus .news__date-box::after {
+    border-top-color: #826550;
+  }
+  &:active .news__date-box::after {
+    border-top-color: #6a4d38;
+  }
 }
 
 // grey line under each news article
@@ -152,15 +151,16 @@
 
 .news__button-to-all {
   position: relative;
-}
-// .news__button-to-all:focus,
-.news__button-to-all:hover {
-  border-color: #d5c9bd;
-}
 
-.news__button-to-all:active {
-  color: #958c84;
-  background-color: #d5c9bd;
+  &:focus,
+  &:hover {
+    border-color: #d5c9bd;
+  }
+
+  &:active {
+    color: #958c84;
+    background-color: #d5c9bd;
+  }
 }
 
 // grey line under news block

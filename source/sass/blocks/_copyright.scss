@@ -11,16 +11,14 @@
 .copyright__link {
   color: #fff;
   border: 1px solid #3e3e3e;
-}
 
-.copyright__link:focus,
-.copyright__link:hover {
-  border-color: #545454;
-}
-
-.copyright__link:active {
-  color: #808080;
-  background-color: #252525;
-  border-color: transparent;
-  opacity: 0.4;
+  &:focus,
+  &:hover {
+    border-color: #545454;
+  }
+  &:active {
+    color: #515151;
+    background-color: #252525;
+    border-color: #252525;
+  }
 }

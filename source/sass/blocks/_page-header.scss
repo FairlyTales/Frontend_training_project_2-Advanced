@@ -13,15 +13,47 @@
   margin: auto;
 }
 
+.page-header__logo-image {
+  display: block;
+  margin: 0 auto;
+}
+
 @media (min-width: $tablet-width) {
+  .page-header {
+    background-color: #000;
+  }
+
   .page-header__logo {
     order: 2;
+
+    width: 100%;
     height: 400px;
+
+    background-color: #000;
+    background-image: url('/source/img/header_background_tablet.jpg');
+    background-repeat: no-repeat;
+    background-position: center -9px;
+  }
+
+  .page-header__logo-image {
+    width: 370px;
+    height: auto;
+    margin-top: 40px;
   }
 }
 
 @media (min-width: $desktop-width) {
   .page-header__logo {
     height: 648px;
+
+    background-image: url('/source/img/header_background_desktop.jpg');
+    background-position: center 0;
+
+    // background-size: cover; - to make background image stretch through the whole width of the screen
+    background-size: cover;
+  }
+
+  .page-header__logo-image {
+    margin-top: 57px;
   }
 }
