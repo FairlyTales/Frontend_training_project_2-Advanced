@@ -26,8 +26,7 @@
   color: inherit;
 }
 
-// login icon
-.user-list__login::after {
+.user-list__icon {
   position: absolute;
   top: 17px;
   left: 18px;
@@ -36,19 +35,69 @@
   height: 16px;
 
   content: '';
-
-  background-image: url('/source/img/login.svg');
 }
 
 @media (min-width: $tablet-width) {
   .user-list {
     display: flex;
-    width: 60px;
+    width: 88px;
+  }
+
+  .user-list__item {
+    padding: 12px 0;
+
+    // change SVG's color, here we use nesting to raise the specificity
+    .user-list__icon-style {
+      fill: #4d4d4d;
+    }
+
+    &:active {
+      background-color: #000;
+    }
+
+    // change icon color when <li> is hovered/focused (user-list__icon-style directly controls SVG's style)
+    &:hover .user-list__icon-style,
+    &:focus .user-list__icon-style {
+      fill: #726155;
+    }
+  }
+
+  .user-list__text {
+    display: none;
   }
 }
 
 @media (min-width: $desktop-width) {
   .user-list {
-    width: 160px;
+    width: 120px;
+  }
+
+  .user-list__item {
+    &:hover,
+    &:focus {
+      color: #000;
+      background-color: #fff;
+    }
+    &:active {
+      color: #b2b2b2;
+      opacity: 1;
+    }
+
+    // change icon color when <li> is hovered/focused (user-list__icon-style directly controls SVG's style)
+    &:hover .user-list__icon-style,
+    &:focus .user-list__icon-style {
+      fill: #a8a8a8;
+    }
+    &:active .user-list__icon-style {
+      fill: #e5e5e5;
+    }
+  }
+
+  .user-list__text {
+    display: block;
+    padding-right: 20px;
+
+    font-weight: bold;
+    text-transform: uppercase;
   }
 }

@@ -26,7 +26,7 @@
         </button>
         <div class="main-nav__wrapper">
           <ul class="main-nav__list main-nav__list--site site-list">
-            <li class="site-list__item site-list__item--active">
+            <li class="site-list__item site-list__item--current-page">
               <a class="site-list__link">Главная</a>
             </li>
             <li class="site-list__item">
@@ -46,7 +46,33 @@
           <ul class="main-nav__list main-nav__list--user user-list">
             <li class="user-list__item">
               <a class="user-list__login" href="login.html">
-                Войти
+                <svg
+                  class="user-list__icon"
+                  version="1.1"
+                  id="Layer_1"
+                  width="16"
+                  height="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0"
+                  y="0"
+                  viewBox="0 0 16 16"
+                  xml:space="preserve"
+                >
+                  <style>
+                    .user-list__icon-style {
+                      fill: #826550;
+                    }
+                  </style>
+                  <path
+                    class="user-list__icon-style"
+                    d="M0 7h7V4l4 4-4 4V9H0z"
+                  />
+                  <path
+                    class="user-list__icon-style"
+                    d="M7 0v2h7v12H7v2h9V0z"
+                  />
+                </svg>
+                <span class="user-list__text"> Войти</span>
               </a>
             </li>
           </ul>

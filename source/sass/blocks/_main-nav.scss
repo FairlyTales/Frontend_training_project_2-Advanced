@@ -183,11 +183,11 @@
   .main-nav__wrapper {
     display: flex;
     justify-content: space-between;
-    width: 640px;
+    width: 690px;
     margin: 0 auto;
   }
 
-  // hide open/close button for mobile version
+  // hide open/close button
   .main-nav__toggle {
     display: none;
   }
