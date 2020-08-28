@@ -55,7 +55,7 @@
                   xmlns="http://www.w3.org/2000/svg"
                   x="0"
                   y="0"
-                  viewBox="0 0 16 16"
+                  viewbox="0 0 16 16"
                   xml:space="preserve"
                 >
                   <style>
@@ -88,31 +88,44 @@
       <section class="stats">
         <header class="stats__header">
           <h2 class="visually-hidden">Статистика барбершопа</h2>
-          <p class="stats__slogan">Стрижка у нас это выгодно!</p>
-          <small class="stats__legend stats__legend--top">
-            <sup>&lowast;</sup> &mdash; приведённые данные ложь
-          </small>
-          <p class="stats__intro">
+          <div class="stats__slogan-and-legend-top">
+            <p class="stats__slogan">
+              Стрижка у нас это выгодно!
+            </p>
+            <small class="stats__legend stats__legend--top">
+              <sup>&lowast;</sup> &mdash; приведённые данные ложь
+            </small>
+          </div>
+          <p class="stats__text">
             Мужская стрижка требует точного подхода. Обратимся к статистике:
           </p>
         </header>
-        <table class="stats__list">
-          <tr class="stats__row stats__row--color-1">
-            <td class="stats__value">1 500 <sup>*</sup></td>
-            <td class="stats__field">рублей<br />вложений</td>
-          </tr>
-          <tr class="stats__row stats__row--color-2">
-            <td class="stats__value">7 200</td>
-            <td class="stats__field">секунд<br />времени мастера</td>
-          </tr>
-          <tr class="stats__row stats__row--color-3">
-            <td class="stats__value">90 000</td>
-            <td class="stats__field">постриженных<br />волос</td>
-          </tr>
-          <tr class="stats__row stats__row--color-4">
-            <td class="stats__value">500 000<sup>*</sup></td>
-            <td class="stats__field">лайков и<br />комментов</td>
-          </tr>
+        <table class="stats__table">
+          <caption class="visually-hidden">
+            Таблица статистики барбершопа
+          </caption>
+          <tbody class="stats__table-body">
+            <tr class="stats__row stats__row--color-1">
+              <td class="stats__value">
+                1 500 <sup class="stats__asterisk">*</sup>
+              </td>
+              <td class="stats__field">рублей <br />вложений</td>
+            </tr>
+            <tr class="stats__row stats__row--color-2">
+              <td class="stats__value">7 200</td>
+              <td class="stats__field">секунд <br />времени мастера</td>
+            </tr>
+            <tr class="stats__row stats__row--color-3">
+              <td class="stats__value">90 000</td>
+              <td class="stats__field">постриженных <br />волос</td>
+            </tr>
+            <tr class="stats__row stats__row--color-4">
+              <td class="stats__value">
+                500 000 <sup class="stats__asterisk">*</sup>
+              </td>
+              <td class="stats__field">лайков и <br />комплиментов</td>
+            </tr>
+          </tbody>
         </table>
         <small class="stats__legend stats__legend--bottom">
           <sup>&lowast;</sup> &mdash; приведённые данные ложь

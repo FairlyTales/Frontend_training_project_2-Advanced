@@ -133,12 +133,14 @@ function checkDeviceWidth() {
   if (tabletWidth.matches) {
     activateTabletFeatures()
   }
+
   // if screen is wider than 1200px: also enable desktop version features
   if (desktopWidth.matches) {
     activateDesktopFeatures()
   }
+
   // if screen is smaller than 768px: enable only mobile version features
-  else {
+  if (!tabletWidth.matches) {
     activateMobileFeatures()
   }
 }

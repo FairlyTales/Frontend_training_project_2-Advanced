@@ -15,6 +15,10 @@
   background-color: #fff;
 }
 
+// this div is used only in tablet/desktop versions
+.stats__slogan-and-legend-top {
+}
+
 .stats__slogan {
   box-sizing: border-box;
   width: 100%;
@@ -28,7 +32,7 @@
   text-transform: uppercase;
 }
 
-.stats__intro {
+.stats__text {
   box-sizing: border-box;
   width: 100%;
   padding: 0 20px;
@@ -38,7 +42,7 @@
 }
 
 // table don't stretch to 100% of his parent by default, so we use width: 100%;
-.stats__list {
+.stats__table {
   width: 100%;
   padding: 0;
   margin: 0;
@@ -85,6 +89,10 @@
   text-align: right;
 }
 
+.stats__asterisk {
+  font-size: 60%;
+}
+
 .stats__legend {
   display: block;
 
@@ -111,16 +119,102 @@
 @media (min-width: $tablet-width) {
   .stats {
     width: 640px;
-    margin-top: -185px;
+
+    // TODO to make stats__header flow above the header
+    // margin-top: -153px;
   }
 
-  .stats__list {
+  .stats__header {
+    position: relative;
     display: flex;
+    justify-content: space-between;
+    width: 640px;
+    padding-top: 30px;
+    padding-bottom: 28px;
+
+    // white decorative triangle
+    &::before {
+      position: absolute;
+      top: 27px;
+      left: -14px;
+
+      content: '';
+
+      border: 15px solid transparent;
+      border-bottom-color: #fff;
+      transform: rotate(45deg);
+    }
+  }
+
+  .stats__slogan-and-legend-top {
+    width: 320px;
+  }
+
+  .stats__slogan {
+    padding: 0 41px;
+
+    font-size: 40px;
+    line-height: 40px;
+    text-align: left;
+    text-transform: none;
+
+    background-color: #fff;
   }
 
   // show legend on top
   .stats__legend--top {
     display: block;
+    padding-top: 1px;
+    padding-left: 40px;
+
+    text-align: left;
+  }
+
+  .stats__text {
+    width: 320px;
+    padding: 5px 0;
+    padding-right: 80px;
+    padding-left: 5px;
+    margin-left: 63px;
+
+    text-align: left;
+  }
+
+  .stats__table-body {
+    display: flex;
+    flex-wrap: wrap;
+    width: 640px;
+  }
+
+  .stats__row {
+    display: block;
+    width: 320px;
+  }
+
+  .stats__value {
+    display: block;
+    width: 320px;
+    padding: 0;
+    padding-top: 27px;
+    padding-left: 35px;
+
+    font-size: 72px;
+    line-height: 72px;
+  }
+
+  .stats__field {
+    width: 320px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 35px;
+
+    font-size: 20px;
+    text-align: left;
+
+    // "deleting" <br> tags in stats__field
+    br {
+      display: none;
+    }
   }
 
   // hide legend on the bottom
@@ -137,10 +231,35 @@
   }
 
   .stats__header {
-    width: 240px;
+    display: block;
+    width: 320px;
+
+    // white decorative triangle
+    &::before {
+      top: 21px;
+    }
   }
 
-  .stats__list {
+  .stats__slogan-and-legend-top {
+    position: relative;
+  }
+
+  .stats__legend--top {
+    position: absolute;
+    bottom: -180px;
+  }
+
+  .stats__table {
+    // to make the table grow if the height of the stats__header increase
+    display: flex;
     width: 640px;
+  }
+
+  .stats__text {
+    padding-top: 25px;
+    padding-right: 70px;
+    padding-bottom: 60px;
+    padding-left: 43px;
+    margin: 0;
   }
 }

@@ -18,8 +18,9 @@
     url('/source/fonts/PTSansNarrow/PTSansNarrow-Bold.woff') format('woff');
 }
 
+// TODO turn scroll-behavior: smooth; ON after styling is finished
 html {
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
 }
 
 body {
