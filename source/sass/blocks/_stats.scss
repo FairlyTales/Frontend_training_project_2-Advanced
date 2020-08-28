@@ -44,6 +44,7 @@
 // table don't stretch to 100% of his parent by default, so we use width: 100%;
 .stats__table {
   width: 100%;
+  min-width: 320px;
   padding: 0;
   margin: 0;
 
@@ -69,11 +70,10 @@
 
 .stats__value {
   box-sizing: border-box;
-  width: 160px;
-  height: 80px;
+  min-width: 160px;
 
-  padding: 10px 0;
-  padding-left: 20px;
+  padding: 18px 0;
+  padding-left: 6%;
 
   font-size: 40px;
   font-weight: bold;
@@ -81,9 +81,9 @@
 }
 
 .stats__field {
-  width: 120px;
-  padding: 10px 0;
-  padding-right: 20px;
+  min-width: 120px;
+  padding: 18px 0;
+  padding-right: 6%;
 
   line-height: 18px;
   text-align: right;
@@ -118,17 +118,17 @@
 
 @media (min-width: $tablet-width) {
   .stats {
-    width: 640px;
-
-    // TODO to make stats__header flow above the header
-    // margin-top: -153px;
+    width: 84%;
+    max-width: 960px;
+    margin: 0 auto;
+    margin-top: -187px;
   }
 
   .stats__header {
     position: relative;
     display: flex;
     justify-content: space-between;
-    width: 640px;
+    min-width: 640px;
     padding-top: 30px;
     padding-bottom: 28px;
 
@@ -147,7 +147,7 @@
   }
 
   .stats__slogan-and-legend-top {
-    width: 320px;
+    width: 50%;
   }
 
   .stats__slogan {
@@ -171,11 +171,9 @@
   }
 
   .stats__text {
-    width: 320px;
-    padding: 5px 0;
-    padding-right: 80px;
-    padding-left: 5px;
-    margin-left: 63px;
+    width: 50%;
+    padding: 10px 30px;
+    padding-right: 70px;
 
     text-align: left;
   }
@@ -183,17 +181,17 @@
   .stats__table-body {
     display: flex;
     flex-wrap: wrap;
-    width: 640px;
+    min-width: 640px;
   }
 
   .stats__row {
     display: block;
-    width: 320px;
+    width: 50%;
   }
 
   .stats__value {
     display: block;
-    width: 320px;
+    width: auto;
     padding: 0;
     padding-top: 27px;
     padding-left: 35px;
@@ -203,7 +201,7 @@
   }
 
   .stats__field {
-    width: 320px;
+    width: auto;
     padding-top: 30px;
     padding-bottom: 30px;
     padding-left: 35px;
@@ -227,12 +225,13 @@
   .stats {
     display: flex;
     width: 960px;
+    margin: 0 auto;
     margin-top: -160px;
   }
 
   .stats__header {
     display: block;
-    width: 320px;
+    min-width: 320px;
 
     // white decorative triangle
     &::before {
@@ -244,18 +243,29 @@
     position: relative;
   }
 
+  .stats__slogan {
+    width: 320px;
+  }
+
   .stats__legend--top {
     position: absolute;
     bottom: -180px;
+    width: 320px;
   }
 
   .stats__table {
     // to make the table grow if the height of the stats__header increase
     display: flex;
-    width: 640px;
+  }
+
+  .stats__field {
+    padding-top: 10px;
   }
 
   .stats__text {
+    box-sizing: border-box;
+    width: 320px;
+
     padding-top: 25px;
     padding-right: 70px;
     padding-bottom: 60px;

@@ -46,10 +46,11 @@
 @media (min-width: $tablet-width) {
   .site-list {
     display: flex;
+    flex-grow: 1;
     flex-wrap: wrap;
     justify-content: flex-start;
 
-    width: 600px;
+    min-width: 600px;
     padding-left: 8px;
   }
 
