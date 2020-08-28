@@ -113,7 +113,7 @@
     display: none;
 
     // show the site-list__item--active (currently opened page)
-    &--active {
+    &--current-page {
       display: block;
       padding-left: 130px;
     }

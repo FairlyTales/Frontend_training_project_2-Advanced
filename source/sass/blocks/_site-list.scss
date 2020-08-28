@@ -26,8 +26,10 @@
   }
 }
 
-// prevent site-list__item--active (page on which we currently are) from changing state
+// prevent site-list__item--current-page from changing state
 .site-list__item--current-page {
+  display: block;
+
   &:hover,
   &:focus,
   &:active {
