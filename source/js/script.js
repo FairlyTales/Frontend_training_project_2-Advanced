@@ -30,7 +30,7 @@ function removeNoJsFallback() {
   NavMenu.classList.remove('main-nav--no-js')
 }
 
-// enables/disables mobile/tablet/desktop features depending on the width of the user's screen
+// enables/disables mobile, tablet & desktop features depending on the width of the user's screen
 function universalFeatures() {
   // button "show all news"; block: news;
   newsButton.addEventListener('click', function (evt) {
@@ -58,10 +58,31 @@ function universalFeatures() {
       }
       newsButton.textContent = 'Показать все'
       // scroll the screen to the position with the "show all news" button at the top
-      newsButton.scrollIntoView()
+      // TODO: dunno should I use it or not, not shure how this would affect the UX
+      // newsButton.scrollIntoView()
+
       // change the toggle-status variable
       newsToggleStatus = 0
     }
+  })
+
+  // slider toggles; block: reviews;
+  sliderButtonReviews1.addEventListener('change', function (evt) {
+    slide[3].classList.remove('visually-hidden')
+    slide[4].classList.add('visually-hidden')
+    slide[5].classList.add('visually-hidden')
+  })
+
+  sliderButtonReviews2.addEventListener('change', function (evt) {
+    slide[3].classList.add('visually-hidden')
+    slide[4].classList.remove('visually-hidden')
+    slide[5].classList.add('visually-hidden')
+  })
+
+  sliderButtonReviews3.addEventListener('change', function (evt) {
+    slide[3].classList.add('visually-hidden')
+    slide[4].classList.add('visually-hidden')
+    slide[5].classList.remove('visually-hidden')
   })
 }
 
@@ -83,40 +104,21 @@ function activateMobileFeatures() {
   // TODO: maybe make the slides change after click/touch on the whole element?
   // slider toggles; block: advantages;
   sliderButtonAdvantages1.addEventListener('change', function (evt) {
-    slide[0].classList.remove('hidden-slider')
-    slide[1].classList.add('hidden-slider')
-    slide[2].classList.add('hidden-slider')
+    slide[0].classList.remove('slider--hidden')
+    slide[1].classList.add('slider--hidden')
+    slide[2].classList.add('slider--hidden')
   })
 
   sliderButtonAdvantages2.addEventListener('change', function (evt) {
-    slide[0].classList.add('hidden-slider')
-    slide[1].classList.remove('hidden-slider')
-    slide[2].classList.add('hidden-slider')
+    slide[0].classList.add('slider--hidden')
+    slide[1].classList.remove('slider--hidden')
+    slide[2].classList.add('slider--hidden')
   })
 
   sliderButtonAdvantages3.addEventListener('change', function (evt) {
-    slide[0].classList.add('hidden-slider')
-    slide[1].classList.add('hidden-slider')
-    slide[2].classList.remove('hidden-slider')
-  })
-
-  // slider toggles; block: reviews;
-  sliderButtonReviews1.addEventListener('change', function (evt) {
-    slide[3].classList.remove('hidden-slider')
-    slide[4].classList.add('hidden-slider')
-    slide[5].classList.add('hidden-slider')
-  })
-
-  sliderButtonReviews2.addEventListener('change', function (evt) {
-    slide[3].classList.add('hidden-slider')
-    slide[4].classList.remove('hidden-slider')
-    slide[5].classList.add('hidden-slider')
-  })
-
-  sliderButtonReviews3.addEventListener('change', function (evt) {
-    slide[3].classList.add('hidden-slider')
-    slide[4].classList.add('hidden-slider')
-    slide[5].classList.remove('hidden-slider')
+    slide[0].classList.add('slider--hidden')
+    slide[1].classList.add('slider--hidden')
+    slide[2].classList.remove('slider--hidden')
   })
 }
 

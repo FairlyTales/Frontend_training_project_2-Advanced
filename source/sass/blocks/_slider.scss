@@ -1,6 +1,10 @@
 .slider {
 }
 
+.slider--hidden {
+  display: none;
+}
+
 .slider__list {
 }
 
@@ -27,7 +31,7 @@
 }
 
 .slider__label--dark {
-  border: 1px solid #000;
+  border: 1px solid #6b6a6a;
 }
 
 // turning off standard radio buttons
@@ -53,4 +57,10 @@
 .slider__input--dark:checked + .slider__label--dark::after {
   background-color: #000;
   border: 1px solid #000;
+}
+
+@media (min-width: $tablet-width) {
+  .slider--hidden {
+    display: block;
+  }
 }

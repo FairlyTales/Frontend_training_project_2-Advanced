@@ -1,4 +1,4 @@
-// local fonts. We use woff2 and woff because not all browsers support the woff2
+// local fonts imports
 @font-face {
   font-family: 'PT Sans Narrow';
   font-style: normal;
@@ -61,10 +61,6 @@ img {
 
 a {
   text-decoration: none;
-}
-
-.hidden-slider {
-  display: none;
 }
 
 @media (min-width: $tablet-width) {

@@ -29,6 +29,20 @@
 
 .reviews__list {
   @include reset-list;
+  position: relative;
+}
+
+// light triangle above the title, for decoration
+.reviews__list::after {
+  position: absolute;
+  top: 207px;
+  left: 0;
+
+  content: '';
+
+  border-top: 34px solid $bg-light;
+  border-right: 160px solid transparent;
+  border-left: 160px solid transparent;
 }
 
 .reviews__item {
@@ -93,33 +107,114 @@
   display: none;
 }
 
-.reviews__toggles {
-  position: relative;
-}
-
-// light triangle above the title, for decoration
-.reviews__toggles::after {
-  position: absolute;
-  top: 27px;
-  left: 0;
-
-  content: '';
-
-  border-top: 34px solid $bg-light;
-  border-right: 160px solid transparent;
-  border-left: 160px solid transparent;
-}
-
 @media (min-width: $tablet-width) {
+  .reviews__wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0;
+  }
+
+  .reviews__title {
+    padding-top: 55px;
+    padding-left: 65px;
+
+    font-size: 40px;
+    line-height: 42px;
+    text-align: left;
+  }
+
   // show "write a review button"
   .reviews__write {
+    position: absolute;
+    top: 55px;
+    right: 43px;
+
     display: block;
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  .reviews__item {
+    box-sizing: border-box;
+    width: 540px;
+    min-height: 0;
+    padding-bottom: 0;
+    margin: 0 auto;
+    margin-top: 44px;
+
+    border: 1px solid #dddad6;
+    border-bottom: 0;
+  }
+
+  .reviews__container {
+    box-sizing: border-box;
+    min-height: 158px;
+    padding: 30px 0;
+  }
+
+  .reviews__author-picture {
+    padding-top: 6px;
+    margin-left: 28px;
+  }
+
+  .reviews__author-image {
+    min-width: 80px;
+    min-height: 80px;
+
+    border: 1px solid transparent;
+    border-radius: 50%;
+  }
+
+  .reviews__text-wrapper {
+    padding-left: 30px;
+  }
+
+  .reviews__autrhor-name {
+    margin-bottom: 12px;
+  }
+
+  .reviews__text {
+    width: 370px;
   }
 
   // show"previous/next review" buttons in mobile version
   .reviews__prev-button,
   .reviews__next-button {
     display: block;
+  }
+  .reviews__prev-button {
+  }
+  .reviews__next-button {
+  }
+
+  .reviews__toggles {
+    position: relative;
+    margin-top: -16px;
+  }
+
+  .reviews__toggles-container {
+    // width: 200px;
+  }
+
+  // bottom border created by this 2 pseudo-elements to create a gap in the "border"1
+  .reviews__toggles::before,
+  .reviews__toggles::after {
+    position: absolute;
+    width: 206px;
+    height: 1px;
+    margin-top: 4px;
+
+    content: '';
+
+    background-color: #dddad6;
+  }
+
+  .reviews__toggles::before {
+    left: 114px;
+  }
+
+  .reviews__toggles::after {
+    right: 114px;
   }
 }
 

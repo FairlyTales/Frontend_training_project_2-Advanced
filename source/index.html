@@ -145,7 +145,7 @@
             </li>
 
             <li
-              class="advantages__item advantages__item--cool slider__item hidden-slider"
+              class="advantages__item advantages__item--cool slider__item slider--hidden"
             >
               <h3 class="advantages__title">Круто</h3>
               <p class="advantages__description">
@@ -155,7 +155,7 @@
             </li>
 
             <li
-              class="advantages__item advantages__item--price slider__item hidden-slider"
+              class="advantages__item advantages__item--price slider__item slider--hidden"
             >
               <h3 class="advantages__title">Дорого</h3>
               <p class="advantages__description">
@@ -292,7 +292,7 @@
               </blockquote>
             </li>
 
-            <li class="reviews__item slider__item hidden-slider">
+            <li class="reviews__item slider__item visually-hidden">
               <blockquote class="reviews__container">
                 <picture class="reviews__author-picture">
                   <source
@@ -316,7 +316,7 @@
               </blockquote>
             </li>
 
-            <li class="reviews__item slider__item hidden-slider">
+            <li class="reviews__item slider__item visually-hidden">
               <blockquote class="reviews__container">
                 <picture class="reviews__author-picture">
                   <source
@@ -342,13 +342,14 @@
           </ul>
 
           <button class="reviews__prev-button" type="button">
-            Предыдущий отзыв
+            <span class="visually-hidden">Предыдущий отзыв</span>
           </button>
           <button class="reviews__next-button" type="button">
-            Следующий отзыв
+            <span class="visually-hidden">Следующий отзыв</span>
           </button>
 
           <div class="reviews__toggles slider__toggles">
+            <!-- <div class="reviews__toggles-container"> -->
             <input
               class="visually-hidden slider__input slider__input--dark"
               type="radio"
@@ -384,6 +385,7 @@
             ></label>
           </div>
         </div>
+        <!-- </div> -->
       </section>
     </main>
     <div class="decorative-triangle"></div>

@@ -183,21 +183,11 @@
   .news__wrapper {
     position: relative;
     width: 100%;
-    margin: 0;
   }
 
-  // grey line under news block
+  // remove grey line under news block from news__wrapper cause news__wrapper isn't centered in tablet version (and we need this line centered)
   .news__wrapper::after {
-    position: absolute;
-    bottom: -30px;
-    left: 0;
-
-    width: 720px;
-    height: 1px;
-
-    content: '';
-
-    background-color: #c6c4c1;
+    content: none;
   }
 
   .news__title {
@@ -209,15 +199,9 @@
     text-align: left;
   }
 
-  // TODO: this triangle is moving, it must stay centered. Solve this problem somehow)
-  // dark triangle above the title, for decoration
+  // remove dark triangle above the title, because title isn't centered in tablet version (and we need this triangle centered)
   .news__title::before {
-    position: absolute;
-    top: -1px;
-
-    border-top: 30px solid $bg-lightgrey;
-    border-right: 384px solid transparent;
-    border-left: 384px solid transparent;
+    display: none;
   }
 
   .news__button-to-all {
@@ -230,11 +214,50 @@
   }
 
   .news__list {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
     padding: 20px 64px;
+    padding-bottom: 0;
+  }
+
+  // dark triangle above the title, for decoration
+  .news__list::before {
+    position: absolute;
+    top: -115px;
+
+    content: '';
+
+    border-top: 30px solid $bg-lightgrey;
+    border-right: 384px solid transparent;
+    border-left: 384px solid transparent;
+  }
+
+  // dark triangle above the title, for decoration
+  .news__list::before {
+    position: absolute;
+    top: -115px;
+
+    content: '';
+
+    border-top: 30px solid $bg-lightgrey;
+    border-right: 384px solid transparent;
+    border-left: 384px solid transparent;
+  }
+
+  // grey line under news block
+  .news__list::after {
+    position: absolute;
+    bottom: -18px;
+
+    width: 100%;
+    height: 1px;
+
+    content: '';
+
+    background-color: #dddad6;
   }
 
   .news__item {
