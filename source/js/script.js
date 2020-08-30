@@ -31,41 +31,7 @@ function removeNoJsFallback() {
 }
 
 // enables/disables mobile/tablet/desktop features depending on the width of the user's screen
-function activateMobileFeatures() {
-  // TODO: remove console.logs after script is finished
-  console.log('mobile version')
-
-  // navigation menu opening/closing
-  toggleNavMenu.addEventListener('click', function (evt) {
-    if (NavMenu.classList.contains('main-nav--closed')) {
-      NavMenu.classList.remove('main-nav--closed')
-      NavMenu.classList.add('main-nav--opened')
-    } else {
-      NavMenu.classList.add('main-nav--closed')
-      NavMenu.classList.remove('main-nav--opened')
-    }
-  })
-
-  // TODO: maybe make the slides change after click/touch on the whole element?
-  // slider toggles; block: advantages;
-  sliderButtonAdvantages1.addEventListener('change', function (evt) {
-    slide[0].classList.remove('visually-hidden')
-    slide[1].classList.add('visually-hidden')
-    slide[2].classList.add('visually-hidden')
-  })
-
-  sliderButtonAdvantages2.addEventListener('change', function (evt) {
-    slide[0].classList.add('visually-hidden')
-    slide[1].classList.remove('visually-hidden')
-    slide[2].classList.add('visually-hidden')
-  })
-
-  sliderButtonAdvantages3.addEventListener('change', function (evt) {
-    slide[0].classList.add('visually-hidden')
-    slide[1].classList.add('visually-hidden')
-    slide[2].classList.remove('visually-hidden')
-  })
-
+function universalFeatures() {
   // button "show all news"; block: news;
   newsButton.addEventListener('click', function (evt) {
     // if the news is colapsed(default): expand them
@@ -97,24 +63,60 @@ function activateMobileFeatures() {
       newsToggleStatus = 0
     }
   })
+}
+
+function activateMobileFeatures() {
+  // TODO: remove console.logs after script is finished
+  console.log('mobile version')
+
+  // navigation menu opening/closing
+  toggleNavMenu.addEventListener('click', function (evt) {
+    if (NavMenu.classList.contains('main-nav--closed')) {
+      NavMenu.classList.remove('main-nav--closed')
+      NavMenu.classList.add('main-nav--opened')
+    } else {
+      NavMenu.classList.add('main-nav--closed')
+      NavMenu.classList.remove('main-nav--opened')
+    }
+  })
+
+  // TODO: maybe make the slides change after click/touch on the whole element?
+  // slider toggles; block: advantages;
+  sliderButtonAdvantages1.addEventListener('change', function (evt) {
+    slide[0].classList.remove('hidden-slider')
+    slide[1].classList.add('hidden-slider')
+    slide[2].classList.add('hidden-slider')
+  })
+
+  sliderButtonAdvantages2.addEventListener('change', function (evt) {
+    slide[0].classList.add('hidden-slider')
+    slide[1].classList.remove('hidden-slider')
+    slide[2].classList.add('hidden-slider')
+  })
+
+  sliderButtonAdvantages3.addEventListener('change', function (evt) {
+    slide[0].classList.add('hidden-slider')
+    slide[1].classList.add('hidden-slider')
+    slide[2].classList.remove('hidden-slider')
+  })
 
   // slider toggles; block: reviews;
   sliderButtonReviews1.addEventListener('change', function (evt) {
-    slide[3].classList.remove('visually-hidden')
-    slide[4].classList.add('visually-hidden')
-    slide[5].classList.add('visually-hidden')
+    slide[3].classList.remove('hidden-slider')
+    slide[4].classList.add('hidden-slider')
+    slide[5].classList.add('hidden-slider')
   })
 
   sliderButtonReviews2.addEventListener('change', function (evt) {
-    slide[3].classList.add('visually-hidden')
-    slide[4].classList.remove('visually-hidden')
-    slide[5].classList.add('visually-hidden')
+    slide[3].classList.add('hidden-slider')
+    slide[4].classList.remove('hidden-slider')
+    slide[5].classList.add('hidden-slider')
   })
 
   sliderButtonReviews3.addEventListener('change', function (evt) {
-    slide[3].classList.add('visually-hidden')
-    slide[4].classList.add('visually-hidden')
-    slide[5].classList.remove('visually-hidden')
+    slide[3].classList.add('hidden-slider')
+    slide[4].classList.add('hidden-slider')
+    slide[5].classList.remove('hidden-slider')
   })
 }
 
@@ -146,4 +148,5 @@ function checkDeviceWidth() {
 }
 
 removeNoJsFallback()
+universalFeatures()
 checkDeviceWidth()

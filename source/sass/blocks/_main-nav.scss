@@ -174,15 +174,13 @@
 @media (min-width: $tablet-width) {
   .main-nav {
     width: auto;
-
     background-color: #000;
   }
 
   .main-nav__wrapper {
     display: flex;
     justify-content: space-between;
-    width: 84%;
-    max-width: 800px;
+    max-width: 880px;
     margin: 0 auto;
   }
 

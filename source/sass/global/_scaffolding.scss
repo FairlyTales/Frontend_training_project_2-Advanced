@@ -62,3 +62,18 @@ img {
 a {
   text-decoration: none;
 }
+
+.hidden-slider {
+  display: none;
+}
+
+@media (min-width: $tablet-width) {
+  body {
+    background-color: $bg-lightgrey;
+  }
+
+  // show all slides which were hidden in mobile version
+  .hidden-slider {
+    display: block;
+  }
+}

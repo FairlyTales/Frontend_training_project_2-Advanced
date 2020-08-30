@@ -17,50 +17,31 @@
   position: relative;
 }
 
-// icon above the .advantages__title
+// icons for the advantages__item
+.advantages__item::before {
+  position: absolute;
+  top: 42px;
+  left: 113px;
+  width: 94px;
+  height: 94px;
+
+  content: '';
+
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
 .advantages__item--fast::before {
-  position: absolute;
-  top: 42px;
-  left: 113px;
-  width: 94px;
-  height: 94px;
-
-  content: '';
-
-  background-color: transparent;
   background-image: url('/source/img/advantage-1-illustration.svg');
-  background-repeat: no-repeat;
-  background-position: 0 0;
 }
 
-// icon above the .advantages__title
 .advantages__item--cool::before {
-  position: absolute;
-  top: 42px;
-  left: 113px;
-  width: 94px;
-  height: 94px;
-
-  content: '';
-  background-color: transparent;
   background-image: url('/source/img/advantage-2-illustration.svg');
-  background-repeat: no-repeat;
-  background-position: 0 0;
 }
 
-// icon above the .advantages__title
 .advantages__item--price::before {
-  position: absolute;
-  top: 42px;
-  left: 113px;
-  width: 94px;
-  height: 94px;
-
-  content: '';
-  background-color: transparent;
   background-image: url('/source/img/advantage-3-illustration.svg');
-  background-repeat: no-repeat;
-  background-position: 0 0;
 }
 
 .advantages__title {
@@ -86,4 +67,64 @@
 .advantages__toggles {
   margin: 0;
   margin-bottom: 15px;
+}
+
+@media (min-width: $tablet-width) {
+  .advantages {
+    background-color: $bg-lightgrey;
+  }
+
+  .advantages__wrapper {
+    width: 80%;
+  }
+
+  .advantages__item {
+    padding-left: 24%;
+    margin-bottom: 30px;
+
+    text-align: left;
+  }
+
+  // icons for advantages items
+  .advantages__item::before {
+    top: 53px;
+    left: 18px;
+  }
+
+  // line between advantages items
+  .advantages__item::after {
+    position: absolute;
+    bottom: -38px;
+    left: 26px;
+
+    width: 91%;
+    height: 1px;
+
+    content: '';
+
+    background-color: #4a4a4a;
+  }
+
+  // hide last line between advantages items
+  .advantages__item:last-child::after {
+    display: none;
+  }
+
+  .advantages__title {
+    padding-top: 47px;
+  }
+
+  .advantages__description {
+    padding: 0;
+    padding-top: 3px;
+    padding-right: 5%;
+    margin: 0;
+  }
+
+  .advantages__toggles {
+    display: none;
+  }
+}
+
+@media (min-width: $desktop-width) {
 }

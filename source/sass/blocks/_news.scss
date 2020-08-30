@@ -1,11 +1,27 @@
 .news {
+  position: relative;
   color: #000;
   background-color: #f8f5f2;
 }
 
 .news__wrapper {
+  position: relative;
   width: 320px;
   margin: 0 auto;
+}
+
+// grey line under news block
+.news__wrapper::after {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+
+  width: 320px;
+  height: 1px;
+
+  content: '';
+
+  background-color: #c6c4c1;
 }
 
 .news__title {
@@ -21,9 +37,9 @@
 }
 
 // dark triangle above the title, for decoration
-.news__title::after {
+.news__title::before {
   position: absolute;
-  top: 0;
+  top: -1px;
   left: 0;
 
   content: '';
@@ -163,16 +179,79 @@
   }
 }
 
-// grey line under news block
-.news__button-to-all::after {
-  position: absolute;
-  bottom: -30px;
-  left: -20px;
+@media (min-width: $tablet-width) {
+  .news__wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0;
+  }
 
-  width: 320px;
-  height: 1px;
+  // grey line under news block
+  .news__wrapper::after {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
 
-  content: '';
+    width: 720px;
+    height: 1px;
 
-  background-color: #c6c4c1;
+    content: '';
+
+    background-color: #c6c4c1;
+  }
+
+  .news__title {
+    padding-top: 73px;
+    padding-left: 65px;
+
+    font-size: 40px;
+    line-height: 42px;
+    text-align: left;
+  }
+
+  // TODO: this triangle is moving, it must stay centered. Solve this problem somehow)
+  // dark triangle above the title, for decoration
+  .news__title::before {
+    position: absolute;
+    top: -1px;
+
+    border-top: 30px solid $bg-lightgrey;
+    border-right: 384px solid transparent;
+    border-left: 384px solid transparent;
+  }
+
+  .news__button-to-all {
+    position: absolute;
+    top: 71px;
+    right: 45px;
+
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  .news__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    padding: 20px 64px;
+  }
+
+  .news__item {
+    box-sizing: border-box;
+    width: 290px;
+    padding: 0;
+    padding-top: 2px;
+    margin-right: 30px;
+
+    // remove margin-right for the last <li>
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  // remove grey line under news items
+  .news__item--with-underline::after {
+    content: none;
+  }
 }

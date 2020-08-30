@@ -39,6 +39,11 @@
   }
 }
 
+// remove left padding for site-list__item--current-page when the nav menu is closed in order to center it
+.main-nav--closed .site-list__item--current-page {
+  padding-left: 0;
+}
+
 .site-list__link {
   color: inherit;
 }
@@ -70,6 +75,10 @@
     }
   }
 
+  .main-nav--closed .site-list__item--current-page {
+    padding-left: 17px;
+  }
+
   .site-list__item--current-page {
     position: relative;
 
@@ -85,7 +94,7 @@
     position: absolute;
     right: 17px;
     bottom: -2px;
-    left: 17px;
+    left: 18px;
 
     height: 3px;
 
@@ -115,6 +124,10 @@
     &:active {
       color: #b2b2b2;
     }
+  }
+
+  .main-nav--closed .site-list__item--current-page {
+    padding-left: 31px;
   }
 
   // make
