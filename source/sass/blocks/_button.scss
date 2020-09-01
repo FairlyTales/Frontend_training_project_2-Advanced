@@ -1,5 +1,7 @@
 .button {
+  box-sizing: border-box;
   display: block;
+  min-width: 160px;
   padding: 12px 20px;
   margin: 0 20px;
 
@@ -13,4 +15,13 @@
 
   background-color: transparent;
   border: 1px solid #e5ddd5;
+
+  &:focus,
+  &:hover {
+    border-color: #d5c9bd;
+  }
+  &:active {
+    color: #958c84;
+    background-color: #d5c9bd;
+  }
 }

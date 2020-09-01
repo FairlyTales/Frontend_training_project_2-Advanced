@@ -22,3 +22,11 @@
     border-color: #252525;
   }
 }
+
+@media (min-width: $tablet-width) {
+  .copyright {
+  }
+}
+
+@media (min-width: $desktop-width) {
+}

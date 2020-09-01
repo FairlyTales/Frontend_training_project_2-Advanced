@@ -11,8 +11,9 @@
   width: 320px;
   padding-top: 66px;
   margin: 0 auto;
-
   margin-bottom: 27px;
+
+  text-align: center;
 }
 
 .page-footer__social {
@@ -20,5 +21,43 @@
 }
 
 .page-footer__copyright {
-  padding-bottom: 100px;
+  padding-bottom: 200px;
+}
+
+@media (min-width: $tablet-width) {
+  .page-footer__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    width: 768px;
+    padding-top: 48px;
+    margin: 0 auto;
+  }
+
+  .page-footer__contacts {
+    width: 410px;
+    padding-top: 0;
+    padding-left: 64px;
+    margin: 0;
+
+    text-align: left;
+  }
+
+  .page-footer__social {
+    order: 2;
+
+    padding: 0 64px;
+    padding-bottom: 200px;
+  }
+
+  .page-footer__copyright {
+    order: 1;
+
+    padding-right: 44px;
+    padding-bottom: 50px;
+  }
+}
+
+@media (min-width: $desktop-width) {
 }

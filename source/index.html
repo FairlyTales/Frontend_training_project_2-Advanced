@@ -10,7 +10,7 @@
 
   <body>
     <header class="page-header">
-      <a class="page-header__logo" href="#">
+      <a class="page-header__logo">
         <img
           class="page-header__logo-image"
           src="img/logotype-mobile.svg"
@@ -341,15 +341,16 @@
             </li>
           </ul>
 
-          <button class="reviews__prev-button" type="button">
-            <span class="visually-hidden">Предыдущий отзыв</span>
-          </button>
-          <button class="reviews__next-button" type="button">
-            <span class="visually-hidden">Следующий отзыв</span>
-          </button>
+          <div class="reviews__buttons">
+            <button class="reviews__button reviews__prev-button" type="button">
+              <span class="visually-hidden">Предыдущий отзыв</span>
+            </button>
+            <button class="reviews__button reviews__next-button" type="button">
+              <span class="visually-hidden">Следующий отзыв</span>
+            </button>
+          </div>
 
           <div class="reviews__toggles slider__toggles">
-            <!-- <div class="reviews__toggles-container"> -->
             <input
               class="visually-hidden slider__input slider__input--dark"
               type="radio"
@@ -385,10 +386,8 @@
             ></label>
           </div>
         </div>
-        <!-- </div> -->
       </section>
     </main>
-    <div class="decorative-triangle"></div>
 
     <footer class="page-footer">
       <div class="page-footer__wrapper">
@@ -425,7 +424,7 @@
         </div>
 
         <div class="page-footer__copyright copyright">
-          <span class="copyright__text">Разработанно:</span>
+          <span class="copyright__text">Разработано:</span>
           <a class="copyright__link button" href="#">HTML Academy</a>
         </div>
       </div>

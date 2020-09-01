@@ -50,6 +50,9 @@
 }
 
 @media (min-width: $tablet-width) {
+  .social__link {
+    width: 211px;
+  }
 }
 
 @media (min-width: $desktop-width) {

@@ -111,6 +111,7 @@
   .reviews__wrapper {
     position: relative;
     width: 100%;
+    padding-bottom: 70px;
     margin: 0;
   }
 
@@ -132,6 +133,11 @@
     display: block;
     padding-right: 25px;
     padding-left: 25px;
+  }
+
+  // remove decorative triangle
+  .reviews__list::after {
+    content: none;
   }
 
   .reviews__item {
@@ -177,30 +183,83 @@
     width: 370px;
   }
 
+  .reviews__buttons {
+    position: relative;
+    width: 768px;
+    margin: 0 auto;
+  }
+
   // show"previous/next review" buttons in mobile version
-  .reviews__prev-button,
-  .reviews__next-button {
+  .reviews__button {
+    position: absolute;
+    box-sizing: border-box;
     display: block;
+
+    width: 50px;
+    height: 160px;
+
+    background-color: transparent;
+    border: 1px solid #dddad6;
+
+    &:focus,
+    &:hover {
+      border-color: #d5c9bd;
+    }
+    &:active {
+      background-color: #d5c9bd;
+    }
   }
+
   .reviews__prev-button {
+    top: -159px;
+    left: 64.5px;
+
+    // triangle icon
+    &::after {
+      position: absolute;
+      top: 73px;
+      left: 15px;
+
+      content: '';
+
+      border-top: 6px solid transparent;
+      border-right: 12px solid #000;
+      border-bottom: 6px solid transparent;
+    }
+
+    // triangle icon's hover/focus/active states
+    &:active::after {
+      border-right: 12px solid #958c84;
+    }
   }
+
   .reviews__next-button {
+    top: -159px;
+    left: 653px;
+
+    // triangle icon
+    &::after {
+      position: absolute;
+      top: 73px;
+      left: 19px;
+
+      content: '';
+
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 12px solid #000;
+    }
   }
 
   .reviews__toggles {
     position: relative;
-    margin-top: -16px;
-  }
-
-  .reviews__toggles-container {
-    // width: 200px;
+    margin-top: -4px;
   }
 
   // bottom border created by this 2 pseudo-elements to create a gap in the "border"1
   .reviews__toggles::before,
   .reviews__toggles::after {
-    position: absolute;
-    width: 206px;
+    width: 210px;
     height: 1px;
     margin-top: 4px;
 
@@ -210,11 +269,11 @@
   }
 
   .reviews__toggles::before {
-    left: 114px;
+    margin-right: 10px;
   }
 
   .reviews__toggles::after {
-    right: 114px;
+    margin-left: 10px;
   }
 }
 

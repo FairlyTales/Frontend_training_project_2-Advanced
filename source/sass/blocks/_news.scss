@@ -167,16 +167,6 @@
 
 .news__button-to-all {
   position: relative;
-
-  &:focus,
-  &:hover {
-    border-color: #d5c9bd;
-  }
-
-  &:active {
-    color: #958c84;
-    background-color: #d5c9bd;
-  }
 }
 
 @media (min-width: $tablet-width) {
