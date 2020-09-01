@@ -207,8 +207,8 @@
 
     &:focus,
     &:hover {
-      border-color: #d5c9bd;
       cursor: pointer;
+      border-color: #d5c9bd;
     }
     &:active {
       background-color: #d5c9bd;
@@ -254,6 +254,11 @@
       border-bottom: 6px solid transparent;
       border-left: 12px solid #000;
     }
+
+    // triangle icon's hover/focus/active states
+    &:active::after {
+      border-left: 12px solid #958c84;
+    }
   }
 
   .reviews__toggles {
@@ -283,4 +288,79 @@
 }
 
 @media (min-width: $desktop-width) {
+  .reviews__wrapper {
+    width: 960px;
+    padding-bottom: 48px;
+    margin: 0 auto;
+  }
+
+  .reviews__title {
+    padding-top: 43px;
+    padding-left: 70px;
+  }
+
+  .reviews__write {
+    top: 40px;
+    right: -20px;
+  }
+
+  .reviews__item {
+    width: 818px;
+    min-height: 160px;
+    padding-right: 200px;
+    margin-top: 42px;
+
+    border: 0;
+  }
+
+  .reviews__container {
+    padding: 0;
+  }
+
+  .reviews__author-picture {
+    padding: 0;
+    margin: 0;
+  }
+
+  .reviews__author-image {
+    min-width: 250px;
+    height: 160px;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .reviews__text-wrapper {
+    display: block;
+    min-width: 497px;
+    max-width: 497px;
+    padding: 0;
+    padding-top: 30px;
+    padding-left: 69px;
+
+    border: 1px solid #dddad6;
+  }
+
+  .reviews__text {
+    width: 425px;
+  }
+
+  .reviews__prev-button {
+    top: -160px;
+    left: -95px;
+  }
+
+  .reviews__next-button {
+    top: -160px;
+    left: 814px;
+  }
+
+  .reviews__toggles {
+    margin-top: 43px;
+  }
+
+  // hide "border" with gap which we used for tablet version
+  .reviews__toggles::before,
+  .reviews__toggles::after {
+    content: none;
+  }
 }

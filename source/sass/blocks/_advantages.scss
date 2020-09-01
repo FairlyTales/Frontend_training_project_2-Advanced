@@ -127,4 +127,55 @@
 }
 
 @media (min-width: $desktop-width) {
+  .advantages__wrapper {
+    width: 960px;
+  }
+
+  .advantages__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding-bottom: 43px;
+  }
+
+  // icons for advantages items
+  .advantages__item {
+    box-sizing: border-box;
+    width: 320px;
+    min-height: 300px;
+
+    padding: 0;
+    padding-top: 155px;
+    margin: 0;
+  }
+
+  .advantages__item::before {
+    top: 80px;
+    left: 113px;
+  }
+
+  // line between advantages items
+  .advantages__item::after {
+    position: absolute;
+    bottom: 0;
+    left: 320px;
+
+    width: 1px;
+    height: 268px;
+
+    content: '';
+
+    background-color: #4a4a4a;
+  }
+
+  .advantages__title {
+    text-align: center;
+  }
+
+  .advantages__description {
+    display: block;
+    padding: 0 40px;
+    text-align: center;
+  }
 }

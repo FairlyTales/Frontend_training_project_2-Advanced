@@ -59,5 +59,26 @@
   // show "Давайте дружить!"
   .social__title {
     display: block;
+    margin-bottom: 13px;
+    font-weight: normal;
+    text-align: center;
+  }
+
+  .social__link {
+    box-sizing: border-box;
+    width: 48px;
+    height: 48px;
+  }
+
+  .social__link--vkontakte {
+    background-image: url('/source/img/vk-icon-small.png');
+  }
+
+  .social__link--facebook {
+    background-image: url('/source/img/facebook-icon-small.png');
+  }
+
+  .social__link--instagram {
+    background-image: url('/source/img/insta-icon-small.png');
   }
 }

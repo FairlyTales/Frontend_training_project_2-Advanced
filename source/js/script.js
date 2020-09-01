@@ -20,6 +20,7 @@ var sliderButtonReviews3 = document.querySelector('#reviews-slide-3')
 var newsItems = document.querySelectorAll('.news__item')
 var newsButton = document.querySelector('.news__button-to-all')
 var newsToggleStatus = 0
+var alwaysShownNews = 2
 
 // variables for next/previous buttons; block: news; tablet & desktop versions
 var prevButton = document.querySelector('.reviews__prev-button')
@@ -37,12 +38,12 @@ function removeNoJsFallback() {
 function universalFeatures() {
   // button "show all news"; block: news;
   newsButton.addEventListener('click', function (evt) {
-    // if the news is colapsed(default): expand them
+    // if the news are colapsed(default): expand them
     if (newsToggleStatus == 0) {
       evt.preventDefault()
 
-      // show 3 more news articles and underlines (pseudo-elements) under them
-      for (let i = 2; (i < newsItems.length) & (i != 5); i++) {
+      // show up to 6 news articles and underlines (pseudo-elements) under them
+      for (let i = 2; (i < newsItems.length) & (i != 6); i++) {
         newsItems[i].classList.remove('visually-hidden')
 
         // i - 1 because by default we show 2 news and 1 underline between them
@@ -55,11 +56,18 @@ function universalFeatures() {
       // change the toggle-status variable
       newsToggleStatus = 1
     } else {
-      // if newsToggleStatus != 0 (news are expanded: colapse them)
+      // if news are expanded: colapse them
       evt.preventDefault()
 
-      // colapse 3 news articles & underlines
-      for (let i = 2; (i < newsItems.length) & (i != 5); i++) {
+      // let 3 news items always be shown in desktop version, 2 in mobile/tablet versions
+      if (desktopWidth.matches) {
+        alwaysShownNews = 3
+      } else {
+        alwaysShownNews = 2
+      }
+
+      // colapse news articles & underlines
+      for (let i = alwaysShownNews; (i < newsItems.length) & (i != 5); i++) {
         newsItems[i].classList.add('visually-hidden')
         newsItems[i - 1].classList.remove('news__item--with-underline')
       }
@@ -186,6 +194,8 @@ function activateTabletFeatures() {
 function activateDesktopFeatures() {
   // TODO: remove console.logs after script is finished
   console.log('desktop version')
+
+  newsItems[2].classList.remove('visually-hidden')
 }
 
 function checkDeviceWidth() {
