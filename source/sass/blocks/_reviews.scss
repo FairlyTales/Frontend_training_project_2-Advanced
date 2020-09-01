@@ -167,6 +167,10 @@
     min-width: 80px;
     min-height: 80px;
 
+    // to make Alt look good
+    font-size: 18px;
+    line-height: 20px;
+
     border: 1px solid transparent;
     border-radius: 50%;
   }
@@ -204,6 +208,7 @@
     &:focus,
     &:hover {
       border-color: #d5c9bd;
+      cursor: pointer;
     }
     &:active {
       background-color: #d5c9bd;

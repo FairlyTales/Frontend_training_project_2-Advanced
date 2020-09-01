@@ -21,6 +21,9 @@ var newsItems = document.querySelectorAll('.news__item')
 var newsButton = document.querySelector('.news__button-to-all')
 var newsToggleStatus = 0
 
+// variables for next/previous buttons; block: news; tablet & desktop versions
+var prevButton = document.querySelector('.reviews__prev-button')
+var nextButton = document.querySelector('.reviews__next-button')
 //* -------------------------------------
 
 //* --------------Functions--------------
@@ -37,14 +40,18 @@ function universalFeatures() {
     // if the news is colapsed(default): expand them
     if (newsToggleStatus == 0) {
       evt.preventDefault()
+
       // show 3 more news articles and underlines (pseudo-elements) under them
       for (let i = 2; (i < newsItems.length) & (i != 5); i++) {
         newsItems[i].classList.remove('visually-hidden')
+
         // i - 1 because by default we show 2 news and 1 underline between them
         newsItems[i - 1].classList.add('news__item--with-underline')
       }
+
       // rename the button
       newsButton.textContent = 'Скрыть'
+
       // change the toggle-status variable
       newsToggleStatus = 1
     } else {
@@ -125,6 +132,55 @@ function activateMobileFeatures() {
 function activateTabletFeatures() {
   // TODO: remove console.logs after script is finished
   console.log('tablet version')
+
+  // button "previous review"; block: reviews;
+  prevButton.addEventListener('click', function (evt) {
+    evt.preventDefault()
+    // if current slide is review1, change to review3
+    if (sliderButtonReviews1.checked) {
+      sliderButtonReviews3.checked = true
+      slide[3].classList.add('visually-hidden')
+      slide[5].classList.remove('visually-hidden')
+    } else {
+      // if current slide is review3, change to review2
+      if (sliderButtonReviews2.checked) {
+        sliderButtonReviews1.checked = true
+        slide[4].classList.add('visually-hidden')
+        slide[3].classList.remove('visually-hidden')
+      }
+      // if current slide is review2, change to review1
+      if (sliderButtonReviews3.checked) {
+        sliderButtonReviews2.checked = true
+        slide[5].classList.add('visually-hidden')
+        slide[4].classList.remove('visually-hidden')
+      }
+    }
+  })
+
+  // button "next review"; block: reviews;
+  nextButton.addEventListener('click', function (evt) {
+    evt.preventDefault()
+    // if current slide is review1, change to review2
+    if (sliderButtonReviews1.checked) {
+      sliderButtonReviews2.checked = true
+      slide[3].classList.add('visually-hidden')
+      slide[4].classList.remove('visually-hidden')
+    } else {
+      // if current slide is review2, change to review3
+      if (sliderButtonReviews2.checked) {
+        sliderButtonReviews3.checked = true
+        slide[4].classList.add('visually-hidden')
+        slide[5].classList.remove('visually-hidden')
+      } else {
+        // if current slide is review3, change to review1
+        if (sliderButtonReviews3.checked) {
+          sliderButtonReviews1.checked = true
+          slide[5].classList.add('visually-hidden')
+          slide[3].classList.remove('visually-hidden')
+        }
+      }
+    }
+  })
 }
 
 function activateDesktopFeatures() {
