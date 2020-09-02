@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./sass/global/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Наши работы</title>
+  </head>
+  <body>
+    <header class="page-header">
+      <a class="page-header__logo">
+        <picture>
+          <source
+            media="(min-width: 1200px)"
+            srcset="img/logotype-desktop.svg"
+          />
+          <source media="(min-width: 768px)" srcset="img/logotype-tablet.svg" />
+          <img
+            class="page-header__logo-image"
+            src="img/logotype-mobile.svg"
+            width="226"
+            height="30"
+            alt="Логотип барбершопа Бородинский"
+          />
+        </picture>
+      </a>
+
+      <nav class="main-nav main-nav--closed main-nav--no-js">
+        <button class="main-nav__toggle" type="button">
+          <span class="visually-hidden">Открыть меню</span>
+        </button>
+        <div class="main-nav__wrapper">
+          <ul class="main-nav__list main-nav__list--site site-list">
+            <li class="site-list__item">
+              <a href="index.html" class="site-list__link">Главная</a>
+            </li>
+            <li class="site-list__item site-list__item--current-page">
+              <a class="site-list__link"> Наши работы</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link" href="form.html">Записаться</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link" href="#">Контакты</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link" href="#">HTML Academy</a>
+            </li>
+          </ul>
+
+          <ul class="main-nav__list main-nav__list--user user-list">
+            <li class="user-list__item">
+              <a class="user-list__login" href="login.html">
+                <svg
+                  class="user-list__icon"
+                  version="1.1"
+                  id="Layer_1"
+                  width="16"
+                  height="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0"
+                  y="0"
+                  viewbox="0 0 16 16"
+                  xml:space="preserve"
+                >
+                  <style>
+                    .user-list__icon-style {
+                      fill: #826550;
+                    }
+                  </style>
+                  <path
+                    class="user-list__icon-style"
+                    d="M0 7h7V4l4 4-4 4V9H0z"
+                  />
+                  <path
+                    class="user-list__icon-style"
+                    d="M7 0v2h7v12H7v2h9V0z"
+                  />
+                </svg>
+                <span class="user-list__text"> Войти</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="inner-page">
+      <div class="inner-page__wrapper">
+        <h1 class="inner-page__title">Наши работы</h1>
+
+        <section class="inner-page__gallery gallery">
+          <div class="gallery__wrapper">
+            <h2 class="visually-hidden">Фотогалерея наших работ</h2>
+            <ul class="gallery__list">
+              <li class="gallery__item">
+                <blockquote class="gallery__container">
+                  <picture>
+                    <img
+                      class="gallery__image"
+                      src=""
+                      alt="Фотография Лжепётра Мчиславского"
+                    />
+                  </picture>
+                  <cite class="gallery__client-name">
+                    Лжепётр Мчиславский
+                  </cite>
+                  <p class="gallery__client-text">
+                    Где я только не стригся, но так как делаете это вы &mdash;
+                    не умеет никто другой! Ещё раз спасибо и до скорого!
+                  </p>
+                </blockquote>
+                <ul class="gallery__services-list">
+                  <h3 class="visually-hidden">
+                    Список услуг оказанных клиенту
+                  </h3>
+                  <li class="gallery__services-item">
+                    <span class="gallery__services-text">
+                      Стрижка
+                    </span>
+                  </li>
+                  <li class="gallery__services-item">
+                    <span class="gallery__services-text">
+                      Бритьё
+                    </span>
+                  </li>
+                  <li class="gallery__services-item">
+                    <span class="gallery__services-text">
+                      Усы
+                    </span>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="gallery__item">
+                <blockquote class="gallery__container">
+                  <picture>
+                    <img
+                      class="gallery__image"
+                      src=""
+                      alt="Фотография Александра Мальцева"
+                    />
+                  </picture>
+                  <cite class="gallery__client-name">
+                    Александр Мальцев
+                  </cite>
+                  <p class="gallery__client-text">
+                    Попросил омолодить и омолодили! Кто теперь скажет, что мне
+                    45?
+                  </p>
+                </blockquote>
+                <ul class="gallery__services-list">
+                  <h3 class="visually-hidden">
+                    Список услуг оказанных клиенту
+                  </h3>
+                  <li class="gallery__services-item">
+                    <span class="gallery__services-text">
+                      Стрижка
+                    </span>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="gallery__item">
+                <blockquote class="gallery__container">
+                  <picture>
+                    <img
+                      class="gallery__image"
+                      src=""
+                      alt="Фотография Владимира Ильича"
+                    />
+                  </picture>
+                  <cite class="gallery__client-name">Владимир Ильич</cite>
+                  <p class="gallery__client-text">
+                    К зимнему сезону &mdash; готов!
+                  </p>
+                </blockquote>
+                <ul class="gallery__services-list">
+                  <h3 class="visually-hidden">
+                    Список услуг оказанных клиенту
+                  </h3>
+                  <li class="gallery__services-item">
+                    <span class="gallery__services-text">
+                      Борода
+                    </span>
+                  </li>
+                  <li class="gallery__services-item">
+                    <span class="gallery__services-text">
+                      Усы
+                    </span>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="gallery__item">
+                <blockquote class="gallery__container">
+                  <picture>
+                    <img
+                      class="gallery__image"
+                      src=""
+                      alt="Фотография Винстона Синего"
+                    />
+                  </picture>
+                  <cite class="gallery__client-name">Винстон Синий</cite>
+                  <p class="gallery__client-text">
+                    Как только заростаю и волосы начинают мешать видеть &mdash;
+                    бегом в Бородинский!
+                  </p>
+                </blockquote>
+                <ul class="gallery__services-list">
+                  <h3 class="visually-hidden">
+                    Список услуг оказанных клиенту
+                  </h3>
+                  <li class="gallery__services-item">
+                    <span class="gallery__services-text">
+                      Стрижка
+                    </span>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="inner-page__price price">
+          <div class="price__wrapper">
+            <h2 class="price__title">
+              Прейскурант
+            </h2>
+            <table class="price__table">
+              <caption class="visually-hidden">
+                Таблица цен на услуги барбершопа
+              </caption>
+              <tbody class="price__table-body">
+                <tr class="price__table-row">
+                  <td class="price__table-field">
+                    Классическая стрижка
+                    <span class="price__table-comment">
+                      (с мытьём головы)
+                    </span>
+                  </td>
+                  <td class="price__table-value">1 500 руб.</td>
+                </tr>
+
+                <tr class="price__table-row">
+                  <td class="price__table-field">
+                    Современный вариант
+                    <span class="price__table-comment">
+                      (с мытьём головы)
+                    </span>
+                  </td>
+                  <td class="price__table-value">1 500 руб.</td>
+                </tr>
+
+                <tr class="price__table-row">
+                  <td class="price__table-field">
+                    Индивидуальный подход
+                    <span class="price__table-comment">
+                      (с мытьём головы)
+                    </span>
+                  </td>
+                  <td class="price__table-value">2 000 руб.</td>
+                </tr>
+
+                <tr class="price__table-row">
+                  <td class="price__table-field">
+                    Бритьё головы
+                    <span class="price__table-comment">
+                      (без мытья)
+                    </span>
+                  </td>
+                  <td class="price__table-value">500 руб.</td>
+                </tr>
+
+                <tr class="price__table-row">
+                  <td class="price__table-field">
+                    Бритьё головы<span class="price__table-comment">
+                      (с мытьём головы)
+                    </span>
+                  </td>
+                  <td class="price__table-value">1 000 руб.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="price__discount-container">
+              <p class="price__discount-text">С 10:00 до 14:00 скидка 20%</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="page-footer">
+      <div class="page-footer__wrapper">
+        <div class="page-footer__contacts contacts">
+          <b class="contacts__title">Барбершоп Бородинский</b>
+          <p class="contacts__text">
+            г. Санкт-Петербург, ул. Большая Конюшенная 19/8
+          </p>
+          <a class="contacts__phone button" href="tel:+78125556666">
+            <span class="contacts__phone-legend">Тел.:</span>
+            +7 (812) 555-66-66
+          </a>
+        </div>
+
+        <div class="page-footer__social social">
+          <b class="social__title">Давайте дружить!</b>
+          <ul class="social__list">
+            <li class="social__item">
+              <a class="social__link social__link--vkontakte" href="#">
+                <span class="visually-hidden">Вконтакте</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link social__link--facebook" href="#">
+                <span class="visually-hidden">Фейсбук</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link social__link--instagram" href="#">
+                <span class="visually-hidden">Инстаграм</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="page-footer__copyright copyright">
+          <span class="copyright__text">Разработано:</span>
+          <a class="copyright__link button" href="#">HTML Academy</a>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/photo.js"></script>
+  </body>
+</html>
