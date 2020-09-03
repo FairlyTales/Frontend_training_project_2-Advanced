@@ -9,7 +9,7 @@
   </head>
   <body>
     <header class="page-header">
-      <a class="page-header__logo">
+      <a class="page-header__logo page-header__logo">
         <picture>
           <source
             media="(min-width: 1200px)"
@@ -88,136 +88,163 @@
 
     <main class="inner-page">
       <div class="inner-page__wrapper">
-        <h1 class="inner-page__title">Наши работы</h1>
+        <div class="inner-page__title_and_button-container">
+          <h1 class="inner-page__title">Наши работы</h1>
+          <a class="inner-page__link-to-index button" href="index.html"
+            >На главную</a
+          >
+        </div>
 
         <section class="inner-page__gallery gallery">
           <div class="gallery__wrapper">
             <h2 class="visually-hidden">Фотогалерея наших работ</h2>
             <ul class="gallery__list">
-              <li class="gallery__item">
-                <blockquote class="gallery__container">
-                  <picture>
-                    <img
-                      class="gallery__image"
-                      src=""
-                      alt="Фотография Лжепётра Мчиславского"
-                    />
-                  </picture>
-                  <cite class="gallery__client-name">
-                    Лжепётр Мчиславский
-                  </cite>
-                  <p class="gallery__client-text">
-                    Где я только не стригся, но так как делаете это вы &mdash;
-                    не умеет никто другой! Ещё раз спасибо и до скорого!
-                  </p>
-                </blockquote>
-                <ul class="gallery__services-list">
-                  <h3 class="visually-hidden">
-                    Список услуг оказанных клиенту
-                  </h3>
-                  <li class="gallery__services-item">
-                    <span class="gallery__services-text">
-                      Стрижка
-                    </span>
-                  </li>
-                  <li class="gallery__services-item">
-                    <span class="gallery__services-text">
-                      Бритьё
-                    </span>
-                  </li>
-                  <li class="gallery__services-item">
-                    <span class="gallery__services-text">
-                      Усы
-                    </span>
-                  </li>
-                </ul>
+              <li class="gallery__item gallery__item--work-of-the-month">
+                <picture>
+                  <img
+                    class="gallery__image"
+                    src="/source/img/photo-1-mobile.jpg"
+                    alt="Фотография Лжепётра Мчиславского"
+                  />
+                </picture>
+                <div class="gallery__text-content-container">
+                  <blockquote class="gallery__blockquote">
+                    <cite class="gallery__client-name">
+                      Лжепётр Мчиславский
+                    </cite>
+                    <p class="gallery__client-text">
+                      Где я только не стригся, но так как делаете это вы &mdash;
+                      не умеет никто другой! Ещё раз спасибо и до скорого!
+                    </p>
+                  </blockquote>
+                  <ul class="gallery__services-list">
+                    <h3 class="visually-hidden">
+                      Список услуг оказанных клиенту
+                    </h3>
+                    <li
+                      class="gallery__services-item gallery__services-item--haircut"
+                    >
+                      <span class="gallery__services-text">
+                        Стрижка
+                      </span>
+                    </li>
+                    <li
+                      class="gallery__services-item gallery__services-item--beard"
+                    >
+                      <span class="gallery__services-text">
+                        Бритьё
+                      </span>
+                    </li>
+                    <li
+                      class="gallery__services-item gallery__services-item--mustache"
+                    >
+                      <span class="gallery__services-text">
+                        Усы
+                      </span>
+                    </li>
+                  </ul>
+                </div>
               </li>
 
               <li class="gallery__item">
-                <blockquote class="gallery__container">
-                  <picture>
-                    <img
-                      class="gallery__image"
-                      src=""
-                      alt="Фотография Александра Мальцева"
-                    />
-                  </picture>
-                  <cite class="gallery__client-name">
-                    Александр Мальцев
-                  </cite>
-                  <p class="gallery__client-text">
-                    Попросил омолодить и омолодили! Кто теперь скажет, что мне
-                    45?
-                  </p>
-                </blockquote>
-                <ul class="gallery__services-list">
-                  <h3 class="visually-hidden">
-                    Список услуг оказанных клиенту
-                  </h3>
-                  <li class="gallery__services-item">
-                    <span class="gallery__services-text">
-                      Стрижка
-                    </span>
-                  </li>
-                </ul>
+                <picture>
+                  <img
+                    class="gallery__image"
+                    src="/source/img/photo-2-mobile.jpg"
+                    alt="Фотография Александра Мальцева"
+                  />
+                </picture>
+                <div class="gallery__text-content-container">
+                  <blockquote class="gallery__blockquote">
+                    <cite class="gallery__client-name">
+                      Александр Мальцев
+                    </cite>
+                    <p class="gallery__client-text">
+                      Попросил омолодить и омолодили! Кто теперь скажет, что мне
+                      45?
+                    </p>
+                  </blockquote>
+                  <ul class="gallery__services-list">
+                    <h3 class="visually-hidden">
+                      Список услуг оказанных клиенту
+                    </h3>
+                    <li
+                      class="gallery__services-item gallery__services-item--haircut"
+                    >
+                      <span class="gallery__services-text">
+                        Стрижка
+                      </span>
+                    </li>
+                  </ul>
+                </div>
               </li>
 
               <li class="gallery__item">
-                <blockquote class="gallery__container">
-                  <picture>
-                    <img
-                      class="gallery__image"
-                      src=""
-                      alt="Фотография Владимира Ильича"
-                    />
-                  </picture>
-                  <cite class="gallery__client-name">Владимир Ильич</cite>
-                  <p class="gallery__client-text">
-                    К зимнему сезону &mdash; готов!
-                  </p>
-                </blockquote>
-                <ul class="gallery__services-list">
-                  <h3 class="visually-hidden">
-                    Список услуг оказанных клиенту
-                  </h3>
-                  <li class="gallery__services-item">
-                    <span class="gallery__services-text">
-                      Борода
-                    </span>
-                  </li>
-                  <li class="gallery__services-item">
-                    <span class="gallery__services-text">
-                      Усы
-                    </span>
-                  </li>
-                </ul>
+                <picture>
+                  <img
+                    class="gallery__image"
+                    src="/source/img/photo-3-mobile.jpg"
+                    alt="Фотография Владимира Ильича"
+                  />
+                </picture>
+                <div class="gallery__text-content-container">
+                  <blockquote class="gallery__blockquote">
+                    <cite class="gallery__client-name">Владимир Ильич</cite>
+                    <p class="gallery__client-text">
+                      К зимнему сезону &mdash; готов!
+                    </p>
+                  </blockquote>
+                  <ul class="gallery__services-list">
+                    <h3 class="visually-hidden">
+                      Список услуг оказанных клиенту
+                    </h3>
+                    <li
+                      class="gallery__services-item gallery__services-item--beard"
+                    >
+                      <span class="gallery__services-text">
+                        Борода
+                      </span>
+                    </li>
+                    <li
+                      class="gallery__services-item gallery__services-item--mustache"
+                    >
+                      <span class="gallery__services-text">
+                        Усы
+                      </span>
+                    </li>
+                  </ul>
+                </div>
               </li>
 
               <li class="gallery__item">
-                <blockquote class="gallery__container">
-                  <picture>
-                    <img
-                      class="gallery__image"
-                      src=""
-                      alt="Фотография Винстона Синего"
-                    />
-                  </picture>
-                  <cite class="gallery__client-name">Винстон Синий</cite>
-                  <p class="gallery__client-text">
-                    Как только заростаю и волосы начинают мешать видеть &mdash;
-                    бегом в Бородинский!
-                  </p>
-                </blockquote>
-                <ul class="gallery__services-list">
-                  <h3 class="visually-hidden">
-                    Список услуг оказанных клиенту
-                  </h3>
-                  <li class="gallery__services-item">
-                    <span class="gallery__services-text">
-                      Стрижка
-                    </span>
-                  </li>
-                </ul>
+                <picture>
+                  <img
+                    class="gallery__image"
+                    src="/source/img/photo-4-mobile.jpg"
+                    alt="Фотография Винстона Синего"
+                  />
+                </picture>
+                <div class="gallery__text-content-container">
+                  <blockquote class="gallery__blockquote">
+                    <cite class="gallery__client-name">Винстон Синий</cite>
+                    <p class="gallery__client-text">
+                      Как только заростаю и волосы начинают мешать видеть
+                      &mdash; бегом в Бородинский!
+                    </p>
+                  </blockquote>
+                  <ul class="gallery__services-list">
+                    <h3 class="visually-hidden">
+                      Список услуг оказанных клиенту
+                    </h3>
+                    <li
+                      class="gallery__services-item gallery__services-item--haircut"
+                    >
+                      <span class="gallery__services-text">
+                        Стрижка
+                      </span>
+                    </li>
+                  </ul>
+                </div>
               </li>
             </ul>
           </div>
@@ -234,50 +261,54 @@
               </caption>
               <tbody class="price__table-body">
                 <tr class="price__table-row">
+                  <td class="price__table-number">1</td>
                   <td class="price__table-field">
                     Классическая стрижка
-                    <span class="price__table-comment">
-                      (с мытьём головы)
-                    </span>
+                  </td>
+                  <td class="price__table-comment">
+                    (с мытьём головы)
                   </td>
                   <td class="price__table-value">1 500 руб.</td>
                 </tr>
 
                 <tr class="price__table-row">
+                  <td class="price__table-number">2</td>
                   <td class="price__table-field">
                     Современный вариант
-                    <span class="price__table-comment">
-                      (с мытьём головы)
-                    </span>
                   </td>
+                  <td class="price__table-comment">(с мытьём головы)</td>
                   <td class="price__table-value">1 500 руб.</td>
                 </tr>
 
                 <tr class="price__table-row">
+                  <td class="price__table-number">3</td>
                   <td class="price__table-field">
                     Индивидуальный подход
-                    <span class="price__table-comment">
-                      (с мытьём головы)
-                    </span>
+                  </td>
+                  <td class="price__table-comment">
+                    (с мытьём головы)
                   </td>
                   <td class="price__table-value">2 000 руб.</td>
                 </tr>
 
                 <tr class="price__table-row">
+                  <td class="price__table-number">4</td>
                   <td class="price__table-field">
                     Бритьё головы
-                    <span class="price__table-comment">
-                      (без мытья)
-                    </span>
+                  </td>
+                  <td class="price__table-comment">
+                    (без мытья)
                   </td>
                   <td class="price__table-value">500 руб.</td>
                 </tr>
 
                 <tr class="price__table-row">
+                  <td class="price__table-number">5</td>
                   <td class="price__table-field">
-                    Бритьё головы<span class="price__table-comment">
-                      (с мытьём головы)
-                    </span>
+                    Бритьё головы
+                  </td>
+                  <td class="price__table-comment">
+                    (с мытьём головы)
                   </td>
                   <td class="price__table-value">1 000 руб.</td>
                 </tr>

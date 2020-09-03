@@ -2,36 +2,170 @@
 }
 
 .gallery__wrapper {
+  padding: 0 20px;
 }
 
 .gallery__list {
+  @include reset-list;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .gallery__item {
+  margin-bottom: 20px;
 }
 
-.gallery__container {
+.gallery__item--work-of-the-month {
+  position: relative;
+
+  // adds "Работа месяца" thingy to the item
+  &::before {
+    position: absolute;
+    top: 401px;
+
+    display: block;
+    width: 122px;
+
+    padding: 11px 0;
+    padding-right: 20px;
+    padding-left: 25px;
+
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 27px;
+
+    color: #fff;
+
+    content: 'РАБОТА МЕСЯЦА';
+
+    background-color: #826550;
+  }
+
+  //decorative "triangle" for "Работа месяца" thingy
+  &::after {
+    position: absolute;
+    top: 401px;
+    left: 167px;
+
+    content: '';
+
+    border-top: 25px solid #826550;
+    border-right: 8px solid transparent;
+    border-bottom: 24px solid #826550;
+  }
+
+  // work-of-the-month has top & bottom paddings different from other gallery items
+  .gallery__client-name {
+    padding-top: 19px;
+  }
+
+  .gallery__text-content-container {
+    padding-bottom: 16px;
+  }
+}
+
+.gallery__blockquote {
+  margin: 0;
+}
+
+.gallery__text-content-container {
+  box-sizing: border-box;
+  padding-bottom: 27px;
+  margin: 0;
+
+  border: 1px solid #e5ddd5;
+  border-top: 0;
 }
 
 .gallery__image {
+  display: block;
+  width: 280px;
 }
 
 .gallery__client-name {
+  display: block;
+  padding: 0 20px;
+  padding-top: 25px;
+  margin-bottom: 13px;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: bold;
 }
 
 .gallery__client-text {
+  padding: 0 21px;
+  margin: 0;
 }
 
 .gallery__services-list {
+  @include reset-list;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  padding: 0 9px;
 }
 
 .gallery__services-item {
+  box-sizing: border-box;
+  width: 130px;
+  margin-top: 16px;
+
+  font-size: 16px;
+  text-transform: uppercase;
+
+  // icons
+  &--haircut {
+    padding-left: 47px;
+
+    background-image: url('/source/img/icon-scissors.svg');
+    background-repeat: no-repeat;
+    background-position-x: 10%;
+    background-position-y: 50%;
+    background-size: 23px 23px;
+  }
+
+  &--beard {
+    padding-left: 44px;
+    background-image: url('/source/img/icon-beard.svg');
+    background-repeat: no-repeat;
+    background-position-x: 10%;
+    background-size: 22px 25px;
+  }
+
+  &--mustache {
+    padding-left: 58px;
+
+    background-image: url('/source/img/icon-mustache.svg');
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+    background-size: 45px 13px;
+  }
 }
 
 .gallery__services-text {
 }
 
 @media (min-width: $tablet-width) {
+  .gallery__wrapper {
+    padding: 0;
+  }
+
+  .gallery__item--work-of-the-month {
+    &::after {
+      top: 35px;
+      left: 164px;
+    }
+
+    &::before {
+      top: 35px;
+      left: -3px;
+    }
+  }
 }
 
 @media (min-width: $desktop-width) {
