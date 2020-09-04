@@ -72,6 +72,8 @@
 
 .gallery__text-content-container {
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
   padding-bottom: 27px;
   margin: 0;
 
@@ -130,7 +132,7 @@
   }
 
   &--beard {
-    padding-left: 44px;
+    padding-left: 50px;
     background-image: url('/source/img/icon-beard.svg');
     background-repeat: no-repeat;
     background-position-x: 10%;
@@ -155,6 +157,11 @@
     padding: 0;
   }
 
+  .gallery__item {
+    display: flex;
+    margin-bottom: 41px;
+  }
+
   .gallery__item--work-of-the-month {
     &::after {
       top: 35px;
@@ -165,6 +172,45 @@
       top: 35px;
       left: -3px;
     }
+
+    .gallery__text-content-container {
+      padding-top: 25px;
+    }
+
+    .gallery__services-list {
+      padding-bottom: 15px;
+    }
+  }
+
+  .gallery__image {
+    width: 270px;
+    min-width: 270px;
+  }
+
+  .gallery__text-content-container {
+    justify-content: space-between;
+    padding-top: 15px;
+    padding-left: 29px;
+    padding-bottom: 0;
+
+    border: 1px solid #e5ddd5;
+    border-left: 0;
+  }
+
+  .gallery__client-name {
+    margin-bottom: 25px;
+  }
+
+  .gallery__client-text {
+    min-height: 54px;
+    padding-right: 50px;
+
+    margin-bottom: 65px;
+  }
+
+  .gallery__services-list {
+    padding-right: 68px;
+    padding-bottom: 35px;
   }
 }
 

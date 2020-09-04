@@ -57,13 +57,18 @@
 
 @media (min-width: $desktop-width) {
   .page-header__logo {
-    height: 648px;
+    height: 305px;
 
     background-image: url('/source/img/header_background_desktop.jpg');
     background-position: center 0;
 
     // background-size: cover; - to make background image stretch through the whole width of the screen
     background-size: cover;
+
+    // different background image height for index.html
+    &--main-page {
+      height: 648px;
+    }
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url('/source/img/header_background_desktop_2x.jpg');
