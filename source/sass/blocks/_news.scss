@@ -4,24 +4,16 @@
   background-color: #f8f5f2;
 }
 
+.news__decorative-triangle {
+  border-top: 34px solid #252525;
+  border-right: 160px solid transparent;
+  border-left: 160px solid transparent;
+}
+
 .news__wrapper {
   position: relative;
   width: 320px;
   margin: 0 auto;
-}
-
-// grey line under news block
-.news__wrapper::after {
-  position: absolute;
-  bottom: -30px;
-  left: 0;
-
-  width: 320px;
-  height: 1px;
-
-  content: '';
-
-  background-color: #c6c4c1;
 }
 
 .news__title {
@@ -34,19 +26,6 @@
   line-height: 30px;
   text-align: center;
   text-transform: uppercase;
-}
-
-// dark triangle above the title, for decoration
-.news__title::before {
-  position: absolute;
-  top: -1px;
-  left: 0;
-
-  content: '';
-
-  border-top: 34px solid #242424;
-  border-right: 160px solid transparent;
-  border-left: 160px solid transparent;
 }
 
 .news__list {
@@ -170,27 +149,15 @@
 }
 
 @media (min-width: $tablet-width) {
-  // grey line under news block
-  .news::after {
-    position: absolute;
-    bottom: -4px;
-
-    width: 100%;
-    height: 1px;
-
-    content: '';
-
-    background-color: #dddad6;
+  .news__decorative-triangle {
+    border-top: 25px solid #353535;
+    border-right: 384px solid transparent;
+    border-left: 384px solid transparent;
   }
 
   .news__wrapper {
     position: relative;
     width: 100%;
-  }
-
-  // remove grey line under news block from news__wrapper cause news__wrapper isn't centered in tablet version (and we need this line centered)
-  .news__wrapper::after {
-    content: none;
   }
 
   .news__title {
@@ -226,18 +193,6 @@
     padding-bottom: 0;
   }
 
-  // dark triangle above news block, for decoration
-  .news__list::before {
-    position: absolute;
-    top: -115px;
-
-    content: '';
-
-    border-top: 30px solid $bg-lightgrey;
-    border-right: 384px solid transparent;
-    border-left: 384px solid transparent;
-  }
-
   .news__item {
     box-sizing: border-box;
     width: 290px;
@@ -258,17 +213,10 @@
 }
 
 @media (min-width: $desktop-width) {
-  // grey line under news block
-  .news::after {
-    position: absolute;
-    bottom: -4px;
-
-    width: 100%;
-    height: 1px;
-
-    content: '';
-
-    background-color: #dddad6;
+  .news__decorative-triangle {
+    border-top: 63px solid #353535;
+    border-right: 600px solid transparent;
+    border-left: 600px solid transparent;
   }
 
   .news__wrapper {
@@ -288,18 +236,6 @@
   .news__list {
     width: 960px;
     padding: 20px 0;
-  }
-
-  // dark triangle above news block, for decoration
-  .news__list::before {
-    position: absolute;
-    top: -162px;
-
-    content: '';
-
-    border-top: 65px solid $bg-lightgrey;
-    border-right: 590px solid transparent;
-    border-left: 590px solid transparent;
   }
 
   //remove line under

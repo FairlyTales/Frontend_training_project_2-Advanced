@@ -25,6 +25,12 @@ var alwaysShownNews = 2
 // variables for next/previous buttons; block: news; tablet & desktop versions
 var prevButton = document.querySelector('.reviews__prev-button')
 var nextButton = document.querySelector('.reviews__next-button')
+
+// variables for responsive decorative triangles
+// page-header always take 100% of the width so we use it to measure the screen width
+var widthMeasurmentBlock = document.querySelector('.page-header')
+var currentWidth = widthMeasurmentBlock.clientWidth
+var decorativeTriangles = document.querySelectorAll('.decorative-triangle')
 //* -------------------------------------
 
 //* --------------Functions--------------
@@ -34,8 +40,18 @@ function removeNoJsFallback() {
   NavMenu.classList.remove('main-nav--no-js')
 }
 
+// agjust decorativeTriangles to the current screen width
+function adaptDecorativeTriangles() {
+  for (let i = 0; i != decorativeTriangles.length; i++) {
+    decorativeTriangles[i].style.borderRightWidth = currentWidth / 2 + 'px'
+    decorativeTriangles[i].style.borderLeftWidth = currentWidth / 2 + 'px'
+  }
+}
+
 // enables/disables mobile, tablet & desktop features depending on the width of the user's screen
 function universalFeatures() {
+  adaptDecorativeTriangles()
+
   // button "show all news"; block: news;
   newsButton.addEventListener('click', function (evt) {
     // if the news are colapsed(default): expand them

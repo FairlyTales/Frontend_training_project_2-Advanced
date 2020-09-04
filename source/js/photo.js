@@ -11,9 +11,7 @@ var toggleNavMenu = document.querySelector('.main-nav__toggle')
 // page-header always take 100% of the width so we use it to measure the screen width
 var widthMeasurmentBlock = document.querySelector('.page-header')
 var currentWidth = widthMeasurmentBlock.clientWidth
-var decorativeTriangle = document.querySelector(
-  '.inner-page__decorative-triangle'
-)
+var decorativeTriangles = document.querySelectorAll('.decorative-triangle')
 
 //* -------------------------------------
 
@@ -24,10 +22,11 @@ function removeNoJsFallback() {
 }
 
 // agjust decorativeTriangles to the current screen width
-function decorativeTriangles() {
-  decorativeTriangle.style.borderRightWidth = currentWidth / 2 + 'px'
-  decorativeTriangle.style.borderLeftWidth = currentWidth / 2 + 'px'
-  console.log('resized')
+function adaptDecorativeTriangles() {
+  for (let i = 0; i != decorativeTriangles.length; i++) {
+    decorativeTriangles[i].style.borderRightWidth = currentWidth / 2 + 'px'
+    decorativeTriangles[i].style.borderLeftWidth = currentWidth / 2 + 'px'
+  }
 }
 
 // enables/disables mobile, tablet & desktop features depending on the width of the user's screen
@@ -52,7 +51,7 @@ function activateMobileFeatures() {
 function activateTabletFeatures() {
   // TODO: remove console.logs after script is finished
   console.log('tablet version')
-  decorativeTriangles()
+  adaptDecorativeTriangles()
 }
 
 function activateDesktopFeatures() {

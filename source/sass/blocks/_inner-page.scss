@@ -36,18 +36,12 @@
   }
 
   .inner-page__decorative-triangle {
-    position: absolute;
     top: -40px;
-    left: 0;
 
-    display: block;
-    width: 0;
-    height: 0;
-
+    border: 0;
     border-top: 40px solid transparent;
     border-right: 384px solid #f8f5f2;
     border-left: 384px solid #f8f5f2;
-    // border-left: 484px solid #f8f5f2;
   }
 
   .inner-page__wrapper {

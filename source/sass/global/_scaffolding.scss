@@ -63,6 +63,14 @@ a {
   text-decoration: none;
 }
 
+.decorative-triangle {
+  position: absolute;
+
+  display: block;
+  width: 0;
+  height: 0;
+}
+
 @media (min-width: $tablet-width) {
   body {
     background-color: $bg-lightgrey;
@@ -71,5 +79,8 @@ a {
   // show all slides which were hidden in mobile version
   .hidden-slider {
     display: block;
+  }
+
+  .decorative-triangle {
   }
 }

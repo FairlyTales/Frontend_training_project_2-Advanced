@@ -1,6 +1,21 @@
 .reviews {
+  position: relative;
   color: #000;
   background-color: $bg-light;
+}
+
+// grey line under news block
+.reviews::after {
+  position: absolute;
+  top: 29px;
+
+  display: block;
+  width: 100%;
+  height: 1px;
+
+  content: '';
+
+  background-color: #c6c4c1;
 }
 
 .reviews__wrapper {
@@ -30,19 +45,6 @@
 .reviews__list {
   @include reset-list;
   position: relative;
-}
-
-// light triangle above the title, for decoration
-.reviews__list::after {
-  position: absolute;
-  top: 207px;
-  left: 0;
-
-  content: '';
-
-  border-top: 34px solid $bg-light;
-  border-right: 160px solid transparent;
-  border-left: 160px solid transparent;
 }
 
 .reviews__item {
@@ -107,12 +109,36 @@
   display: none;
 }
 
+.reviews__decorative-triangle {
+  border-top: 34px solid $bg-light;
+  border-right: 160px solid transparent;
+  border-left: 160px solid transparent;
+}
+
 @media (min-width: $tablet-width) {
+  // grey line under news block
+  .reviews::after {
+    position: absolute;
+    top: 17px;
+
+    width: 100%;
+    height: 1px;
+
+    content: '';
+
+    background-color: #c6c4c1;
+  }
+
   .reviews__wrapper {
     position: relative;
     width: 100%;
     padding-bottom: 70px;
     margin: 0;
+  }
+
+  // remove grey line under news block from reviews__wrapper because he isn't centered in tablet version
+  .reviews__wrapper::after {
+    display: none;
   }
 
   .reviews__title {
@@ -133,11 +159,6 @@
     display: block;
     padding-right: 25px;
     padding-left: 25px;
-  }
-
-  // remove decorative triangle
-  .reviews__list::after {
-    content: none;
   }
 
   .reviews__item {
@@ -285,13 +306,26 @@
   .reviews__toggles::after {
     margin-left: 10px;
   }
+
+  .reviews__decorative-triangle {
+    display: none;
+  }
 }
 
 @media (min-width: $desktop-width) {
+  .reviews {
+    position: relative;
+  }
+
   .reviews__wrapper {
     width: 960px;
     padding-bottom: 48px;
     margin: 0 auto;
+  }
+
+  // reposition grey line under news block
+  .reviews::after {
+    top: 3px;
   }
 
   .reviews__title {
