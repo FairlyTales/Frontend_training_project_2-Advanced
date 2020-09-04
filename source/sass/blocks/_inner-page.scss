@@ -83,9 +83,24 @@
 }
 
 @media (min-width: $desktop-width) {
+  .inner-page__decorative-triangle {
+    top: -65px;
+    border-top: 65px solid transparent;
+  }
+
   .inner-page__wrapper {
     box-sizing: border-box;
     width: 1200px;
+    padding: 0 120px;
+  }
+
+  .inner-page__title_and_button-container {
+    padding-top: 26px;
+    margin-bottom: 78px;
+  }
+
+  .inner-page__link-to-index {
+    margin-top: 29px;
   }
 
   .inner-page__title {

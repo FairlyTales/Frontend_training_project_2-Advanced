@@ -190,8 +190,8 @@
   .gallery__text-content-container {
     justify-content: space-between;
     padding-top: 15px;
-    padding-left: 29px;
     padding-bottom: 0;
+    padding-left: 29px;
 
     border: 1px solid #e5ddd5;
     border-left: 0;
@@ -215,4 +215,78 @@
 }
 
 @media (min-width: $desktop-width) {
+  .gallery__list {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .gallery__item {
+    flex-direction: column;
+    width: 294px;
+  }
+
+  .gallery__image {
+    width: 294px;
+  }
+
+  .gallery__text-content-container {
+    min-height: 247px;
+
+    padding-top: 5px;
+    padding-left: 14px;
+
+    border: 1px solid #e5ddd5;
+    border-top: 0;
+  }
+
+  .gallery__client-text {
+    padding-right: 30px;
+    margin-bottom: 10px;
+  }
+
+  .gallery__services-list {
+    justify-content: flex-start;
+
+    padding-right: 0;
+    padding-bottom: 30px;
+  }
+
+  .gallery__item--work-of-the-month {
+    flex-direction: row;
+    width: 961px;
+
+    &::after {
+      top: 27px;
+      left: 785px;
+
+      border-top: 25px solid #826550;
+      border-right: 0;
+      border-bottom: 24px solid #826550;
+      border-left: 8px solid transparent;
+    }
+
+    &::before {
+      top: 27px;
+      left: 793px;
+    }
+
+    .gallery__image {
+      width: 480px;
+      min-width: 480px;
+    }
+
+    .gallery__text-content-container {
+      padding-top: 109px;
+      padding-left: 20px;
+    }
+
+    .gallery__client-text {
+      padding-right: 130px;
+    }
+
+    .gallery__services-list {
+      padding-right: 0;
+      padding-bottom: 10px;
+    }
+  }
 }
