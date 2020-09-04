@@ -87,6 +87,7 @@
     </header>
 
     <main class="inner-page">
+      <span class="inner-page__decorative-triangle"></span>
       <div class="inner-page__wrapper">
         <div class="inner-page__title_and_button-container">
           <h1 class="inner-page__title">Наши работы</h1>
@@ -101,9 +102,24 @@
             <ul class="gallery__list">
               <li class="gallery__item gallery__item--work-of-the-month">
                 <picture>
+                  <source
+                    media="(min-width: 1200px)"
+                    srcset="
+                      img/photo-1-desktop.jpg    1x,
+                      img/photo-1-desktop@2x.jpg 2x
+                    "
+                  />
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="
+                      img/photo-1-tablet.jpg    1x,
+                      img/photo-1-tablet@2x.jpg 2x
+                    "
+                  />
                   <img
                     class="gallery__image"
-                    src="/source/img/photo-1-mobile.jpg"
+                    src="img/photo-1-mobile@2x.jpg 2x"
+                    srcset="img/photo-1-mobile.jpg"
                     alt="Фотография Лжепётра Мчиславского"
                   />
                 </picture>
@@ -148,9 +164,24 @@
 
               <li class="gallery__item">
                 <picture>
+                  <source
+                    media="(min-width: 1200px)"
+                    srcset="
+                      img/photo-2-desktop.jpg    1x,
+                      img/photo-2-desktop@2x.jpg 2x
+                    "
+                  />
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="
+                      img/photo-2-tablet.jpg    1x,
+                      img/photo-2-tablet@2x.jpg 2x
+                    "
+                  />
                   <img
                     class="gallery__image"
                     src="/source/img/photo-2-mobile.jpg"
+                    srcset="/source/img/photo-2-mobile@2x.jpg 2x"
                     alt="Фотография Александра Мальцева"
                   />
                 </picture>
@@ -181,9 +212,24 @@
 
               <li class="gallery__item">
                 <picture>
+                  <source
+                    media="(min-width: 1200px)"
+                    srcset="
+                      img/photo-3-desktop.jpg    1x,
+                      img/photo-3-desktop@2x.jpg 2x
+                    "
+                  />
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="
+                      img/photo-3-tablet.jpg    1x,
+                      img/photo-3-tablet@2x.jpg 2x
+                    "
+                  />
                   <img
                     class="gallery__image"
                     src="/source/img/photo-3-mobile.jpg"
+                    srcset="/source/img/photo-3-mobile@2x.jpg 2x"
                     alt="Фотография Владимира Ильича"
                   />
                 </picture>
@@ -218,9 +264,24 @@
 
               <li class="gallery__item">
                 <picture>
+                  <source
+                    media="(min-width: 1200px)"
+                    srcset="
+                      img/photo-4-desktop.jpg    1x,
+                      img/photo-4-desktop@2x.jpg 2x
+                    "
+                  />
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="
+                      img/photo-4-tablet.jpg    1x,
+                      img/photo-4-tablet@2x.jpg 2x
+                    "
+                  />
                   <img
                     class="gallery__image"
                     src="/source/img/photo-4-mobile.jpg"
+                    src="/source/img/photo-4-mobile@2x.jpg 2x"
                     alt="Фотография Винстона Синего"
                   />
                 </picture>

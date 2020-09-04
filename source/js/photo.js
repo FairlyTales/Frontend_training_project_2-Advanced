@@ -7,9 +7,27 @@ var desktopWidth = window.matchMedia('(min-width: 1200px)')
 var NavMenu = document.querySelector('.main-nav')
 var toggleNavMenu = document.querySelector('.main-nav__toggle')
 
+// variables for responsive decorative triangles
+// page-header always take 100% of the width so we use it to measure the screen width
+var widthMeasurmentBlock = document.querySelector('.page-header')
+var currentWidth = widthMeasurmentBlock.clientWidth
+var decorativeTriangle = document.querySelector(
+  '.inner-page__decorative-triangle'
+)
+
+//* -------------------------------------
+
+//* -------------Functions---------------
 // we have a fallback is our CSS for the case where user got HTML and CSS, but didn't get JS. This fallback makes shure that the navigation menu is constantly openned. But if user downloaded the JS we must disable this fallback by removing class "main-nav--no-js" from the <nav> to make everything work according to "Plan A"
 function removeNoJsFallback() {
   NavMenu.classList.remove('main-nav--no-js')
+}
+
+// agjust decorativeTriangles to the current screen width
+function decorativeTriangles() {
+  decorativeTriangle.style.borderRightWidth = currentWidth / 2 + 'px'
+  decorativeTriangle.style.borderLeftWidth = currentWidth / 2 + 'px'
+  console.log('resized')
 }
 
 // enables/disables mobile, tablet & desktop features depending on the width of the user's screen
@@ -34,6 +52,7 @@ function activateMobileFeatures() {
 function activateTabletFeatures() {
   // TODO: remove console.logs after script is finished
   console.log('tablet version')
+  decorativeTriangles()
 }
 
 function activateDesktopFeatures() {

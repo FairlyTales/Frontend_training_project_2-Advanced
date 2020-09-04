@@ -31,27 +31,31 @@
 }
 
 @media (min-width: $tablet-width) {
+  .inner-page {
+    position: relative;
+  }
+
+  .inner-page__decorative-triangle {
+    position: absolute;
+    top: -40px;
+    left: 0;
+
+    display: block;
+    width: 0;
+    height: 0;
+
+    border-top: 40px solid transparent;
+    border-right: 384px solid #f8f5f2;
+    border-left: 384px solid #f8f5f2;
+    // border-left: 484px solid #f8f5f2;
+  }
+
   .inner-page__wrapper {
     position: relative;
     box-sizing: border-box;
     width: 768px;
 
     padding: 0 65px;
-
-    // decorative "triangle" under page__header's background image
-    &::before {
-      position: absolute;
-      top: -39px;
-      left: 0;
-
-      width: 0;
-      height: 0;
-      content: '';
-
-      border-top: 40px solid transparent;
-      border-right: 384px solid #f8f5f2;
-      border-left: 384px solid #f8f5f2;
-    }
   }
 
   .inner-page__title_and_button-container {
