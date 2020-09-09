@@ -13,9 +13,6 @@ const widthMeasurmentBlock = document.querySelector('.page-header');
 const currentWidth = widthMeasurmentBlock.clientWidth;
 const decorativeTriangles = document.querySelectorAll('.decorative-triangle');
 
-// variables for hiding brackets in tablet & desktop versions
-const cellsWithBrackets = document.querySelectorAll('.price__table-comment');
-
 //* --------------------------------------------
 //*
 //* -----------Task functions-------------
@@ -33,20 +30,9 @@ function adaptDecorativeTriangles() {
   }
 }
 
-// removes brackets from .price__table-comment cells in table, used in tablet & desktop versions
-function removeBracketsInTable() {
-  for (let i = 0; i < cellsWithBrackets.length; i++) {
-    // replace (){}[] with '', basically removing them
-    cellsWithBrackets[i].textContent = cellsWithBrackets[i].textContent.replace(
-      /[\])}[{(]/g,
-      ''
-    );
-  }
-}
-
 //* --------------------------------------------
 //*
-//* -----------Task activation functions----------
+//* --------Task activation functions-------
 
 function activateUniversalFeatures() {
   removeNoJsFallback();
@@ -72,15 +58,11 @@ function activateMobileFeatures() {
 function activateTabletFeatures() {
   // TODO: remove console.logs after script is finished
   console.log('tablet version');
-
-  removeBracketsInTable();
 }
 
 function activateDesktopFeatures() {
   // TODO: remove console.logs after script is finished
   console.log('desktop version');
-
-  removeBracketsInTable();
 }
 
 // checks device width and calls feature activation function according to this width

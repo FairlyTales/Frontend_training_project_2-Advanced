@@ -209,9 +209,7 @@
 
   .gallery__client-text {
     min-height: 54px;
-    padding-right: 50px;
-
-    margin-bottom: 65px;
+    padding-right: 60px;
   }
 
   .gallery__services-list {
@@ -222,8 +220,8 @@
 
 @media (min-width: $desktop-width) {
   .gallery__wrapper {
-    width: 1200px;
-    padding: 0 120px;
+    width: 960px;
+    padding: 0;
   }
   .gallery__list {
     flex-direction: row;

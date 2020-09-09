@@ -62,6 +62,7 @@
   .inner-page__title_and_button-container {
     display: flex;
     justify-content: space-between;
+    padding: 0 65px;
 
     padding-top: 54px;
     margin-bottom: 38px;
@@ -83,9 +84,15 @@
   }
 
   .inner-page__gallery {
+    padding-bottom: 23px;
   }
 
   .inner-page__price {
+    padding-bottom: 55px;
+  }
+
+  .inner-page__decorative-triangle--convex-dark {
+    display: none;
   }
 }
 
@@ -100,7 +107,9 @@
   }
 
   .inner-page__title_and_button-container {
+    padding: 0 120px;
     padding-top: 26px;
+
     margin-bottom: 78px;
   }
 
@@ -114,8 +123,13 @@
   }
 
   .inner-page__gallery {
+    padding-bottom: 48px;
+  }
+  .inner-page__decorative-triangle--convex-light {
+    display: none;
   }
 
   .inner-page__price {
+    padding-bottom: 87px;
   }
 }
