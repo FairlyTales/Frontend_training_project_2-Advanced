@@ -2,7 +2,12 @@
 }
 
 .gallery__wrapper {
+  box-sizing: border-box;
+  width: 320px;
+
   padding: 0 20px;
+  padding-bottom: 9px;
+  margin: 0 auto;
 }
 
 .gallery__list {
@@ -154,7 +159,8 @@
 
 @media (min-width: $tablet-width) {
   .gallery__wrapper {
-    padding: 0;
+    width: 768px;
+    padding: 0 65px;
   }
 
   .gallery__item {
@@ -215,6 +221,10 @@
 }
 
 @media (min-width: $desktop-width) {
+  .gallery__wrapper {
+    width: 1200px;
+    padding: 0 120px;
+  }
   .gallery__list {
     flex-direction: row;
     justify-content: space-between;
@@ -278,6 +288,9 @@
     .gallery__text-content-container {
       padding-top: 109px;
       padding-left: 20px;
+
+      border-top: 1px solid #e5ddd5;
+      border-left: 0;
     }
 
     .gallery__client-text {

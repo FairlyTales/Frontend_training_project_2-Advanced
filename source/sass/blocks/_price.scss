@@ -1,32 +1,135 @@
 .price {
+  color: #fff;
+  background-color: $bg-lightgrey;
 }
 
 .price__wrapper {
+  width: 320px;
+  margin: 0 auto;
 }
 
 .price__title {
+  padding-top: 75px;
+  margin: 0;
+  margin-bottom: 23px;
+
+  font-size: 30px;
+  line-height: 30px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .price__table {
+  margin-bottom: 13px;
+  font-size: 20px;
+  border-collapse: collapse;
 }
 
 .price__table-body {
 }
 
+// table layout is different in mobile version so we use flex and order. In other versions these setting are revoked
 .price__table-row {
+  display: flex;
+  flex-wrap: wrap;
+
+  padding: 0 20px;
+  margin-bottom: 11px;
+}
+
+.price__table-number {
+  display: none;
 }
 
 .price__table-field {
+  order: 1;
+  min-width: 201px;
+
+  font-weight: bold;
 }
 
 .price__table-comment {
+  order: 3;
 }
 
 .price__table-value {
+  order: 2;
+  width: 75px;
+
+  text-align: right;
+}
+
+.price__discount-container {
+  margin: 0 20px;
+
+  background-image: url('/source/img/icon-clock.svg');
+  background-repeat: no-repeat;
+  background-position-x: -16px;
+  background-position-y: 13px;
+  background-size: 130px;
+
+  border: 1px solid #484848;
+}
+
+.price__discount-text {
+  width: 140px;
+  padding: 18px 0;
+  padding-right: 45px;
+  padding-left: 112px;
+
+  margin: 0;
+
+  font-size: 20px;
 }
 
 @media (min-width: $tablet-width) {
+  .price__wrapper {
+  }
+
+  .price__title {
+  }
+
+  .price__table {
+  }
+
+  .price__table-body {
+  }
+
+  .price__table-row {
+  }
+
+  .price__table-field {
+  }
+
+  .price__table-comment {
+  }
+
+  .price__table-value {
+  }
 }
 
 @media (min-width: $desktop-width) {
+  .price__wrapper {
+  }
+
+  .price__title {
+  }
+
+  .price__table {
+  }
+
+  .price__table-body {
+  }
+
+  .price__table-row {
+  }
+
+  .price__table-field {
+  }
+
+  .price__table-comment {
+  }
+
+  .price__table-value {
+  }
 }

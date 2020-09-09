@@ -88,7 +88,10 @@
     </header>
 
     <main class="inner-page">
-      <span class="decorative-triangle inner-page__decorative-triangle"></span>
+      <span
+        class="decorative-triangle inner-page__decorative-triangle--concave"
+        role="presentation"
+      ></span>
       <div class="inner-page__wrapper">
         <div class="inner-page__title_and_button-container">
           <h1 class="inner-page__title">Наши работы</h1>
@@ -103,7 +106,7 @@
             <ul class="gallery__list">
               <li class="gallery__item gallery__item--work-of-the-month">
                 <picture>
-                  <source
+                  <!-- <source
                     media="(min-width: 1200px)"
                     srcset="
                       img/photo-1-desktop.webp    1x,
@@ -125,7 +128,7 @@
                       img/photo-1-mobile.webp    2x,
                       img/photo-1-mobile@2x.webp 2x
                     "
-                  />
+                  /> -->
 
                   <source
                     media="(min-width: 1200px)"
@@ -189,7 +192,7 @@
 
               <li class="gallery__item">
                 <picture>
-                  <source
+                  <!-- <source
                     media="(min-width: 1200px)"
                     srcset="
                       img/photo-2-desktop.webp    1x,
@@ -211,7 +214,7 @@
                       img/photo-2-mobile.webp    2x,
                       img/photo-2-mobile@2x.webp 2x
                     "
-                  />
+                  /> -->
                   <source
                     media="(min-width: 1200px)"
                     srcset="
@@ -260,7 +263,7 @@
 
               <li class="gallery__item">
                 <picture>
-                  <source
+                  <!-- <source
                     media="(min-width: 1200px)"
                     srcset="
                       img/photo-3-desktop.webp    1x,
@@ -282,7 +285,7 @@
                       img/photo-3-mobile.webp    2x,
                       img/photo-3-mobile@2x.webp 2x
                     "
-                  />
+                  /> -->
                   <source
                     media="(min-width: 1200px)"
                     srcset="
@@ -301,12 +304,12 @@
                     class="gallery__image"
                     src="/source/img/photo-3-mobile.jpg"
                     srcset="/source/img/photo-3-mobile@2x.jpg 2x"
-                    alt="Фотография Владимира Ильича"
+                    alt="Фотография Владимира Иваныча"
                   />
                 </picture>
                 <div class="gallery__text-content-container">
                   <blockquote class="gallery__blockquote">
-                    <cite class="gallery__client-name">Владимир Ильич</cite>
+                    <cite class="gallery__client-name">Владимир Иваныч</cite>
                     <p class="gallery__client-text">
                       К зимнему сезону &mdash; готов!
                     </p>
@@ -335,7 +338,7 @@
 
               <li class="gallery__item">
                 <picture>
-                  <source
+                  <!-- <source
                     media="(min-width: 1200px)"
                     srcset="
                       img/photo-4-desktop.webp    1x,
@@ -357,7 +360,7 @@
                       img/photo-4-mobile.webp   2x,
                       img/photo-4-mobil@2x.webp 2x
                     "
-                  />
+                  /> -->
                   <source
                     media="(min-width: 1200px)"
                     srcset="
@@ -375,7 +378,7 @@
                   <img
                     class="gallery__image"
                     src="/source/img/photo-4-mobile.jpg"
-                    src="/source/img/photo-4-mobile@2x.jpg 2x"
+                    srcset="/source/img/photo-4-mobile@2x.jpg 2x"
                     alt="Фотография Винстона Синего"
                   />
                 </picture>
@@ -404,6 +407,11 @@
             </ul>
           </div>
         </section>
+
+        <span
+          class="decorative-triangle inner-page__decorative-triangle--convex-light"
+          role="presentation"
+        ></span>
 
         <section class="inner-page__price price">
           <div class="price__wrapper">
@@ -475,6 +483,11 @@
             </div>
           </div>
         </section>
+
+        <span
+          class="decorative-triangle inner-page__decorative-triangle--convex-dark"
+          role="presentation"
+        ></span>
       </div>
     </main>
 

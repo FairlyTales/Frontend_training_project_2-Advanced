@@ -36,6 +36,8 @@ function activateMobileFeatures() {
   // TODO: remove console.logs after script is finished
   console.log('mobile version');
 
+  adaptDecorativeTriangles();
+
   // navigation menu opening/closing
   toggleNavMenu.addEventListener('click', function (evt) {
     if (NavMenu.classList.contains('main-nav--closed')) {
