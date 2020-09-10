@@ -1,14 +1,16 @@
 {
   "extends": [
-    "stylelint-config-sass-guidelines",
+    "stylelint-config-standard",
+    "stylelint-config-recommended-scss",
     "stylelint-config-recess-order",
     "stylelint-config-prettier"
   ],
-  "plugins": ["stylelint-order"],
+  "plugins": ["stylelint-scss", "stylelint-order"],
   "rules": {
     "indentation": 2,
     "order/properties-alphabetical-order": null,
-    "selector-class-pattern": null
+    "selector-class-pattern": null,
+    "declaration-empty-line-before": null
   },
   "ignoreFiles": ["**/*.js", "**/*.css"]
 }
