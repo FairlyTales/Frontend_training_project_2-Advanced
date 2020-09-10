@@ -8,7 +8,7 @@ let source_folder = 'source';
 
 let path = {
   build: {
-    html: build_folder + '/html/',
+    html: build_folder,
     css: build_folder + '/css/',
     js: build_folder + '/js/',
     content_img: build_folder + '/img/content_img/',
@@ -83,7 +83,7 @@ function clean(params) {
 function browserSync(params) {
   browsersync.init({
     server: {
-      baseDir: './' + build_folder + '/html/',
+      baseDir: ['./' + build_folder + '/'],
     },
     browser: 'chrome',
     port: 3000,
