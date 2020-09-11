@@ -1,5 +1,7 @@
 {
   "liveServer.settings.CustomBrowser": "chrome",
   "liveServer.settings.port": 5501,
-  "git.ignoreLimitWarning": true
+  "git.ignoreLimitWarning": true,
+  "editor.wordWrap": "on",
+  "breadcrumbs.enabled": true
 }

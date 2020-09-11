@@ -12,5 +12,5 @@
     "selector-class-pattern": null,
     "declaration-empty-line-before": null
   },
-  "ignoreFiles": ["**/*.js", "**/*.css"]
+  "ignoreFiles": ["**/*.js", "**/*.css", "**/*.html"]
 }

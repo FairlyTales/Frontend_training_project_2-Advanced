@@ -20,10 +20,7 @@ let path = {
 
   src: {
     // '!' - don't include html files starting with _underscore
-    html: [
-      source_folder + '/html/*.html',
-      '!' + source_folder + '/html/_*.html',
-    ],
+    pug: [source_folder + '/pug/*.pug', '!' + source_folder + '/pug/_*.pug'],
     sass: source_folder + '/sass/style.scss',
     js: source_folder + '/js/*.js',
     content_img: source_folder + '/img/content_img/*.{jpg, png, webp}',
@@ -34,7 +31,7 @@ let path = {
   },
 
   watch: {
-    html: source_folder + '/html/*.html',
+    pug: source_folder + '/pug/*.pug',
     sass: source_folder + '/sass/**/*.scss',
     js: source_folder + '/js/*.js',
   },
@@ -50,6 +47,7 @@ let path = {
 //*
 //*
 //* --------Plugins--------
+// general
 let gulp = require('gulp');
 let { src, dest } = require('gulp');
 let plumber = require('gulp-plumber');
@@ -58,15 +56,21 @@ let del = require('del');
 let rename = require('gulp-rename');
 let browsersync = require('browser-sync').create();
 
+// HTML
+let pug = require('gulp-pug');
+
+// sass, css
 let sass = require('gulp-dart-sass');
 let group_media_queries = require('gulp-group-css-media-queries');
 let postcss = require('gulp-postcss');
 let autoprefixer = require('autoprefixer');
 let cssnano = require('cssnano');
 
+// images
 let imagemin = require('gulp-imagemin');
 let webp = require('gulp-webp');
 
+// js
 let terser = require('gulp-terser');
 
 //*
@@ -90,11 +94,16 @@ function browserSync(params) {
   });
 }
 
-// compile and send HTML files to dist, call browsersync
+// compile PUG and send compiled HTML files to dist, call browsersync
 function compileHTML() {
-  return src(path.src.html)
+  return src(path.src.pug)
     .pipe(plumber())
-    .pipe(fileinclude())
+    .pipe(
+      pug({
+        doctype: 'html',
+        pretty: false,
+      })
+    )
     .pipe(dest(path.build.html))
     .pipe(browsersync.stream());
 }
@@ -136,9 +145,9 @@ function compileJS() {
     .pipe(browsersync.stream());
 }
 
-// watches changes in source folder's HTML, SCSS and JS files and runs the build compiling tasks
+// watch changes in source folder's HTML, SCSS and JS files and runs the build compiling tasks
 function watchSource(params) {
-  gulp.watch([path.watch.html], compileHTML);
+  gulp.watch([path.watch.pug], compileHTML);
   gulp.watch([path.watch.sass], compileSASS);
   gulp.watch([path.watch.js], compileJS);
 }
