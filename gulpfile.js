@@ -58,7 +58,6 @@ let del = require('del');
 let rename = require('gulp-rename');
 let browsersync = require('browser-sync').create();
 
-//! я удалил node-sass, который используется по умолчанию, если dart-sass не будет работать, нужно поставить обратно node-sass и прописать его в sass.compiler
 let sass = require('gulp-dart-sass');
 let group_media_queries = require('gulp-group-css-media-queries');
 let postcss = require('gulp-postcss');

@@ -1,5 +1,8 @@
+@use 'global/variables' as vars;
+@use 'global/mixin' as mixins;
+
 .site-list {
-  @include reset-list;
+  @include mixins.reset-list;
   font-weight: bold;
 }
 
@@ -48,7 +51,7 @@
   color: inherit;
 }
 
-@media (min-width: $tablet-width) {
+@media (min-width: vars.$tablet-width) {
   .site-list {
     display: flex;
     flex-grow: 1;
@@ -104,7 +107,7 @@
   }
 }
 
-@media (min-width: $desktop-width) {
+@media (min-width: vars.$desktop-width) {
   .site-list {
     width: 800px;
     padding-left: 1px;
@@ -130,7 +133,6 @@
     padding-left: 31px;
   }
 
-  // make
   .site-list__item--current-page {
     &:hover,
     &:focus {

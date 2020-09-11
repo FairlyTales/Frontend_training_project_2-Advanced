@@ -1,3 +1,6 @@
+@use 'global/variables' as vars;
+@use 'global/mixin' as mixins;
+
 .news {
   position: relative;
   color: #000;
@@ -29,7 +32,7 @@
 }
 
 .news__list {
-  @include reset-list;
+  @include mixins.reset-list;
 }
 
 .news__item {
@@ -148,9 +151,9 @@
   position: relative;
 }
 
-@media (min-width: $tablet-width) {
+@media (min-width: vars.$tablet-width) {
   .news__decorative-triangle {
-    border-top: 25px solid #353535;
+    border-top: 25px solid vars.$bg-lightgrey;
     border-right: 384px solid transparent;
     border-left: 384px solid transparent;
   }
@@ -212,7 +215,7 @@
   }
 }
 
-@media (min-width: $desktop-width) {
+@media (min-width: vars.$desktop-width) {
   .news__decorative-triangle {
     border-top: 63px solid #353535;
     border-right: 600px solid transparent;

@@ -1,6 +1,9 @@
+@use 'global/variables' as vars;
+@use 'global/mixin' as mixins;
+
 .price {
   color: #fff;
-  background-color: $bg-lightgrey;
+  background-color: vars.$bg-lightgrey;
 }
 
 .price__wrapper {
@@ -82,7 +85,7 @@
   font-size: 20px;
 }
 
-@media (min-width: $tablet-width) {
+@media (min-width: vars.$tablet-width) {
   .price__wrapper {
     width: 768px;
     margin: 0 auto;
@@ -172,7 +175,7 @@
   }
 }
 
-@media (min-width: $desktop-width) {
+@media (min-width: vars.$desktop-width) {
   .price__wrapper {
     width: 960px;
   }

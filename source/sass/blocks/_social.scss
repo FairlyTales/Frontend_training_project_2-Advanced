@@ -1,3 +1,6 @@
+@use 'global/variables' as vars;
+@use 'global/mixin' as mixins;
+
 .social {
 }
 
@@ -7,7 +10,7 @@
 }
 
 .social__list {
-  @include reset-list;
+  @include mixins.reset-list;
 
   display: flex;
   justify-content: space-around;
@@ -49,13 +52,13 @@
   background-image: url('../img/background_img/insta-icon-big.png');
 }
 
-@media (min-width: $tablet-width) {
+@media (min-width: vars.$tablet-width) {
   .social__link {
     width: 211px;
   }
 }
 
-@media (min-width: $desktop-width) {
+@media (min-width: vars.$desktop-width) {
   // show "Давайте дружить!"
   .social__title {
     display: block;

@@ -1,3 +1,6 @@
+@use 'global/variables' as vars;
+@use 'global/mixin' as mixins;
+
 .main-nav {
   position: relative;
   width: 320px;
@@ -20,7 +23,7 @@
 }
 
 // styles only for mobile version, they won't be translated further. We do this specifically for styling open/close navigation menu in mobile version because tablet & desktop version have their nav menus opened all the time and it will be huge pain in the ass undoing all these open/close styles if they cascade to the tablet & desktop versions from mobile version. Much easier to make these styles stay within mobile version.
-@media (max-width: $mobile-width-only) {
+@media (max-width: vars.$mobile-width-only) {
   // open/close button, not a cross (close) icon or hamburger (open) icon, they are specified by other selectors
   .main-nav__toggle {
     position: absolute;
@@ -171,7 +174,7 @@
   }
 }
 
-@media (min-width: $tablet-width) {
+@media (min-width: vars.$tablet-width) {
   .main-nav {
     width: auto;
     background-color: #000;
@@ -190,7 +193,7 @@
   }
 }
 
-@media (min-width: $desktop-width) {
+@media (min-width: vars.$desktop-width) {
   .main-nav__wrapper {
     width: 960px;
     max-width: none;

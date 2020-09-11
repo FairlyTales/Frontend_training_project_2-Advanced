@@ -1,3 +1,6 @@
+@use 'global/variables' as vars;
+@use 'global/mixin' as mixins;
+
 .gallery {
 }
 
@@ -11,7 +14,7 @@
 }
 
 .gallery__list {
-  @include reset-list;
+  @include mixins.reset-list;
 
   display: flex;
   flex-direction: column;
@@ -108,7 +111,7 @@
 }
 
 .gallery__services-list {
-  @include reset-list;
+  @include mixins.reset-list;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -157,7 +160,7 @@
 .gallery__services-text {
 }
 
-@media (min-width: $tablet-width) {
+@media (min-width: vars.$tablet-width) {
   .gallery__wrapper {
     width: 768px;
     padding: 0 65px;
@@ -218,7 +221,7 @@
   }
 }
 
-@media (min-width: $desktop-width) {
+@media (min-width: vars.$desktop-width) {
   .gallery__wrapper {
     width: 960px;
     padding: 0;

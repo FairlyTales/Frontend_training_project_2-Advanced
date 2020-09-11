@@ -1,5 +1,8 @@
+@use 'global/variables' as vars;
+@use 'global/mixin' as mixins;
+
 .user-list {
-  @include reset-list;
+  @include mixins.reset-list;
 }
 
 // we made <a> fully fill our <li> to make the whole space ocupied by <li> clickable. Thats why the in nothing in this selector besides hover/focus/active (but they can be also applied to the user-list__login, result will be the same)
@@ -37,7 +40,7 @@
   content: '';
 }
 
-@media (min-width: $tablet-width) {
+@media (min-width: vars.$tablet-width) {
   .user-list {
     display: flex;
     width: 88px;
@@ -71,7 +74,7 @@
   }
 }
 
-@media (min-width: $desktop-width) {
+@media (min-width: vars.$desktop-width) {
   .user-list {
     width: 120px;
     padding-right: 0;

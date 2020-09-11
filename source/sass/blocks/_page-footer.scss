@@ -1,5 +1,8 @@
+@use 'global/variables' as vars;
+@use 'global/mixin' as mixins;
+
 .page-footer {
-  background-color: $bg-darkgrey;
+  background-color: vars.$bg-darkgrey;
 }
 
 .page-footer__wrapper {
@@ -24,7 +27,7 @@
   padding-bottom: 200px;
 }
 
-@media (min-width: $tablet-width) {
+@media (min-width: vars.$tablet-width) {
   .page-footer__wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -59,7 +62,7 @@
   }
 }
 
-@media (min-width: $desktop-width) {
+@media (min-width: vars.$desktop-width) {
   .page-footer__wrapper {
     width: 1000px;
     padding-bottom: 100px;

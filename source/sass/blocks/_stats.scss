@@ -1,3 +1,6 @@
+@use 'global/variables' as vars;
+@use 'global/mixin' as mixins;
+
 .stats {
   width: 320px;
   margin: 0 auto;
@@ -116,7 +119,7 @@
   text-align: center;
 }
 
-@media (min-width: $tablet-width) {
+@media (min-width: vars.$tablet-width) {
   .stats {
     width: 83%;
     max-width: 960px;
@@ -221,7 +224,7 @@
   }
 }
 
-@media (min-width: $desktop-width) {
+@media (min-width: vars.$desktop-width) {
   .stats {
     display: flex;
     width: 960px;

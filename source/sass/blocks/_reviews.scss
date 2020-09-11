@@ -1,7 +1,10 @@
+@use 'global/variables' as vars;
+@use 'global/mixin' as mixins;
+
 .reviews {
   position: relative;
   color: #000;
-  background-color: $bg-light;
+  background-color: vars.$bg-light;
 }
 
 // grey line under news block
@@ -43,7 +46,7 @@
 }
 
 .reviews__list {
-  @include reset-list;
+  @include mixins.reset-list;
   position: relative;
 }
 
@@ -110,12 +113,12 @@
 }
 
 .reviews__decorative-triangle {
-  border-top: 34px solid $bg-light;
+  border-top: 34px solid vars.$bg-light;
   border-right: 160px solid transparent;
   border-left: 160px solid transparent;
 }
 
-@media (min-width: $tablet-width) {
+@media (min-width: vars.$tablet-width) {
   // grey line under news block
   .reviews::after {
     position: absolute;
@@ -312,7 +315,7 @@
   }
 }
 
-@media (min-width: $desktop-width) {
+@media (min-width: vars.$desktop-width) {
   .reviews {
     position: relative;
   }

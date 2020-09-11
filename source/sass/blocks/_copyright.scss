@@ -1,3 +1,6 @@
+@use 'global/variables' as vars;
+@use 'global/mixin' as mixins;
+
 .copyright {
 }
 
@@ -23,8 +26,8 @@
   }
 }
 
-@media (min-width: $tablet-width) {
+@media (min-width: vars.$tablet-width) {
 }
 
-@media (min-width: $desktop-width) {
+@media (min-width: vars.$desktop-width) {
 }

@@ -1,3 +1,6 @@
+@use 'global/variables' as vars;
+@use 'global/mixin' as mixins;
+
 .inner-page {
   color: #000;
 
@@ -14,7 +17,7 @@
 }
 
 .inner-page__decorative-triangle--convex-dark {
-  border-top: 40px solid $bg-lightgrey;
+  border-top: 40px solid vars.$bg-lightgrey;
   border-right: 160px solid transparent;
   border-left: 160px solid transparent;
 }
@@ -41,7 +44,7 @@
   padding-bottom: 20px;
 }
 
-@media (min-width: $tablet-width) {
+@media (min-width: vars.$tablet-width) {
   .inner-page {
     position: relative;
   }
@@ -96,7 +99,7 @@
   }
 }
 
-@media (min-width: $desktop-width) {
+@media (min-width: vars.$desktop-width) {
   .inner-page__decorative-triangle--concave {
     top: -65px;
 

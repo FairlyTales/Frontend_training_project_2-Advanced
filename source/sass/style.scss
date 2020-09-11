@@ -1,6 +1,32 @@
-@import 'global/normalize', 'global/variables', 'global/mixin',
-  'global/scaffolding', 'blocks/button', 'blocks/slider', 'blocks/page-header',
-  'blocks/main-nav', 'blocks/site-list', 'blocks/user-list', 'blocks/inner-page',
-  './blocks/stats', 'blocks/advantages', 'blocks/news', 'blocks/reviews',
-  'blocks/gallery', 'blocks/price', 'blocks/page-footer', 'blocks/contacts',
-  'blocks/social', 'blocks/copyright';
+//* global styles, variables, mixins, normalize.css
+@use 'global/normalize';
+@use 'global/variables';
+@use 'global/mixin';
+@use 'global/scaffolding';
+
+//* base styles for buttons, sliders, etc.
+@use 'blocks/button';
+@use 'blocks/slider';
+
+//* header blocks
+@use 'blocks/page-header';
+@use 'blocks/main-nav';
+@use 'blocks/site-list';
+@use 'blocks/user-list';
+
+//* styles for inner page
+@use 'blocks/inner-page';
+
+//* page content blocks
+@use 'blocks/stats';
+@use 'blocks/advantages';
+@use 'blocks/news';
+@use 'blocks/reviews';
+@use 'blocks/gallery';
+@use 'blocks/price';
+
+//* footer blocks
+@use 'blocks/page-footer';
+@use 'blocks/contacts';
+@use 'blocks/social';
+@use 'blocks/copyright';
