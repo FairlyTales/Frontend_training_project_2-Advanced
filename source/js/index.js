@@ -20,7 +20,7 @@ const sliderButtonReviews3 = document.querySelector('#reviews-slide-3');
 const newsItems = document.querySelectorAll('.news__item');
 const newsButton = document.querySelector('.news__button-to-all');
 let newsToggleStatus = 0;
-const alwaysShownNews = 2;
+let alwaysShownNews = 2;
 
 // variables for next/previous buttons; block: news; tablet & desktop versions
 const prevButton = document.querySelector('.reviews__prev-button');

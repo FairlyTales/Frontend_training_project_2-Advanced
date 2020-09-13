@@ -1,3 +1,66 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="./sass/global/normalize.css"><link rel="stylesheet" href="./css/style.css"><title>Записаться</title></head><body><header class="page-header"><a class="page-header__logo page-header__logo"><picture><source media="(min-width: 1200px)" srcset="img/logotype-desktop.svg"><source media="(min-width: 768px)" srcset="img/logotype-tablet.svg"><img class="page-header__logo-image" src="img/logotype-mobile.svg" width="226" height="30" alt="Логотип барбершопа Бородинский"></picture></a><nav class="main-nav main-nav--closed main-nav--no-js"><button class="main-nav__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button><div class="main-nav__wrapper"><ul class="main-nav__list main-nav__list--site site-list"><li class="site-list__item"><a class="site-list__link" href="index.html">Главная</a></li><li class="site-list__item"><a class="site-list__link"> Наши работы</a></li><li class="site-list__item site-list__item--current-page"><a class="site-list__link" href="form.html">Записаться</a></li><li class="site-list__item"><a class="site-list__link" href="#">Контакты</a></li><li class="site-list__item"><a class="site-list__link" href="#">HTML Academy</a></li></ul><ul class="main-nav__list main-nav__list--user user-list"><li class="user-list__item"><a class="user-list__login" href="login.html"><svg class="user-list__icon" id="Layer_1" version="1.1" width="16" height="16" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewbox="0 0 16 16" xml:space="preserve"><style>.user-list__icon-style {
-fill: #826550;
-}</style><path class="user-list__icon-style" d="M0 7h7V4l4 4-4 4V9H0z"></path><path class="user-list__icon-style" d="M7 0v2h7v12H7v2h9V0z"></path></svg><span class="user-list__text"> Войти</span></a></li></ul></div></nav></header><main class="inner-page"><span class="decorative-triangle inner-page__decorative-triangle--concave" role="presentation"></span><div class="inner-page__wrapper"><div class="inner-page__title_and_button-container"><h1 class="inner-page__title">Запись на стрижку</h1><a class="inner-page__link-to-index button" href="index.html">На главную</a></div><section></section></div></main><footer class="page-footer"><div class="page-footer__wrapper"><div class="page-footer__contacts contacts"><b class="contacts__title">Барбершоп Бородинский</b><p class="contacts__text">г. Санкт-Петербург, ул. Большая Конюшенная 19/8</p><a class="contacts__phone button" href="tel:+78125556666"><span class="contacts__phone-legend">Тел.:</span>            +7 (812) 555-66-66</a></div><div class="page-footer__social social"><b class="social__title">Давайте дружить!</b><ul class="social__list"><li class="social__item"><a class="social__link social__link--vkontakte" href="#"><span class="visually-hidden">Вконтакте</span></a></li><li class="social__item"><a class="social__link social__link--facebook" href="#"><span class="visually-hidden">Фейсбук</span></a></li><li class="social__item"><a class="social__link social__link--instagram" href="#"><span class="visually-hidden">Инстаграм</span></a></li></ul></div><div class="page-footer__copyright copyright"><span class="copyright__text">Разработано:</span><a class="copyright__link button" href="#">HTML Academy</a></div></div></footer><script src="./js/form.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <title>Записаться</title>
+  </head>
+  <body>
+    <!-- dunno how to make Pug header add/remove class .site-list__item--current-page (which adds css styles needed for currently openned page) depending on the openned page. Probably can solve it by just including page-header.pug in this template without this class and than add it by JS. But this is not ideal, wanna try to find another solution. And while doing so all headers will be inside their .pug files and added to the template as blocks (which is also very not ideal)-->
+    <header class="page-header"><a class="page-header__logo page-header__logo">
+        <picture>
+          <source media="(min-width: 1200px)" srcset="img/logotype-desktop.svg">
+          <source media="(min-width: 768px)" srcset="img/logotype-tablet.svg"><img class="page-header__logo-image" src="img/logotype-mobile.svg" width="226" height="30" alt="Логотип барбершопа Бородинский">
+        </picture></a>
+      <nav class="main-nav main-nav--closed main-nav--no-js">
+        <button class="main-nav__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
+        <div class="main-nav__wrapper">
+          <ul class="main-nav__list main-nav__list--site site-list">
+            <li class="site-list__item"><a class="site-list__link" href="index.html">Главная</a></li>
+            <li class="site-list__item"><a class="site-list__link" href="photo.html"> Наши работы</a></li>
+            <li class="site-list__item site-list__item--current-page"><a class="site-list__link" href="#">Записаться</a></li>
+            <li class="site-list__item"><a class="site-list__link" href="#">Контакты</a></li>
+            <li class="site-list__item"><a class="site-list__link" href="#">HTML Academy</a></li>
+          </ul>
+          <ul class="main-nav__list main-nav__list--user user-list">
+            <li class="user-list__item"><a class="user-list__login" href="login.html">
+                <svg class="user-list__icon" id="Layer_1" version="1.1" width="16" height="16" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewbox="0 0 16 16" xml:space="preserve">
+                  <style>
+                    .user-list__icon-style {
+                    fill: #826550;
+                    }
+                  </style>
+                  <path class="user-list__icon-style" d="M0 7h7V4l4 4-4 4V9H0z"></path>
+                  <path class="user-list__icon-style" d="M7 0v2h7v12H7v2h9V0z"></path>
+                </svg><span class="user-list__text"> Войти</span></a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="inner-page"><span class="decorative-triangle inner-page__decorative-triangle--concave" role="presentation"></span>
+      <div class="inner-page__wrapper">
+        <div class="inner-page__title_and_button-container">
+          <h1 class="inner-page__title">Запись на стрижку</h1><a class="inner-page__link-to-index button" href="index.html">На главную</a>
+        </div>
+        <section></section>
+      </div>
+    </main>
+    <footer class="page-footer">
+      <div class="page-footer__wrapper">
+        <div class="page-footer__contacts contacts"><b class="contacts__title">Барбершоп Бородинский</b>
+          <p class="contacts__text">г. Санкт-Петербург, ул. Большая Конюшенная 19/8</p><a class="contacts__phone button" href="tel:+78125556666"><span class="contacts__phone-legend">Тел.:</span>            +7 (812) 555-66-66</a>
+        </div>
+        <div class="page-footer__social social"><b class="social__title">Давайте дружить!</b>
+          <ul class="social__list">
+            <li class="social__item"><a class="social__link social__link--vkontakte" href="#"><span class="visually-hidden">Вконтакте</span></a></li>
+            <li class="social__item"><a class="social__link social__link--facebook" href="#"><span class="visually-hidden">Фейсбук</span></a></li>
+            <li class="social__item"><a class="social__link social__link--instagram" href="#"><span class="visually-hidden">Инстаграм</span></a></li>
+          </ul>
+        </div>
+        <div class="page-footer__copyright copyright"><span class="copyright__text">Разработано:</span><a class="copyright__link button" href="#">HTML Academy</a></div>
+      </div>
+    </footer>
+    <script src="./js/form.min.js"></script>
+  </body>
+</html>

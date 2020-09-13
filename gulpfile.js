@@ -1,5 +1,3 @@
-// ! перейти на dart sass
-
 //*
 //*
 //* --------File Paths--------
@@ -31,9 +29,9 @@ let path = {
   },
 
   watch: {
-    pug: source_folder + '/pug/*.pug',
+    pug: source_folder + '/pug/**/*.pug',
     sass: source_folder + '/sass/**/*.scss',
-    js: source_folder + '/js/*.js',
+    js: source_folder + '/js/**/*.js',
   },
 
   // path for deleting HTML, CSS and JS folders
@@ -101,7 +99,7 @@ function compileHTML() {
     .pipe(
       pug({
         doctype: 'html',
-        pretty: false,
+        pretty: true,
       })
     )
     .pipe(dest(path.build.html))
@@ -110,39 +108,45 @@ function compileHTML() {
 
 // compile SCSS and send CSS and min.CSS files to dist, call browsersync
 function compileSASS() {
-  return src(path.src.sass)
-    .pipe(plumber())
-    .pipe(
-      sass({
-        outputStyle: 'expanded',
-      })
-    )
-    .pipe(group_media_queries())
-    .pipe(dest(path.build.css))
-    .pipe(postcss([autoprefixer({ cascade: true }), cssnano()]))
-    .pipe(
-      rename({
-        extname: '.min.css',
-      })
-    )
-    .pipe(dest(path.build.css))
-    .pipe(browsersync.stream());
+  return (
+    src(path.src.sass)
+      .pipe(plumber())
+      .pipe(
+        sass({
+          outputStyle: 'expanded',
+        })
+      )
+      .pipe(group_media_queries())
+      // remove comment to also get non-min css
+      // .pipe(dest(path.build.css))
+      .pipe(postcss([autoprefixer(), cssnano()]))
+      .pipe(
+        rename({
+          extname: '.min.css',
+        })
+      )
+      .pipe(dest(path.build.css))
+      .pipe(browsersync.stream())
+  );
 }
 
 // compile JS and send it and min.js files to dist, call browsersync
 function compileJS() {
-  return src(path.src.js)
-    .pipe(plumber())
-    .pipe(fileinclude())
-    .pipe(dest(path.build.js))
-    .pipe(terser())
-    .pipe(
-      rename({
-        extname: '.min.js',
-      })
-    )
-    .pipe(dest(path.build.js))
-    .pipe(browsersync.stream());
+  return (
+    src(path.src.js)
+      .pipe(plumber())
+      .pipe(fileinclude())
+      // remove comment to also get non-min css
+      // .pipe(dest(path.build.js))
+      .pipe(terser())
+      .pipe(
+        rename({
+          extname: '.min.js',
+        })
+      )
+      .pipe(dest(path.build.js))
+      .pipe(browsersync.stream())
+  );
 }
 
 // watch changes in source folder's HTML, SCSS and JS files and runs the build compiling tasks

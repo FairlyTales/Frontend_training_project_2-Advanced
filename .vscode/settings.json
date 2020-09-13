@@ -3,5 +3,6 @@
   "liveServer.settings.port": 5501,
   "git.ignoreLimitWarning": true,
   "editor.wordWrap": "on",
-  "breadcrumbs.enabled": true
+  "breadcrumbs.enabled": true,
+  "bracketPairColorizer.forceUniqueOpeningColor": false
 }
