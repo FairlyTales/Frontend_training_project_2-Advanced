@@ -5,6 +5,7 @@
   "main": "gulpfile.js",
   "dependencies": {},
   "devDependencies": {
+    "@prettier/plugin-pug": "^1.5.1",
     "autoprefixer": "^9.8.6",
     "browser-sync": "^2.26.12",
     "cssnano": "^4.1.10",

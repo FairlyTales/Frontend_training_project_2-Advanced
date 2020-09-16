@@ -1,4 +1,4 @@
-//* global styles, variables, mixins, normalize.css
+//* global base styles: normalize.css, variables, mixins, scaffolding
 @use 'global/normalize';
 @use 'global/variables';
 @use 'global/mixin';
@@ -14,7 +14,7 @@
 @use 'blocks/site-list';
 @use 'blocks/user-list';
 
-//* styles for inner page
+//* styles for inner pages
 @use 'blocks/inner-page';
 
 //* page content blocks
@@ -24,6 +24,7 @@
 @use 'blocks/reviews';
 @use 'blocks/gallery';
 @use 'blocks/price';
+@use 'blocks/appointment';
 
 //* footer blocks
 @use 'blocks/page-footer';

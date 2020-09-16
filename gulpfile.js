@@ -1,6 +1,6 @@
 //*
-//*
 //* --------File Paths--------
+//*
 let build_folder = 'dist';
 let source_folder = 'source';
 
@@ -34,17 +34,20 @@ let path = {
     js: source_folder + '/js/**/*.js',
   },
 
-  // path for deleting HTML, CSS and JS folders
+  // path for cleaning dist HTML, CSS and JS folders content before compiling new versions of them
   clean: [
     build_folder + '/html/',
     build_folder + '/css/',
     build_folder + '/js/',
   ],
+
+  // path for cleaning dist img folder before optimizing and sending new images to it
+  clean_img: [build_folder + '/img/**'],
 };
 
 //*
-//*
 //* --------Plugins--------
+//*
 // general
 let gulp = require('gulp');
 let { src, dest } = require('gulp');
@@ -57,27 +60,32 @@ let browsersync = require('browser-sync').create();
 // HTML
 let pug = require('gulp-pug');
 
-// sass, css
+// CSS, SASS
 let sass = require('gulp-dart-sass');
 let group_media_queries = require('gulp-group-css-media-queries');
 let postcss = require('gulp-postcss');
 let autoprefixer = require('autoprefixer');
 let cssnano = require('cssnano');
 
-// images
+// Images
 let imagemin = require('gulp-imagemin');
 let webp = require('gulp-webp');
 
-// js
+// Javascript
 let terser = require('gulp-terser');
 
 //*
-//*
 //* --------Private tasks--------
+//*
 
-// delete build folder (we use it before compiling new version of the build)
+// clean HTML, CSS & JS in dist (we use this function before compiling new version of the build)
 function clean(params) {
   return del(path.clean);
+}
+
+// clean img folder in dist (we use this function before optimizing and sending new images to dist)
+function cleanImg(params) {
+  return del(path.clean_img);
 }
 
 // launch browserSync
@@ -107,7 +115,7 @@ function compileHTML() {
 }
 
 // compile SCSS and send CSS and min.CSS files to dist, call browsersync
-function compileSASS() {
+function compileCSS() {
   return (
     src(path.src.sass)
       .pipe(plumber())
@@ -152,7 +160,7 @@ function compileJS() {
 // watch changes in source folder's HTML, SCSS and JS files and runs the build compiling tasks
 function watchSource(params) {
   gulp.watch([path.watch.pug], compileHTML);
-  gulp.watch([path.watch.sass], compileSASS);
+  gulp.watch([path.watch.sass], compileCSS);
   gulp.watch([path.watch.js], compileJS);
 }
 
@@ -184,21 +192,24 @@ function optimizeRasterImages() {
 function optimizeSvgImages() {}
 
 //*
-//*
 //* --------Public tasks--------
+//*
 
-// optimizes all images (svg and raster), converts them to/from webp
-let imageOptimize = gulp.parallel(optimizeRasterImages, optimizeSvgImages);
-
-// delete previous HTML, CSS and JS folders in dist and compile them anew
-let compileProject = gulp.series(
-  clean,
-  gulp.parallel(compileHTML, compileSASS, compileJS)
+// optimize all images (svg and raster), converts raster to/from webp
+let imgOptim = gulp.series(
+  cleanImg,
+  gulp.parallel(optimizeRasterImages, optimizeSvgImages)
 );
 
-//
+// clean HTML, CSS and JS folders in dist and compile them anew
+let compileProject = gulp.series(
+  clean,
+  gulp.parallel(compileHTML, compileCSS, compileJS)
+);
+
+// start watching: compile the project, than launch browserSync and watchSource
 let watchProject = gulp.parallel(compileProject, watchSource, browserSync);
 
 exports.compileProject = compileProject;
-exports.imageOptimize = imageOptimize;
+exports.imgOptim = imgOptim;
 exports.default = watchProject;
