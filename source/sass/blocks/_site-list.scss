@@ -7,9 +7,6 @@
 }
 
 .site-list__item {
-  padding-top: 13px;
-  padding-bottom: 13px;
-  padding-left: 20px;
   margin-bottom: 1px;
 
   line-height: 24px;
@@ -48,6 +45,11 @@
 }
 
 .site-list__link {
+  display: block;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 20px;
+
   color: inherit;
 }
 

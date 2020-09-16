@@ -34,14 +34,12 @@
     "stylelint-config-standard": "^20.0.0",
     "stylelint-scss": "^3.18.0"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FairlyTales/Barbershp_adaptive.git"
   },
-  "author": "",
+  "author": "Khnychkin Kirill",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/FairlyTales/Barbershp_adaptive/issues"

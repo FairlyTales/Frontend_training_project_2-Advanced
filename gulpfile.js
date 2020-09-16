@@ -13,6 +13,7 @@ let path = {
     background_img: build_folder + '/img/background_img/',
     content_svg: build_folder + '/img/content_svg/',
     background_svg: build_folder + '/img/background_svg/',
+    icons: build_folder + '/img/icons/',
     fonts: build_folder + '/fonts/',
   },
 
@@ -21,11 +22,12 @@ let path = {
     pug: [source_folder + '/pug/*.pug', '!' + source_folder + '/pug/_*.pug'],
     sass: source_folder + '/sass/style.scss',
     js: source_folder + '/js/*.js',
-    content_img: source_folder + '/img/content_img/*.{jpg, png, webp}',
-    background_img: source_folder + '/img/background_img/*.{jpg, png}',
-    content_svg: source_folder + '/img/content_svg/*.{svg}',
-    background_svg: source_folder + '/img/background_svg/*.{svg}',
-    fonts: source_folder + '/fonts/*.{oft, ttf, woff, woff2}',
+    content_img: source_folder + '/img/content_img/*.{jpg,png,webp}',
+    background_img: source_folder + '/img/background_img/*.{jpg,png}',
+    content_svg: source_folder + '/img/content_svg/*.svg',
+    background_svg: source_folder + '/img/background_svg/*.svg',
+    icons: source_folder + '/img/icons/*.svg',
+    fonts: source_folder + '/fonts/*.{oft,ttf}',
   },
 
   watch: {
@@ -52,12 +54,11 @@ let path = {
 let gulp = require('gulp');
 let { src, dest } = require('gulp');
 let plumber = require('gulp-plumber');
-let fileinclude = require('gulp-file-include');
 let del = require('del');
 let rename = require('gulp-rename');
 let browsersync = require('browser-sync').create();
 
-// HTML
+// Pug, HTML
 let pug = require('gulp-pug');
 
 // CSS, SASS
@@ -79,17 +80,17 @@ let terser = require('gulp-terser');
 //*
 
 // clean HTML, CSS & JS in dist (we use this function before compiling new version of the build)
-function clean(params) {
+function clean() {
   return del(path.clean);
 }
 
 // clean img folder in dist (we use this function before optimizing and sending new images to dist)
-function cleanImg(params) {
+function cleanImg() {
   return del(path.clean_img);
 }
 
 // launch browserSync
-function browserSync(params) {
+function browserSync() {
   browsersync.init({
     server: {
       baseDir: ['./' + build_folder + '/'],
@@ -125,7 +126,7 @@ function compileCSS() {
         })
       )
       .pipe(group_media_queries())
-      // remove comment to also get non-min css
+      //* remove comment bellow to also get non-min css
       // .pipe(dest(path.build.css))
       .pipe(postcss([autoprefixer(), cssnano()]))
       .pipe(
@@ -143,8 +144,7 @@ function compileJS() {
   return (
     src(path.src.js)
       .pipe(plumber())
-      .pipe(fileinclude())
-      // remove comment to also get non-min css
+      //* remove comment to also get non-min css
       // .pipe(dest(path.build.js))
       .pipe(terser())
       .pipe(
@@ -158,38 +158,68 @@ function compileJS() {
 }
 
 // watch changes in source folder's HTML, SCSS and JS files and runs the build compiling tasks
-function watchSource(params) {
+function watchSource() {
   gulp.watch([path.watch.pug], compileHTML);
   gulp.watch([path.watch.sass], compileCSS);
   gulp.watch([path.watch.js], compileJS);
 }
 
-//! переписать эти функцию: if/else чтобы для webp и jpg/png выполнялись разные операции. Отдельную функцию для svg написать
-function optimizeRasterImages() {
-  return src(path.src.img)
+// optimize PNG's and JPG's in background_img folder and export them to dist
+function optimizeBackgroundImg() {
+  return src(path.src.background_img)
     .pipe(plumber())
+    .pipe(
+      imagemin([
+        imagemin.mozjpeg({ quality: 80, progressive: true }),
+        imagemin.optipng({ optimizationLevel: 5 }),
+      ])
+    )
+    .pipe(dest(path.build.background_img));
+}
+
+// optimize PNG's and JPG's in content_img folder, export them to dist, load them in pipe once more, convert to WEBP and export again
+function optimizeContentImg() {
+  return src(path.src.content_img)
+    .pipe(plumber())
+    .pipe(
+      imagemin([
+        imagemin.mozjpeg({ quality: 80, progressive: true }),
+        imagemin.optipng({ optimizationLevel: 5 }),
+      ])
+    )
+    .pipe(dest(path.build.content_img))
+    .pipe(src(path.src.content_img))
     .pipe(
       webp({
         quality: 80,
       })
     )
-    .pipe(dest(path.build.img))
-    .pipe(src(path.src.img))
-    .pipe(
-      imagemin([
-        imagemin.gifsicle({ interlaced: true }),
-        imagemin.mozjpeg({ quality: 75, progressive: true }),
-        imagemin.optipng({ optimizationLevel: 5 }),
-        imagemin.svgo({
-          plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
-        }),
-      ])
-    )
-    .pipe(dest(path.build.img))
-    .pipe(browsersync.stream());
+    .pipe(dest(path.build.content_img));
+}
+// optimize SVG in background_svg folder and export them to dist
+function optimizeBackgroundSvg() {
+  return src(path.src.background_svg)
+    .pipe(plumber())
+    .pipe(imagemin([imagemin.svgo()]))
+    .pipe(dest(path.build.background_svg));
 }
 
-function optimizeSvgImages() {}
+// optimize SVG in content_svg folder and export them to dist
+function optimizeContentSvg() {
+  return src(path.src.content_svg)
+    .pipe(plumber())
+    .pipe(imagemin([imagemin.svgo()]))
+    .pipe(dest(path.build.content_svg));
+}
+
+// create sprite form SVG's in icons folder and export it to dist
+function createSvgSprite() {
+  return src(path.src.icons).pipe(plumber()).pipe(dest(path.build.icons));
+}
+
+//! converts OTF and TTF to WOFF and WOFF2 and sends them to
+function fontsToWOFF() {}
+exports.fontsToWOFF = fontsToWOFF;
 
 //*
 //* --------Public tasks--------
@@ -198,7 +228,13 @@ function optimizeSvgImages() {}
 // optimize all images (svg and raster), converts raster to/from webp
 let imgOptim = gulp.series(
   cleanImg,
-  gulp.parallel(optimizeRasterImages, optimizeSvgImages)
+  gulp.parallel(
+    optimizeBackgroundImg,
+    optimizeContentImg,
+    optimizeBackgroundSvg,
+    optimizeContentSvg,
+    createSvgSprite
+  )
 );
 
 // clean HTML, CSS and JS folders in dist and compile them anew
