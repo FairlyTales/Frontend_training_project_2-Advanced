@@ -6,6 +6,7 @@
   font-family: 'PT Sans Narrow';
   font-style: normal;
   font-weight: normal;
+  font-display: swap;
 
   src: url('/fonts/PTSansNarrow-Regular.woff2') format('woff2'),
     url('/fonts/PTSansNarrow-Regular.woff') format('woff');
@@ -15,14 +16,14 @@
   font-family: 'PT Sans Narrow';
   font-style: normal;
   font-weight: bold;
+  font-display: swap;
 
   src: url('/fonts/PTSansNarrow-Bold.woff2') format('woff2'),
     url('/fonts/PTSansNarrow-Bold.woff') format('woff');
 }
 
-// TODO turn scroll-behavior: smooth; ON after styling is finished
 html {
-  // scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {

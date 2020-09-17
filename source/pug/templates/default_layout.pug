@@ -1,15 +1,32 @@
 include mixins
 block vars
 
+doctype html
 html(lang='ru')
   head
     meta(charset='UTF-8')
+    meta(name='description', content=page_decription)
+    meta(name='keywords', content=page_keywords)
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='preload', href='/css/style.min.css', as='style')
+    link(
+      rel='preload',
+      href='/fonts/PTSansNarrow-Regular.woff2',
+      as='font',
+      crossorigin='anonymous'
+    )
+    link(
+      rel='preload',
+      href='/fonts/PTSansNarrow-Bold.woff2',
+      as='font',
+      crossorigin='anonymous'
+    )
+    //- link(rel='preload', href=page_script, as='script')
     link(rel='stylesheet', href='/css/style.min.css')
     title= page_title
 
   body
-    // dunno how to make Pug header add/remove class .site-list__item--current-page (which adds css styles needed for currently openned page) depending on the openned page. Probably can solve it by just including page-header.pug in this template without this class and than add it by JS. But this is not ideal, wanna try to find another solution. And while doing so all headers will be inside their .pug files and added to the template as blocks (which is also very not ideal)
+    //- dunno how to make Pug header add/remove class .site-list__item--current-page (which adds css styles needed for currently openned page) depending on the openned page. Probably can solve it by just including page-header.pug in this template without this class and than add it by JS. But this is not ideal, wanna try to find another solution. And while doing so all headers will be inside their .pug files and added to the template as blocks (which is also very not ideal)
     //- include page-header
     //- +page-header-mixin(current_page)
     block header

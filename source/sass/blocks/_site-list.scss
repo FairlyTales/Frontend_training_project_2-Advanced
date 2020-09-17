@@ -95,7 +95,7 @@
     position: absolute;
     right: 18px;
     bottom: -2px;
-    left: 10px;
+    left: 18px;
 
     height: 3px;
 
@@ -109,7 +109,7 @@
   }
 
   .main-nav--closed .site-list__item--current-page .site-list__link {
-    padding-left: 10px;
+    padding-left: 17px;
   }
 }
 
@@ -121,8 +121,6 @@
 
   .site-list__item {
     box-sizing: border-box;
-    // padding-right: 31px;
-    // padding-left: 31px;
     border-right: 2px solid #000;
 
     &:hover,
