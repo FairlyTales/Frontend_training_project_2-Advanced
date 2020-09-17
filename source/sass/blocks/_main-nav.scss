@@ -110,14 +110,28 @@
   .main-nav--opened .main-nav__toggle:active::after {
     background-color: rgba(255, 255, 255, 0.3);
   }
-  // hide site-list__item if class main-nav--closed applied to the main-nav
-  .main-nav--closed .site-list__item {
-    display: none;
 
-    // show the site-list__item--active (currently opened page)
-    &--current-page {
-      display: block;
-      text-align: center;
+  // hide site-list__item if class main-nav--closed applied to the main-nav
+  .main-nav--closed {
+    .site-list__item {
+      display: none;
+      // show the site-list__item--active (currently opened page)
+      &--current-page {
+        display: block;
+        text-align: center;
+      }
+    }
+
+    // if there is no JS and navbar is openned constantly (fallback) -
+    &.main-nav--no-js {
+      .site-list__item--current-page {
+        padding-left: 18px;
+
+        text-align: left;
+
+        border: 3px solid #6a4d38;
+        border-bottom: 2px solid #6a4d38;
+      }
     }
   }
 
@@ -152,25 +166,28 @@
     }
   }
   //* fallback for the case where user got HTML and CSS, but didn't get JS. This fallback makes shure that the navigation menu is constantly openned. If the JS was donwloaded it will remove class "main-nav--no-js" from the DOM and everything will work according to "Plan A"
-  // hide the open/close button (no need for it in this case)
-  .main-nav--no-js .main-nav__toggle {
-    display: none;
-  }
 
-  // show site-list
-  .main-nav--no-js .site-list__item {
-    display: block;
-  }
+  .main-nav--no-js {
+    // hide the open/close button (no need for it in this case)
+    .main-nav__toggle {
+      display: none;
+    }
 
-  // move site-list__item--active to the left, like other list items
-  .main-nav--no-js .site-list__item--active {
-    padding-right: 21px;
-    padding-left: 21px;
-  }
+    // show site-list
+    .site-list__item {
+      display: block;
+    }
 
-  // show user-list
-  .main-nav--no-js .user-list__item {
-    display: block;
+    // move site-list__item--active to the left, like other list items
+    .site-list__item--active {
+      padding-right: 21px;
+      padding-left: 21px;
+    }
+
+    // show user-list
+    .user-list__item {
+      display: block;
+    }
   }
 }
 

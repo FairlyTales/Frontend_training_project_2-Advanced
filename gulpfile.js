@@ -324,8 +324,8 @@ let sprite = createSvgSprite;
 
 let fonts2Woffs = gulp.parallel(fontsToWOFF, fontsToWOFF2);
 
-exports.compileProject = compileProject;
-exports.imgOptim = imgOptim;
+exports.compile = compileProject;
+exports.imgOpt = imgOptim;
 exports.sprite = sprite; //* care, it overrides _sprite.scss
-exports.fonts2Woffs = fonts2Woffs;
+exports.font = fonts2Woffs;
 exports.default = watchProject;

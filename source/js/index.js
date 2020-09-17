@@ -54,6 +54,7 @@ function adaptDecorativeTriangles() {
 
 // enables/disables mobile, tablet & desktop features depending on the width of the user's screen
 function universalFeatures() {
+  removeNoJsFallback();
   adaptDecorativeTriangles();
 
   // button "show all news"; block: news;
@@ -243,6 +244,5 @@ function checkDeviceWidth() {
 //* ----------Function calls----------
 //*
 
-removeNoJsFallback();
 universalFeatures();
 checkDeviceWidth();

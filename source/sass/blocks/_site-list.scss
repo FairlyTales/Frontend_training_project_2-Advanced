@@ -39,11 +39,6 @@
   }
 }
 
-// remove left padding for site-list__item--current-page when the nav menu is closed in order to center it
-.main-nav--closed .site-list__item--current-page {
-  padding-left: 0;
-}
-
 .site-list__link {
   display: block;
   padding-top: 13px;
@@ -51,6 +46,11 @@
   padding-left: 20px;
 
   color: inherit;
+}
+
+// remove left padding for site-list__item--current-page when the nav menu is closed in order to center it
+.main-nav--closed .site-list__item--current-page .site-list__link {
+  padding-left: 0;
 }
 
 @media (min-width: vars.$tablet-width) {
@@ -61,11 +61,11 @@
     justify-content: flex-start;
 
     min-width: 600px;
-    padding-left: 15px;
+    padding-left: 30px;
   }
 
   .site-list__item {
-    padding: 24px 17px;
+    padding: 0;
     margin: 0;
 
     background-color: #000;
@@ -78,10 +78,6 @@
     &:active {
       color: #4d4d4d;
     }
-  }
-
-  .main-nav--closed .site-list__item--current-page {
-    padding-left: 17px;
   }
 
   .site-list__item--current-page {
@@ -97,9 +93,9 @@
   // underline for current page
   .site-list__item--current-page .site-list__link::before {
     position: absolute;
-    right: 17px;
+    right: 18px;
     bottom: -2px;
-    left: 18px;
+    left: 10px;
 
     height: 3px;
 
@@ -107,17 +103,26 @@
 
     background-color: #826550;
   }
+
+  .site-list__link {
+    padding: 23px 17px;
+  }
+
+  .main-nav--closed .site-list__item--current-page .site-list__link {
+    padding-left: 10px;
+  }
 }
 
 @media (min-width: vars.$desktop-width) {
   .site-list {
     width: 800px;
-    padding-left: 1px;
+    padding-left: 15px;
   }
 
   .site-list__item {
-    padding-right: 31px;
-    padding-left: 31px;
+    box-sizing: border-box;
+    // padding-right: 31px;
+    // padding-left: 31px;
     border-right: 2px solid #000;
 
     &:hover,
@@ -129,10 +134,6 @@
     &:active {
       color: #b2b2b2;
     }
-  }
-
-  .main-nav--closed .site-list__item--current-page {
-    padding-left: 31px;
   }
 
   .site-list__item--current-page {
@@ -147,9 +148,22 @@
     }
   }
 
+  .main-nav--closed .site-list__item--current-page {
+    padding-left: 0;
+  }
+
   // underline for current page
   .site-list__item--current-page .site-list__link::before {
     right: 30px;
-    left: 30px;
+    left: 17px;
+  }
+
+  .site-list__link {
+    padding-right: 31px;
+    padding-left: 31px;
+  }
+
+  .main-nav--closed .site-list__item--current-page .site-list__link {
+    padding-left: 17px;
   }
 }
