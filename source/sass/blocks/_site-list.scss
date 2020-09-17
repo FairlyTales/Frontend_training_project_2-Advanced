@@ -116,7 +116,7 @@
 @media (min-width: vars.$desktop-width) {
   .site-list {
     width: 800px;
-    padding-left: 15px;
+    padding-left: 0;
   }
 
   .site-list__item {
@@ -155,7 +155,7 @@
   // underline for current page
   .site-list__item--current-page .site-list__link::before {
     right: 30px;
-    left: 17px;
+    left: 30px;
   }
 
   .site-list__link {
@@ -164,6 +164,6 @@
   }
 
   .main-nav--closed .site-list__item--current-page .site-list__link {
-    padding-left: 17px;
+    padding-left: 31px;
   }
 }

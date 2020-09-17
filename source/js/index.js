@@ -224,18 +224,18 @@ function activateDesktopFeatures() {
 }
 
 function checkDeviceWidth() {
-  // if screen is wider than 768px: enable tablet version features
-  if (tabletWidth.matches) {
-    activateTabletFeatures();
-  }
-
-  // if screen is wider than 1200px: also enable desktop version features
+  // if screen is wider than 1200px: enable desktop version features
   if (desktopWidth.matches) {
     activateDesktopFeatures();
   }
 
-  // if screen is smaller than 768px: enable only mobile version features
-  if (!tabletWidth.matches) {
+  // if screen is wider than 768px: enable tablet version features
+  else if (tabletWidth.matches) {
+    activateTabletFeatures();
+  }
+
+  // if screen is smaller than 768px: enable mobile version features
+  else {
     activateMobileFeatures();
   }
 }
