@@ -7,8 +7,8 @@
   font-style: normal;
   font-weight: normal;
 
-  src: url('/fonts/PTSansNarrow/PTSansNarrow-Regular.woff2') format('woff2'),
-    url('/fonts/PTSansNarrow/PTSansNarrow-Regular.woff') format('woff');
+  src: url('/fonts/PTSansNarrow-Regular.woff2') format('woff2'),
+    url('/fonts/PTSansNarrow-Regular.woff') format('woff');
 }
 
 @font-face {
@@ -16,8 +16,8 @@
   font-style: normal;
   font-weight: bold;
 
-  src: url('/fonts/PTSansNarrow/PTSansNarrow-Bold.woff2') format('woff2'),
-    url('/fonts/PTSansNarrow/PTSansNarrow-Bold.woff') format('woff');
+  src: url('/fonts/PTSansNarrow-Bold.woff2') format('woff2'),
+    url('/fonts/PTSansNarrow-Bold.woff') format('woff');
 }
 
 // TODO turn scroll-behavior: smooth; ON after styling is finished

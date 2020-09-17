@@ -1,4 +1,7 @@
+//*
 //* --------------Variables--------------
+//*
+
 // variables for checking the user's screen width
 const tabletWidth = window.matchMedia('(min-width: 768px)');
 const desktopWidth = window.matchMedia('(min-width: 1200px)');
@@ -31,9 +34,10 @@ const nextButton = document.querySelector('.reviews__next-button');
 let widthMeasurmentBlock = document.querySelector('.page-header');
 let currentWidth = widthMeasurmentBlock.clientWidth;
 const decorativeTriangles = document.querySelectorAll('.decorative-triangle');
-//* -------------------------------------
 
-//* --------------Functions--------------
+//*
+//* -----------Task functions-------------
+//*
 
 // we have a fallback is our CSS for the case where user got HTML and CSS, but didn't get JS. This fallback makes shure that the navigation menu is constantly openned. But if user downloaded the JS we must disable this fallback by removing class "main-nav--no-js" from the <nav> to make everything work according to "Plan A"
 function removeNoJsFallback() {
@@ -116,6 +120,10 @@ function universalFeatures() {
     slide[5].classList.remove('visually-hidden');
   });
 }
+
+//*
+//* --------Task activation functions-------
+//*
 
 function activateMobileFeatures() {
   // TODO: remove console.logs after script is finished
@@ -230,6 +238,10 @@ function checkDeviceWidth() {
     activateMobileFeatures();
   }
 }
+
+//*
+//* ----------Function calls----------
+//*
 
 removeNoJsFallback();
 universalFeatures();

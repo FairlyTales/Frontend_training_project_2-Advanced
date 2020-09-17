@@ -1,4 +1,6 @@
+//*
 //* --------------Variables--------------
+//*
 // variables for checking the user's screen width
 const tabletWidth = window.matchMedia('(min-width: 768px)');
 const desktopWidth = window.matchMedia('(min-width: 1200px)');
@@ -13,9 +15,9 @@ const widthMeasurmentBlock = document.querySelector('.page-header');
 const currentWidth = widthMeasurmentBlock.clientWidth;
 const decorativeTriangles = document.querySelectorAll('.decorative-triangle');
 
-//* --------------------------------------------
 //*
 //* -----------Task functions-------------
+//*
 
 // we have a fallback is our CSS for the case user got HTML and CSS, but didn't get JS. This fallback makes shure that the navigation menu is constantly openned. But if user downloaded the JS we must disable this fallback by removing class "main-nav--no-js" from the <nav> to make everything work according to "Plan A"
 function removeNoJsFallback() {
@@ -30,9 +32,9 @@ function adaptDecorativeTriangles() {
   }
 }
 
-//* --------------------------------------------
 //*
 //* --------Task activation functions-------
+//*
 
 function activateUniversalFeatures() {
   removeNoJsFallback();
@@ -83,9 +85,9 @@ function checkDeviceWidth() {
   }
 }
 
-//* --------------------------------------------
 //*
 //* ----------Function calls----------
+//*
 
 activateUniversalFeatures();
 checkDeviceWidth();

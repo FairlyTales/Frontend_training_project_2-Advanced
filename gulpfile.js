@@ -28,7 +28,7 @@ let path = {
     content_svg: source_folder + '/img/content_svg/*.svg',
     background_svg: source_folder + '/img/background_svg/*.svg',
     sprite: source_folder + '/img/sprite/*.svg',
-    fonts: source_folder + '/fonts/*.{oft,ttf}',
+    fonts: source_folder + '/fonts/**/*.ttf',
   },
 
   watch: {
@@ -70,6 +70,9 @@ let postcss = require('gulp-postcss'); // big plugin with sub-plugins for workin
 let autoprefixer = require('autoprefixer'); // part of the postcss
 let cssnano = require('cssnano'); // CSS minifier, part of the postcss
 
+// Javascript
+let terser = require('gulp-terser'); // JS minifier
+
 // Images
 let imagemin = require('gulp-imagemin'); // image minificator
 let webp = require('gulp-webp'); // convert jpg, png to webp
@@ -77,8 +80,9 @@ let svgSprite = require('gulp-svg-sprite'); // sprite creation
 let cheerio = require('gulp-cheerio'); // HMTL/XML parser based on jQuery, we use it to remove unnecessary attributes from svg
 let replace = require('gulp-replace'); // string replace plugin, we use it to fix one particular bug in cheerio's symbol conversion algorithm
 
-// Javascript
-let terser = require('gulp-terser'); // JS minifier
+// Fonts
+let ttf2woff = require('gulp-ttf2woff');
+let ttf2woff2 = require('gulp-ttf2woff2');
 
 //*
 //* --------Private tasks--------
@@ -272,13 +276,34 @@ function createSvgSprite() {
   );
 }
 
-//!! converts OTF and TTF to WOFF and WOFF2 and sends them to
-function fontsToWOFF() {}
-exports.fontsToWOFF = fontsToWOFF;
+// converts TTF fonts to WOFF and exports them to dist
+function fontsToWOFF() {
+  return src(path.src.fonts)
+    .pipe(plumber())
+    .pipe(ttf2woff())
+    .pipe(dest(path.build.fonts));
+}
+
+// converts TTF fonts to WOFF2 and exports them to dist
+function fontsToWOFF2() {
+  return src(path.src.fonts)
+    .pipe(plumber())
+    .pipe(ttf2woff2())
+    .pipe(dest(path.build.fonts));
+}
 
 //*
 //* --------Public tasks--------
 //*
+
+// clean HTML, CSS and JS folders in dist and compile them anew
+let compileProject = gulp.series(
+  clean,
+  gulp.parallel(compileHTML, compileCSS, compileJS)
+);
+
+// start watching: compile the project, than launch browserSync and watchSource
+let watchProject = gulp.parallel(compileProject, watchSource, browserSync);
 
 // clean img folder in dist; optimize background JPG's, PNG's and SVG's; optimize content JPG's, PNG's, create Webp versions of them and export already existing Webp's, optimize content SVG's;
 let imgOptim = gulp.series(
@@ -297,16 +322,10 @@ let imgOptim = gulp.series(
 // it overrides the exsisting _sprite.scss (if it already exists)! Backup your style modification if you want to recompile already existing sprite
 let sprite = createSvgSprite;
 
-// clean HTML, CSS and JS folders in dist and compile them anew
-let compileProject = gulp.series(
-  clean,
-  gulp.parallel(compileHTML, compileCSS, compileJS)
-);
-
-// start watching: compile the project, than launch browserSync and watchSource
-let watchProject = gulp.parallel(compileProject, watchSource, browserSync);
+let fonts2Woffs = gulp.parallel(fontsToWOFF, fontsToWOFF2);
 
 exports.compileProject = compileProject;
 exports.imgOptim = imgOptim;
-exports.sprite = sprite; // carefull - it overrides the already exsisting _sprite.scss
+exports.sprite = sprite; //* care, it overrides _sprite.scss
+exports.fonts2Woffs = fonts2Woffs;
 exports.default = watchProject;
