@@ -1,0 +1,7 @@
+//- mixin for using SVG's from SVG sprite
+mixin svgSpriteIcon(name, width, height, BEMclass)
+  svg(class="sprite sprite__" + name + " " + BEMclass, width=width, height=height)
+    use(href="img/sprite/sprite.svg#" + name)
+
+//- to use this mixin in your .pug's insert
+//- +svgSpriteIcon('icon_name', width, height, cssClass)

@@ -1,0 +1,16 @@
+.sprite {
+	display: inline-block;
+	fill: currentColor;
+}
+
+{{#shapes}}
+.sprite__{{base}} {
+  // my code
+	width:({{width.inner}});
+  height:({{height.inner}});
+
+  // original code, dunno why they are doing this, so I decided to use my own code
+  // font-size:({{height.inner}}/10)*1rem;
+	// width:({{width.inner}}/{{height.inner}})*1em;
+}
+{{/shapes}}

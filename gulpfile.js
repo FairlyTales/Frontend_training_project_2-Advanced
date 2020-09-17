@@ -13,20 +13,21 @@ let path = {
     background_img: build_folder + '/img/background_img/',
     content_svg: build_folder + '/img/content_svg/',
     background_svg: build_folder + '/img/background_svg/',
-    icons: build_folder + '/img/icons/',
+    sprite: build_folder + '/img/sprite/',
     fonts: build_folder + '/fonts/',
   },
 
   src: {
-    // '!' - don't include html files starting with _underscore
+    // '!' - don't include files starting with '_'(underscore)
     pug: [source_folder + '/pug/*.pug', '!' + source_folder + '/pug/_*.pug'],
     sass: source_folder + '/sass/style.scss',
     js: source_folder + '/js/*.js',
-    content_img: source_folder + '/img/content_img/*.{jpg,png,webp}',
+    content_img: source_folder + '/img/content_img/*.{jpg,png}',
+    content_imgWebp: source_folder + '/img/content_img/*.webp',
     background_img: source_folder + '/img/background_img/*.{jpg,png}',
     content_svg: source_folder + '/img/content_svg/*.svg',
     background_svg: source_folder + '/img/background_svg/*.svg',
-    icons: source_folder + '/img/icons/*.svg',
+    sprite: source_folder + '/img/sprite/*.svg',
     fonts: source_folder + '/fonts/*.{oft,ttf}',
   },
 
@@ -52,28 +53,32 @@ let path = {
 //*
 // general
 let gulp = require('gulp');
-let { src, dest } = require('gulp');
-let plumber = require('gulp-plumber');
-let del = require('del');
-let rename = require('gulp-rename');
+let { src, dest } = require('gulp'); // assign gulp.src and gulp.dest to use them as src and dest (without prefix - gulp.)
+let plumber = require('gulp-plumber'); // prevents gulp from crushing when encountered with error in the pipeline
+let del = require('del'); // plugin for deleting files
+let rename = require('gulp-rename'); // plugin for renameing files
 let browsersync = require('browser-sync').create();
 
 // Pug, HTML
 let pug = require('gulp-pug');
+let minifyHTML = require('gulp-htmlmin');
 
 // CSS, SASS
 let sass = require('gulp-dart-sass');
-let group_media_queries = require('gulp-group-css-media-queries');
-let postcss = require('gulp-postcss');
-let autoprefixer = require('autoprefixer');
-let cssnano = require('cssnano');
+let group_media_queries = require('gulp-group-css-media-queries'); // combines all media queries in a right way and puts them at the bottom of the stylesheet
+let postcss = require('gulp-postcss'); // big plugin with sub-plugins for working with CSS
+let autoprefixer = require('autoprefixer'); // part of the postcss
+let cssnano = require('cssnano'); // CSS minifier, part of the postcss
 
 // Images
-let imagemin = require('gulp-imagemin');
-let webp = require('gulp-webp');
+let imagemin = require('gulp-imagemin'); // image minificator
+let webp = require('gulp-webp'); // convert jpg, png to webp
+let svgSprite = require('gulp-svg-sprite'); // sprite creation
+let cheerio = require('gulp-cheerio'); // HMTL/XML parser based on jQuery, we use it to remove unnecessary attributes from svg
+let replace = require('gulp-replace'); // string replace plugin, we use it to fix one particular bug in cheerio's symbol conversion algorithm
 
 // Javascript
-let terser = require('gulp-terser');
+let terser = require('gulp-terser'); // JS minifier
 
 //*
 //* --------Private tasks--------
@@ -108,9 +113,9 @@ function compileHTML() {
     .pipe(
       pug({
         doctype: 'html',
-        pretty: true,
       })
     )
+    .pipe(minifyHTML())
     .pipe(dest(path.build.html))
     .pipe(browsersync.stream());
 }
@@ -196,6 +201,21 @@ function optimizeContentImg() {
     )
     .pipe(dest(path.build.content_img));
 }
+
+// export Webp images in src/img/content_img to dist without doing anything to them. If you need to lower the quality - uncomment the .pipe(webp(...)) and set the desired compression value
+function exportContentImgWebp() {
+  return (
+    src(path.src.content_imgWebp)
+      .pipe(plumber())
+      // .pipe(
+      //   webp({
+      //     quality: 80,
+      //   })
+      // )
+      .pipe(dest(path.build.content_img))
+  );
+}
+
 // optimize SVG in background_svg folder and export them to dist
 function optimizeBackgroundSvg() {
   return src(path.src.background_svg)
@@ -213,11 +233,46 @@ function optimizeContentSvg() {
 }
 
 // create sprite form SVG's in icons folder and export it to dist
+// it overrides the exsisting _sprite.scss (if it already exists)! Backup your style modification if you want to recompile already existing sprite
 function createSvgSprite() {
-  return src(path.src.icons).pipe(plumber()).pipe(dest(path.build.icons));
+  return (
+    src(path.src.sprite)
+      .pipe(plumber())
+      .pipe(imagemin([imagemin.svgo()]))
+      // using cheerio to remove the 'style', 'fill' and 'stroke' attributes from the icons so that they do not interrupt the styles specified via css
+      .pipe(
+        cheerio({
+          run: function ($) {
+            $('[fill]').removeAttr('fill');
+            $('[stroke]').removeAttr('stroke');
+            $('[style]').removeAttr('style');
+          },
+          parserOptions: { xmlMode: true },
+        })
+      )
+      // cheerio has a bug - sometimes it converts the symbol '>' to the encoding '& gt;', we use replace to fix this
+      .pipe(replace('&gt;', '>'))
+      .pipe(
+        svgSprite({
+          mode: {
+            symbol: {
+              sprite: '../sprite.svg',
+              render: {
+                scss: {
+                  dest: '../../../../source/sass/global/_sprite.scss',
+                  template:
+                    source_folder + '/sass/templates/_sprite_template.scss',
+                },
+              },
+            },
+          },
+        })
+      )
+      .pipe(dest(path.build.sprite))
+  );
 }
 
-//! converts OTF and TTF to WOFF and WOFF2 and sends them to
+//!! converts OTF and TTF to WOFF and WOFF2 and sends them to
 function fontsToWOFF() {}
 exports.fontsToWOFF = fontsToWOFF;
 
@@ -225,17 +280,22 @@ exports.fontsToWOFF = fontsToWOFF;
 //* --------Public tasks--------
 //*
 
-// optimize all images (svg and raster), converts raster to/from webp
+// clean img folder in dist; optimize background JPG's, PNG's and SVG's; optimize content JPG's, PNG's, create Webp versions of them and export already existing Webp's, optimize content SVG's;
 let imgOptim = gulp.series(
   cleanImg,
   gulp.parallel(
     optimizeBackgroundImg,
-    optimizeContentImg,
     optimizeBackgroundSvg,
-    optimizeContentSvg,
-    createSvgSprite
+
+    optimizeContentImg,
+    exportContentImgWebp,
+    optimizeContentSvg
   )
 );
+
+// assemble sprite from svg icons in icons folder, create _sprite.scss
+// it overrides the exsisting _sprite.scss (if it already exists)! Backup your style modification if you want to recompile already existing sprite
+let sprite = createSvgSprite;
 
 // clean HTML, CSS and JS folders in dist and compile them anew
 let compileProject = gulp.series(
@@ -248,4 +308,5 @@ let watchProject = gulp.parallel(compileProject, watchSource, browserSync);
 
 exports.compileProject = compileProject;
 exports.imgOptim = imgOptim;
+exports.sprite = sprite; // carefull - it overrides the already exsisting _sprite.scss
 exports.default = watchProject;
