@@ -4,7 +4,7 @@ block vars
   - var current_page = "Наши работы";
   - var page_title = "Наши работы";
   - var page_script = "./js/photo.min.js";
-  - var page_decription = "Барбершоп Бородинский - наши работы. Санкт-Петербург, ул. Большая Конюшенная 19/8";
+  - var page_decription = "Барбершоп Бородинский - фотографии наших работ. Санкт-Петербург, ул. Большая Конюшенная 19/8";
   - var page_keywords = "Барбершоп Бородинский, барбершоп, Бородинский, мужская стрижка, стрижка, укладка, стрижка бороды, укладка бороды, стильная борода, стильная стрижка, постричься в питере, постричься в питере парню, Санкт-Петербург";
 
 block header
@@ -152,7 +152,8 @@ block content
                 img.gallery__image(
                   src='img/content_img/photo-2-mobile.jpg',
                   srcset='img/content_img/photo-2-mobile@2x.jpg 2x',
-                  alt='Фотография Саши Мальцева'
+                  alt='Фотография Саши Мальцева',
+                  loading='lazy'
                 )
               .gallery__text-content-container
                 blockquote.gallery__blockquote
@@ -195,7 +196,8 @@ block content
                 img.gallery__image(
                   src='img/content_img/photo-3-mobile.jpg',
                   srcset='img/content_img/photo-3-mobile@2x.jpg 2x',
-                  alt='Фотография Владимира Иваныча'
+                  alt='Фотография Владимира Иваныча',
+                  loading='lazy'
                 )
               .gallery__text-content-container
                 blockquote.gallery__blockquote
@@ -238,7 +240,8 @@ block content
                 img.gallery__image(
                   src='img/content_img/photo-4-mobile.jpg',
                   srcset='img/content_img/photo-4-mobile@2x.jpg 2x',
-                  alt='Фотография Винстона Синего'
+                  alt='Фотография Винстона Синего',
+                  loading='lazy'
                 )
               .gallery__text-content-container
                 blockquote.gallery__blockquote
