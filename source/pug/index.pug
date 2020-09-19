@@ -2,13 +2,14 @@ extends templates/default_layout
 
 block vars
   - var current_page = "Главная";
+  - var page_id_for_js = "js-index";
   - var page_title = "Барбершоп «Бородинский»";
-  - var page_script = "./js/index.min.js";
+  - var page_script = "./js/script.min.js";
   - var page_decription = "Барбершоп Бородинский - истинно мужская классика. Санкт-Петербург, ул. Большая Конюшенная 19/8";
   - var page_keywords = "Барбершоп Бородинский, барбершоп, Бородинский, мужская стрижка, стрижка, укладка, стрижка бороды, укладка бороды, стильная борода, стильная стрижка, постричься в питере, постричься в питере парню, Санкт-Петербург";
 
 block header
-  header.page-header
+  header.page-header(id=page_id_for_js)
     a.page-header__logo.page-header__logo--main-page
       picture
         source(

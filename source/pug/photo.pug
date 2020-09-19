@@ -2,13 +2,14 @@ extends templates/default_layout
 
 block vars
   - var current_page = "Наши работы";
+  - var page_id_for_js = "js-photo";
   - var page_title = "Наши работы";
-  - var page_script = "./js/photo.min.js";
+  - var page_script = "./js/script.min.js";
   - var page_decription = "Барбершоп Бородинский - фотографии наших работ. Санкт-Петербург, ул. Большая Конюшенная 19/8";
   - var page_keywords = "Барбершоп Бородинский, барбершоп, Бородинский, мужская стрижка, стрижка, укладка, стрижка бороды, укладка бороды, стильная борода, стильная стрижка, постричься в питере, постричься в питере парню, Санкт-Петербург";
 
 block header
-  header.page-header
+  header.page-header(id=page_id_for_js)
     a.page-header__logo.page-header__logo
       picture
         source(
@@ -112,9 +113,9 @@ block content
                   p.gallery__client-text
                     | Где я только не стригся, но так как делаете это вы —
                     | не умеет никто другой! Ещё раз спасибо и до скорого!
+                h3.visually-hidden
+                  | Список услуг оказанных клиенту
                 ul.gallery__services-list
-                  h3.visually-hidden
-                    | Список услуг оказанных клиенту
                   li.gallery__services-item.gallery__services-item--haircut
                     span.gallery__services-text
                       | Стрижка
@@ -162,9 +163,9 @@ block content
                   p.gallery__client-text
                     | Попросил омолодить и омолодили! Кто теперь скажет, что мне
                     | 45?
+                h3.visually-hidden
+                  | Список услуг оказанных клиенту
                 ul.gallery__services-list
-                  h3.visually-hidden
-                    | Список услуг оказанных клиенту
                   li.gallery__services-item.gallery__services-item--haircut
                     span.gallery__services-text
                       | Стрижка
@@ -204,9 +205,9 @@ block content
                   cite.gallery__client-name Владимир Иваныч
                   p.gallery__client-text
                     | К зимнему сезону — готов!
+                h3.visually-hidden
+                  | Список услуг оказанных клиенту
                 ul.gallery__services-list
-                  h3.visually-hidden
-                    | Список услуг оказанных клиенту
                   li.gallery__services-item.gallery__services-item--beard
                     span.gallery__services-text
                       | Борода
@@ -249,9 +250,9 @@ block content
                   p.gallery__client-text
                     | Как только заростаю и волосы начинают мешать видеть
                     | — бегом в Бородинский!
+                h3.visually-hidden
+                  | Список услуг оказанных клиенту
                 ul.gallery__services-list
-                  h3.visually-hidden
-                    | Список услуг оказанных клиенту
                   li.gallery__services-item.gallery__services-item--haircut
                     span.gallery__services-text
                       | Стрижка
