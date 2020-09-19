@@ -1,3 +1,5 @@
-First training project with adaptive layout & adaptive graphics, BEM, Sass, Pug, Gulp and Npm.
+Second training project.
 
-Template by HTML Academy.
+Adaptive layout & graphics, Sass, Pug, Gulp, linters, Npm, BEM and basic optimization.
+
+Webpage template created by HTML Academy.
