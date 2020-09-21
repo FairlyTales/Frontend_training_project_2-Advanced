@@ -42,7 +42,7 @@ const nextButton = document.querySelector('.reviews__next-button');
 const cellsWithBrackets = document.querySelectorAll('.price__table-comment');
 
 //*
-//* -----------Task functions-------------
+//* -----------Single Task functions-------------
 //*
 
 // we have a fallback is our CSS for the case user got HTML and CSS, but didn't get JS. This fallback makes shure that the navigation menu is constantly openned. But if user downloaded the JS we must disable this fallback by removing class "main-nav--no-js" from the <nav> to make everything work according to "Plan A"
@@ -230,7 +230,7 @@ function expandCollapseNews() {
 }
 
 //*
-//* ----------     ----------
+//* ----------Complex functions----------
 //*
 
 function checkDeviceWidth() {
@@ -290,5 +290,9 @@ function checkDeviceWidth() {
     }
   }
 }
+
+//*
+//* ----------Function Calls----------
+//*
 
 checkDeviceWidth();
