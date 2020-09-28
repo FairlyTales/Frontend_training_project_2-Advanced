@@ -2,6 +2,7 @@
 @use 'global/mixin' as mixins;
 
 .stats {
+  box-sizing: border-box;
   width: 100%;
   margin: 0;
 
@@ -52,6 +53,7 @@
 
 // table don't stretch to 100% of his parent by default, so we use width: 100%;
 .stats__table {
+  box-sizing: border-box;
   width: 100%;
   min-width: 320px;
   padding: 0;
@@ -135,9 +137,6 @@
 
   .stats__header {
     position: relative;
-    display: flex;
-    justify-content: space-between;
-    min-width: 640px;
     padding-top: 30px;
     padding-bottom: 28px;
 
@@ -153,6 +152,14 @@
       border-bottom-color: #fff;
       transform: rotate(45deg);
     }
+  }
+
+  .stats__header-container {
+    display: flex;
+    justify-content: space-between;
+
+    min-width: 640px;
+    max-width: none;
   }
 
   .stats__slogan-and-legend-top {
@@ -247,6 +254,10 @@
     &::before {
       top: 21px;
     }
+  }
+
+  .stats__header-container {
+    display: block;
   }
 
   .stats__slogan-and-legend-top {

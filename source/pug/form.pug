@@ -83,74 +83,70 @@ block content
         .appointment__wrapper
           //- в форме не прописан action, добавить его
           form.appointment__form(method='POST')
-            fieldset.appointment__name-container
+            fieldset.appointment__fieldset.appointment__fieldset-name
               legend.visually-hidden
-                | Фамилия Имя Отчество
-              .appointment__surname
-                label.visually-hidden(for='client-surname') Фамилия
-                input#client-surname.appointment__surname-input(
-                  type='text',
-                  name='client-surname',
-                  placeholder='Фамилия',
-                  required,
-                  autocomplete='on',
-                  autofocus
-                )
+                | Фамилия, Имя, Отчество
+              label.visually-hidden(for='client-surname') Фамилия
+              input#client-surname.appointment__text-input(
+                type='text',
+                name='client-surname',
+                placeholder='Фамилия',
+                required,
+                autocomplete='on',
+                autofocus
+              )
 
-              .appointment__firstname
-                label.visually-hidden(for='client-firstname') Имя
-                input#client-firstname.appointment__firstname-input(
-                  type='text',
-                  name='client-firstname',
-                  placeholder='Имя',
-                  required,
-                  autocomplete='on'
-                )
+              label.visually-hidden(for='client-firstname') Имя
+              input#client-firstname.appointment__text-input(
+                type='text',
+                name='client-firstname',
+                placeholder='Имя',
+                required,
+                autocomplete='on'
+              )
 
-              .appointment__middlename
-                label.visually-hidden(for='client-middlename') Отчество
-                input#client-middlename.appointment__middlename-input(
-                  type='text',
-                  name='client-middlename',
-                  placeholder='Отчество',
-                  required,
-                  autocomplete='on'
-                )
+              label.visually-hidden(for='client-middlename') Отчество
+              input#client-middlename.appointment__text-input(
+                type='text',
+                name='client-middlename',
+                placeholder='Отчество',
+                required,
+                autocomplete='on'
+              )
 
-            fieldset.appointment__contacts-container
+            fieldset.appointment__fieldset.appointment__fieldset-contacts
               legend.visually-hidden
                 | Телефон и электронная почта
-              .appointment__phone
-                label.visually-hidden(for='client-phone') Контактный телефон
-                input#client-phone.appointment__phone-input(
-                  type='tel',
-                  name='client-phone',
-                  placeholder='Контактный телефон',
-                  required,
-                  autocomplete='on'
-                )
+              label.visually-hidden(for='client-phone') Контактный телефон
+              input#client-phone.appointment__text-input(
+                type='tel',
+                name='client-phone',
+                placeholder='Контактный телефон',
+                required,
+                autocomplete='on'
+              )
 
-              .appointment__email
-                label.visually-hidden(for='client-email') Контактный e-mail
-                input#client-email.appointment__email-input(
-                  type='email',
-                  name='client-email',
-                  placeholder='Контактный e-mail',
-                  required,
-                  autocomplete='on'
-                )
+              label.visually-hidden(for='client-email') Контактный e-mail
+              input#client-email.appointment__text-input(
+                type='email',
+                name='client-email',
+                placeholder='Контактный e-mail',
+                required,
+                autocomplete='on'
+              )
 
-              .appointment__additional-info
-                label.visually-hidden(for='client-additional-info')
-                  | Дополнительная информация для мастера
-                textarea#client-additional-info.appointment__additional-info-textarea(
-                  name='client-additional-info',
-                  placeholder='Доп. информация для мастера',
-                  cols='21',
-                  rows='3'
-                )
+            fieldset.appointment__fieldset.appointment__fieldset-additional-info
+              legend.visually-hidden Дополнительная информация для мастера
+              label.visually-hidden(for='client-additional-info')
+                | Дополнительная информация для мастера
+              textarea#client-additional-info.appointment__text-input.appointment__textarea(
+                name='client-additional-info',
+                placeholder='Доп. информация для мастера',
+                cols='21',
+                rows='3'
+              )
 
-            fieldset.appointment__beard-select
+            fieldset.appointment__fieldset.appointment__beard-select
               legend.appointment__beard-title
                 | Выберите модель бороды:
               ul.appointment__beard-list
@@ -193,7 +189,7 @@ block content
                     name='beard-select'
                   )
 
-            fieldset.appointment__additional-services
+            fieldset.appointment__fieldset.appointment__additional-services
               Legend.appointment__additional-services-title
                 | Дополнительные услуги
               ul.appointment__additional-services-list

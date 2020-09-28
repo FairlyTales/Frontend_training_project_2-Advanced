@@ -2,48 +2,57 @@
 }
 
 .appointment__wrapper {
+  box-sizing: border-box;
+  min-width: 320px;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .appointment__form {
 }
 
-.appointment__name-container {
+.appointment__fieldset {
+  box-sizing: border-box;
+  padding: 0 20px;
+  margin: 0;
+
+  border: none;
 }
 
-.appointment__surname {
+.appointment__text-input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  min-height: 50px;
+
+  padding: 0;
+  padding-left: 18px;
+  margin: 0;
+  margin-bottom: 6px;
+
+  border: 1px solid #e5ddd5;
+
+  &::placeholder {
+    color: #000;
+    opacity: 1;
+  }
 }
 
-.appointment__surname-input {
+.appointment__fieldset-name {
+  margin-bottom: 26px;
 }
 
-.appointment__firstname {
+.appointment__fieldset-contacts {
+  margin-bottom: 26px;
 }
 
-.appointment__firstname-input {
+.appointment__fieldset-additional-info {
+  margin-bottom: 0;
 }
 
-.appointment__middlename {
-}
-
-.appointment__middlename-input {
-}
-
-.appointment__contacts-container {
-}
-
-.appointment__phone {
-}
-
-.appointment__phone-input {
-}
-
-.appointment__email {
-}
-
-.appointment__email-input {
-}
-
-.appointment__additional-info {
+.appointment__textarea {
+  margin-bottom: 0;
+  resize: none;
 }
 
 .appointment__additional-info-textarea {
