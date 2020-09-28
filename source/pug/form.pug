@@ -151,43 +151,46 @@ block content
                 | Выберите модель бороды:
               ul.appointment__beard-list
                 li.appointment__beard-item
-                  label.appointment__beard-label(for='beard-admiral') Адмирал
-                    //- yes, there is no need for svg sprite here and simple <img> should be used instead. However, it's a training project, so I decided to use an svg sprite here in order to learn how to create and use it manually (I deleted the manual code after switched to automatic sprite creation/insertion) and with Pug & Gulp
-                    +svgSpriteIcon('icon-admiral', 52, 49, 'appointment__icon-beard appointment__icon-beard--admiral', 'изображение адмиральской бороды')
-                  input#beard-admiral.appointment__beard-input(
+                  input#beard-admiral.appointment__beard-input.visually-hidden(
                     type='radio',
                     name='beard-select',
                     required
                   )
-                  p
+                  label.appointment__beard-label(for='beard-admiral') Адмирал
+                    //- yes, there is no need for svg sprite here and simple <img> should be used instead. However, it's a training project, so I decided to use an svg sprite here in order to learn how to create and use it manually (I deleted the manual code after switched to automatic sprite creation/insertion) and with Pug & Gulp
+                    +svgSpriteIcon('icon-admiral', 52, 49, 'appointment__icon-beard appointment__icon-beard--admiral', 'изображение адмиральской бороды')
+
                 li.appointment__beard-item
+                  input#beard-lumberjack.appointment__beard-input.visually-hidden(
+                    type='radio',
+                    name='beard-select'
+                  )
                   label.appointment__beard-label(for='beard-lumberjack') Лесоруб
                     +svgSpriteIcon('icon-lumberjack', 58, 68, 'appointment__icon-beard appointment__icon-beard--lumberjack', 'изображение бороды лесоруба')
-                  input#beard-lumberjack.appointment__beard-input(
+
+                li.appointment__beard-item
+                  input#beard-polarman.appointment__beard-input.visually-hidden(
                     type='radio',
                     name='beard-select'
                   )
-                li.appointment__beard-item
                   label.appointment__beard-label(for='beard-polarman') Полярник
                     +svgSpriteIcon('icon-polarman', 63, 78, 'appointment__icon-beard appointment__icon-beard--polarman', 'изображение бороды полярника')
-                  input#beard-polarman.appointment__beard-input(
+
+                li.appointment__beard-item
+                  input#beard-boyar.appointment__beard-input.visually-hidden(
                     type='radio',
                     name='beard-select'
                   )
-                li.appointment__beard-item
                   label.appointment__beard-label(for='beard-boyar') Боярин
                     +svgSpriteIcon('icon-boyar', 57, 97, 'appointment__icon-beard appointment__icon-beard--boyar', 'изображение бороды боярина')
-                  input#beard-boyar.appointment__beard-input(
+
+                li.appointment__beard-item
+                  input#beard-sage.appointment__beard-input.visually-hidden(
                     type='radio',
                     name='beard-select'
                   )
-                li.appointment__beard-item
                   label.appointment__beard-label(for='beard-sage') Мудрец
                   +svgSpriteIcon('icon-sage', 45, 104, 'appointment__icon-beard appointment__icon-beard--sage', 'изображение бороды мудреца')
-                  input#beard-sage.appointment__beard-input(
-                    type='radio',
-                    name='beard-select'
-                  )
 
             fieldset.appointment__fieldset.appointment__additional-services
               Legend.appointment__additional-services-title

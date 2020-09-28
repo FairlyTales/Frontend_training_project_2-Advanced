@@ -1,3 +1,6 @@
+@use 'global/variables' as vars;
+@use 'global/mixin' as mixins;
+
 .appointment {
 }
 
@@ -25,8 +28,7 @@
   width: 100%;
   min-height: 50px;
 
-  padding: 0;
-  padding-left: 18px;
+  padding: 0 18px;
   margin: 0;
   margin-bottom: 6px;
 
@@ -35,6 +37,15 @@
   &::placeholder {
     color: #000;
     opacity: 1;
+  }
+
+  &:focus,
+  &:hover {
+    border: 1px solid #d5c9bd;
+  }
+
+  &:active {
+    border: 1px solid #999;
   }
 }
 
@@ -47,11 +58,15 @@
 }
 
 .appointment__fieldset-additional-info {
-  margin-bottom: 0;
+  margin-bottom: 37px;
 }
 
 .appointment__textarea {
+  min-height: 112px;
+
+  padding-top: 13px;
   margin-bottom: 0;
+
   resize: none;
 }
 
@@ -63,21 +78,91 @@
 }
 
 .appointment__beard-title {
+  margin-bottom: 6px;
+
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .appointment__beard-list {
+  @include mixins.reset-list;
+
+  display: flex;
+  flex-wrap: wrap;
+  // padding-right: 10px;
 }
 
 .appointment__beard-item {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  width: 93px;
+
+  margin-top: 89px;
+  // margin-right: 26px;
+  margin-right: 0;
+
+  text-align: center;
+
+  &:nth-child(3) {
+    margin-right: 0;
+  }
 }
 
 .appointment__beard-label {
+  position: relative;
 }
 
-.appointment__beard-input {
+// custom radio button
+.appointment__beard-input + .appointment__beard-label::before {
+  position: absolute;
+  top: -59px;
+  left: 22px;
+
+  width: 50px;
+  height: 50px;
+
+  content: '';
+
+  background-color: #fff;
+  border: 1px solid #e8e1da;
+  border-radius: 50%;
+}
+
+// custom radio button hover, focus
+.appointment__beard-input:hover + .appointment__beard-label::before,
+.appointment__beard-input:focus + .appointment__beard-label::before {
+  border-color: #d8cdc2;
+}
+
+// custom radio button active
+.appointment__beard-input:active + .appointment__beard-label::before {
+  background-color: #d5c9bd;
+}
+
+// custom radio button checked icon
+.appointment__beard-input:checked + .appointment__beard-label::after {
+  position: absolute;
+  top: -42px;
+  left: 39px;
+
+  width: 16px;
+  height: 16px;
+
+  content: '';
+
+  background-color: #fff;
+  border: 1px solid #e8e1da;
+  border-radius: 50%;
 }
 
 .appointment__icon-beard {
+  display: block;
+  padding-top: 15px;
+  margin: 0 auto;
+
   fill: #826550;
 }
 
