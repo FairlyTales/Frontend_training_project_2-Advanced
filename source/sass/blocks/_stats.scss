@@ -2,8 +2,8 @@
 @use 'global/mixin' as mixins;
 
 .stats {
-  width: 320px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
 
   color: #000;
 }
@@ -16,6 +16,12 @@
   text-align: center;
 
   background-color: #fff;
+}
+
+.stats__header-container {
+  min-width: 320px;
+  max-width: 490px;
+  margin: 0 auto;
 }
 
 // this div is used only in tablet/desktop versions
@@ -49,7 +55,7 @@
   width: 100%;
   min-width: 320px;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
 
   color: #f7f4f1;
   border-collapse: collapse;
