@@ -7,17 +7,20 @@
 .appointment__wrapper {
   box-sizing: border-box;
   min-width: 320px;
-  max-width: 500px;
+  max-width: 510px;
+
+  padding-bottom: 39px;
   margin: 0 auto;
 }
 
 .appointment__form {
+  position: relative;
 }
 
 .appointment__fieldset {
   box-sizing: border-box;
   padding: 0 20px;
-  margin: 0;
+  margin: 0 auto;
 
   border: none;
 }
@@ -90,7 +93,9 @@
 
   display: flex;
   flex-wrap: wrap;
-  // padding-right: 10px;
+  justify-content: center;
+
+  margin-bottom: 38px;
 }
 
 .appointment__beard-item {
@@ -101,7 +106,6 @@
   width: 93px;
 
   margin-top: 89px;
-  // margin-right: 26px;
   margin-right: 0;
 
   text-align: center;
@@ -142,7 +146,7 @@
   background-color: #d5c9bd;
 }
 
-// custom radio button checked icon
+// custom radio button checked symbol
 .appointment__beard-input:checked + .appointment__beard-label::after {
   position: absolute;
   top: -42px;
@@ -167,22 +171,115 @@
 }
 
 .appointment__additional-services {
+  margin-bottom: 20px;
 }
 
 .appointment__additional-services-title {
+  margin-bottom: 37px;
+
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .appointment__additional-services-list {
+  @include mixins.reset-list;
+
+  box-sizing: border-box;
+  width: 280px;
+
+  margin: 0 auto;
 }
 
 .appointment__additional-services-item {
+  box-sizing: border-box;
+  max-width: 220px;
+
+  padding: 0;
+  padding-left: 60px;
+  margin: 0;
+  margin-bottom: 30px;
 }
 
-.appointment__checkbox {
+.appointment__checkbox-label {
+  position: relative;
 }
 
 .appointment__checkbox-input {
 }
 
+// custom checkbox
+.appointment__checkbox-input + .appointment__checkbox-label::before {
+  position: absolute;
+  top: -7px;
+  left: -60px;
+
+  box-sizing: border-box;
+  width: 36px;
+  height: 36px;
+
+  content: '';
+
+  background-color: #fff;
+  border: 1px solid #e5ddd5;
+}
+
+// custom checkbox hover, focus
+.appointment__checkbox-input:hover + .appointment__checkbox-label::before,
+.appointment__checkbox-input:focus + .appointment__checkbox-label::before {
+  border-color: #d5c9bd;
+}
+
+// custom checkbox active
+.appointment__checkbox-input:active + .appointment__checkbox-label::before {
+  background-color: #d5c9bd;
+}
+
+// custom checkbox checked symbol
+.appointment__checkbox-input:checked + .appointment__checkbox-label::after {
+  position: absolute;
+  top: 5px;
+  left: -53px;
+
+  width: 22px;
+  height: 17px;
+
+  content: '';
+
+  background-image: url('/img/background_svg/checked_arrow.svg');
+  background-repeat: no-repeat;
+  background-size: 21.7px 16.1px;
+}
+
 .appointment__submit-button {
+  width: 80%;
+  min-width: 280px;
+  max-width: 500px;
+
+  margin: 0 auto;
+
+  color: #fff;
+  background-color: #826550;
+
+  &:hover,
+  &:focus {
+    background-color: #6a4d38;
+  }
+
+  &:active {
+    color: #978374;
+    background-color: #6a4d38;
+  }
+
+  &:disabled {
+    background-color: #aeaeae;
+  }
+}
+
+.appointment__decorative-triangle {
+  bottom: -73px;
+
+  border-top: 34px solid #f8f5f2;
+  border-right: 160px solid transparent;
+  border-left: 160px solid transparent;
 }

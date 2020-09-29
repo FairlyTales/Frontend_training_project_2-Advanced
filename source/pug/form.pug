@@ -151,7 +151,7 @@ block content
                 | Выберите модель бороды:
               ul.appointment__beard-list
                 li.appointment__beard-item
-                  input#beard-admiral.appointment__beard-input.visually-hidden(
+                  input#beard-admiral.appointment__beard-input.visually-hidden-input-button(
                     type='radio',
                     name='beard-select',
                     required
@@ -161,7 +161,7 @@ block content
                     +svgSpriteIcon('icon-admiral', 52, 49, 'appointment__icon-beard appointment__icon-beard--admiral', 'изображение адмиральской бороды')
 
                 li.appointment__beard-item
-                  input#beard-lumberjack.appointment__beard-input.visually-hidden(
+                  input#beard-lumberjack.appointment__beard-input.visually-hidden-input-button(
                     type='radio',
                     name='beard-select'
                   )
@@ -169,7 +169,7 @@ block content
                     +svgSpriteIcon('icon-lumberjack', 58, 68, 'appointment__icon-beard appointment__icon-beard--lumberjack', 'изображение бороды лесоруба')
 
                 li.appointment__beard-item
-                  input#beard-polarman.appointment__beard-input.visually-hidden(
+                  input#beard-polarman.appointment__beard-input.visually-hidden-input-button(
                     type='radio',
                     name='beard-select'
                   )
@@ -177,7 +177,7 @@ block content
                     +svgSpriteIcon('icon-polarman', 63, 78, 'appointment__icon-beard appointment__icon-beard--polarman', 'изображение бороды полярника')
 
                 li.appointment__beard-item
-                  input#beard-boyar.appointment__beard-input.visually-hidden(
+                  input#beard-boyar.appointment__beard-input.visually-hidden-input-button(
                     type='radio',
                     name='beard-select'
                   )
@@ -185,64 +185,68 @@ block content
                     +svgSpriteIcon('icon-boyar', 57, 97, 'appointment__icon-beard appointment__icon-beard--boyar', 'изображение бороды боярина')
 
                 li.appointment__beard-item
-                  input#beard-sage.appointment__beard-input.visually-hidden(
+                  input#beard-sage.appointment__beard-input.visually-hidden-input-button(
                     type='radio',
                     name='beard-select'
                   )
                   label.appointment__beard-label(for='beard-sage') Мудрец
-                  +svgSpriteIcon('icon-sage', 45, 104, 'appointment__icon-beard appointment__icon-beard--sage', 'изображение бороды мудреца')
+                    +svgSpriteIcon('icon-sage', 45, 104, 'appointment__icon-beard appointment__icon-beard--sage', 'изображение бороды мудреца')
 
             fieldset.appointment__fieldset.appointment__additional-services
               Legend.appointment__additional-services-title
-                | Дополнительные услуги
+                | Дополнительные услуги:
               ul.appointment__additional-services-list
                 li.appointment__additional-services-item
-                  label.appointment__checkbox-label(for='beard-paint')
-                    | Подкрасить бороду
-                  input#beard-paint.appointment__checkbox-input(
+                  input#beard-paint.appointment__checkbox-input.visually-hidden-input-button(
                     type='checkbox',
                     name='paint-beard'
                   )
+                  label.appointment__checkbox-label(for='beard-paint')
+                    | Подкрасить бороду
 
                 li.appointment__additional-services-item
-                  label.appointment__checkbox-label(for='mustache')
-                    | Накрутить усы
-                  input#mustache.appointment__checkbox-input(
+                  input#mustache.appointment__checkbox-input.visually-hidden-input-button(
                     type='checkbox',
                     name='mustache'
                   )
+                  label.appointment__checkbox-label(for='mustache')
+                    | Накрутить усы
 
                 li.appointment__additional-services-item
-                  label.appointment__checkbox-label(for='beard-comb')
-                    | Причесать бороду
-                  input#beard-comb.appointment__checkbox-input(
+                  input#beard-comb.appointment__checkbox-input.visually-hidden-input-button(
                     type='checkbox',
                     name='beard-comb'
                   )
+                  label.appointment__checkbox-label(for='beard-comb')
+                    | Причесать бороду
 
                 li.appointment__additional-services-item
-                  label.appointment__checkbox-label(for='temple-trim')
-                    | Подкрасить бороду
-                  input#temple-trim.appointment__checkbox-input(
+                  input#temple-trim.appointment__checkbox-input.visually-hidden-input-button(
                     type='checkbox',
                     name='temple-trim'
                   )
+                  label.appointment__checkbox-label(for='temple-trim')
+                    | Подровнять виски
 
                 li.appointment__additional-services-item
-                  label.appointment__checkbox-label(for='grey-hair')
-                    | Убрать седину
-                  input#grey-hair.appointment__checkbox-input(
+                  input#grey-hair.appointment__checkbox-input.visually-hidden-input-button(
                     type='checkbox',
                     name='grey-hair'
                   )
+                  label.appointment__checkbox-label(for='grey-hair')
+                    | Убрать седину
 
                 li.appointment__additional-services-item
-                  label.appointment__checkbox-label(for='bald-polish')
-                    | Отполировать лысину
-                  input#bald-polish.appointment__checkbox-input(
+                  input#bald-polish.appointment__checkbox-input.visually-hidden-input-button(
                     type='checkbox',
                     name='bald-polish'
                   )
+                  label.appointment__checkbox-label(for='bald-polish')
+                    | Отполировать лысину
 
             button.button.appointment__submit-button(type='submit')
               | Отправить заявку
+
+            span.decorative-triangle.appointment__decorative-triangle(
+              role='presentation'
+            )

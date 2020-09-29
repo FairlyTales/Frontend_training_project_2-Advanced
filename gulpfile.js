@@ -38,19 +38,28 @@ let path = {
   },
 
   // path for cleaning dist HTML, CSS and JS folders content before compiling new versions of them
-  clean: [
+  clean_build: [
     build_folder + '/html/',
     build_folder + '/css/',
     build_folder + '/js/',
   ],
 
   // path for cleaning dist img folder before optimizing and sending new images to it
-  clean_img: [build_folder + '/img/**'],
+  clean_img: [
+    build_folder + '/img/background_img/*',
+    build_folder + '/img/content_img/*',
+    build_folder + '/img/background_svg/*',
+    build_folder + '/img/content_img/*',
+  ],
+
+  // path for cleaning sprite folder
+  clean_sprite: [build_folder + '/img/background_img/sprite/*'],
 };
 
 //*
 //* --------Plugins--------
 //*
+
 // general
 let gulp = require('gulp');
 let { src, dest } = require('gulp'); // assign gulp.src and gulp.dest to use them as src and dest (without prefix - gulp.)
@@ -75,10 +84,10 @@ let terser = require('gulp-terser'); // JS minifier
 
 // Images
 let imagemin = require('gulp-imagemin'); // image minificator
-let webp = require('gulp-webp'); // convert jpg, png to webp
+let webp = require('gulp-webp'); // convert jpg and png to webp
 let svgSprite = require('gulp-svg-sprite'); // sprite creation
 let cheerio = require('gulp-cheerio'); // HMTL/XML parser based on jQuery, we use it to remove unnecessary attributes from svg
-let replace = require('gulp-replace'); // string replace plugin, we use it to fix one particular bug in cheerio's symbol conversion algorithm
+let replace = require('gulp-replace'); // string replacement plugin, we use it to fix one particular bug in cheerio's symbol conversion algorithm
 
 // Fonts
 let ttf2woff = require('gulp-ttf2woff');
@@ -90,12 +99,17 @@ let ttf2woff2 = require('gulp-ttf2woff2');
 
 // clean HTML, CSS & JS in dist (we use this function before compiling new version of the build)
 function clean() {
-  return del(path.clean);
+  return del(path.clean_build);
 }
 
 // clean img folder in dist (we use this function before optimizing and sending new images to dist)
 function cleanImg() {
   return del(path.clean_img);
+}
+
+// clean sprite folder in dist (we use this function before creating a new sprite and sending it to dist)
+function cleanSprite() {
+  return del(path.clean_sprite);
 }
 
 // launch browserSync
@@ -311,7 +325,6 @@ let imgOptim = gulp.series(
   gulp.parallel(
     optimizeBackgroundImg,
     optimizeBackgroundSvg,
-
     optimizeContentImg,
     exportContentImgWebp,
     optimizeContentSvg
@@ -320,12 +333,13 @@ let imgOptim = gulp.series(
 
 // assemble sprite from svg icons in icons folder, create _sprite.scss
 // it overrides the exsisting _sprite.scss (if it already exists)! Backup your style modification if you want to recompile already existing sprite
-let sprite = createSvgSprite;
+let sprite = gulp.series(cleanSprite, createSvgSprite);
 
+// convert fonts from ttf to woff and woff2
 let fonts2Woffs = gulp.parallel(fontsToWOFF, fontsToWOFF2);
 
 exports.compile = compileProject;
-exports.imgOpt = imgOptim;
-exports.sprite = sprite; //* care, it overrides _sprite.scss
+exports.img = imgOptim;
+exports.sprite = sprite; //* carefull with it, this task overrides _sprite.scss
 exports.font = fonts2Woffs;
 exports.default = watchProject;
