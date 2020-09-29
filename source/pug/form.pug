@@ -75,7 +75,7 @@ block content
     )
 
     .inner-page__wrapper
-      .inner-page__title_and_button-container
+      .inner-page__title_and_button-container.inner-page__title_and_button-container--form-page
         h1.inner-page__title Запись на стрижку
         a.inner-page__link-to-index.button(href='index.html') На главную
 
@@ -122,7 +122,7 @@ block content
               legend.visually-hidden
                 | Телефон и электронная почта
               ul.appointment__fieldset-list--contacts
-                li.appointment__fieldset-item.appointment__fieldset-item--phone
+                li.appointment__fieldset-item.appointment__fieldset-item--contacts
                   label.visually-hidden(for='client-phone') Контактный телефон
                   input#client-phone.appointment__text-input(
                     type='tel',
@@ -131,7 +131,7 @@ block content
                     required,
                     autocomplete='on'
                   )
-                li.appointment__fieldset-item
+                li.appointment__fieldset-item.appointment__fieldset-item--contacts
                   label.visually-hidden(for='client-email') Контактный e-mail
                   input#client-email.appointment__text-input(
                     type='email',
@@ -211,20 +211,20 @@ block content
                     | Подкрасить бороду
 
                 li.appointment__additional-services-item
-                  input#mustache.appointment__checkbox-input.visually-hidden-input-button(
-                    type='checkbox',
-                    name='mustache'
-                  )
-                  label.appointment__checkbox-label(for='mustache')
-                    | Накрутить усы
-
-                li.appointment__additional-services-item
                   input#beard-comb.appointment__checkbox-input.visually-hidden-input-button(
                     type='checkbox',
                     name='beard-comb'
                   )
                   label.appointment__checkbox-label(for='beard-comb')
                     | Причесать бороду
+
+                li.appointment__additional-services-item
+                  input#mustache.appointment__checkbox-input.visually-hidden-input-button(
+                    type='checkbox',
+                    name='mustache'
+                  )
+                  label.appointment__checkbox-label(for='mustache')
+                    | Накрутить усы
 
                 li.appointment__additional-services-item
                   input#temple-trim.appointment__checkbox-input.visually-hidden-input-button(

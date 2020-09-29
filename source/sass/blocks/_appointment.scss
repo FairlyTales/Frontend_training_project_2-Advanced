@@ -189,7 +189,7 @@
   @include mixins.reset-list;
 
   box-sizing: border-box;
-  width: 280px;
+  max-width: 280px;
 
   margin: 0 auto;
 }
@@ -338,6 +338,10 @@
     margin-bottom: 55px;
   }
 
+  .appointment__beard-select {
+    margin-bottom: 20px;
+  }
+
   .appointment__beard-title {
     position: relative;
     margin-bottom: 33px;
@@ -389,12 +393,16 @@
 
   // custom radio button checked symbol
   .appointment__beard-input:checked + .appointment__beard-label::after {
-    top: -60px;
+    top: -61px;
     left: 39px;
   }
 
+  .appointment__additional-services {
+    margin-bottom: 8px;
+  }
   .appointment__additional-services-title {
     position: relative;
+    margin-bottom: 70px;
 
     font-size: 30px;
     line-height: 30px;
@@ -419,9 +427,101 @@
       left: 348px;
     }
   }
+
+  .appointment__additional-services-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    min-width: 638px;
+    max-width: none;
+
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .appointment__additional-services-item {
+    min-width: 319px;
+    margin-bottom: 54px;
+  }
+
+  // custom checkbox
+  .appointment__checkbox-input + .appointment__checkbox-label::before {
+    top: -2px;
+    left: -60px;
+  }
+
+  // custom checkbox checked symbol
+  .appointment__checkbox-input:checked + .appointment__checkbox-label::after {
+    top: 9px;
+    left: -53px;
+  }
+
+  .appointment__submit-button {
+    min-width: 640px;
+    max-width: none;
+
+    padding: 20px 20px;
+    margin-bottom: 35px;
+
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .appointment__decorative-triangle {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+  }
 }
 
 @media (min-width: vars.$desktop-width) {
+  .appointment__wrapper {
+    padding: 0 120px;
+    padding-bottom: 85px;
+    margin: 0 auto;
+  }
+
+  .appointment__fieldset-item {
+    max-width: 295px;
+  }
+
   .appointment__fieldset-list--contacts {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .appointment__fieldset-item--contacts {
+    max-width: 462px;
+  }
+
+  .appointment__fieldset-additional-info {
+    margin-bottom: 70px;
+  }
+
+  .appointment__beard-title {
+    margin-bottom: 40px;
+
+    // decorative lines next to title
+    &::before,
+    &::after {
+      width: 292px;
+    }
+  }
+
+  .appointment__beard-list {
+    max-width: 960px;
+    padding: 0 35px;
+  }
+
+  .appointment__additional-services {
+    margin-bottom: 29px;
+  }
+
+  .appointment__submit-button {
+    width: 960px;
+    min-width: none;
+    margin-bottom: 0;
   }
 }

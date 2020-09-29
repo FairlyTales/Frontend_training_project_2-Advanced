@@ -112,10 +112,17 @@
   }
 
   .inner-page__title_and_button-container {
+    width: 960px;
+
     padding: 0 120px;
     padding-top: 26px;
 
+    margin: 0 auto;
     margin-bottom: 78px;
+
+    &--form-page {
+      margin-bottom: 66px;
+    }
   }
 
   .inner-page__link-to-index {
