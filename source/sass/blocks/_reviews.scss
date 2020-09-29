@@ -115,8 +115,8 @@
 
 .reviews__decorative-triangle {
   border-top: 34px solid vars.$bg-light;
-  border-right: 160px solid transparent;
-  border-left: 160px solid transparent;
+  border-right: calc(50vw) solid transparent;
+  border-left: calc(50vw) solid transparent;
 }
 
 @media (min-width: vars.$tablet-width) {

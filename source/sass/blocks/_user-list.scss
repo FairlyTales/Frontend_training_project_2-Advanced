@@ -19,8 +19,10 @@
 
 .user-list__login {
   position: relative;
-
   display: block;
+  width: 10px;
+  min-height: 20px;
+
   padding-top: 13px;
   padding-bottom: 13px;
   padding-left: 48px;
@@ -99,6 +101,10 @@
     &:active .user-list__icon-style {
       fill: #e5e5e5;
     }
+  }
+
+  .user-list__login {
+    width: 60px;
   }
 
   .user-list__icon {

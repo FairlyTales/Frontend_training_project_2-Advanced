@@ -39,7 +39,7 @@ block header
             a.site-list__link(href='photo.html') Наши работы
 
           li.site-list__item.site-list__item--current-page
-            a.site-list__link(href='#') Записаться
+            a.site-list__link Записаться
 
           li.site-list__item
             a.site-list__link(href='#') Контакты
@@ -86,54 +86,60 @@ block content
             fieldset.appointment__fieldset.appointment__fieldset-name
               legend.visually-hidden
                 | Фамилия, Имя, Отчество
-              label.visually-hidden(for='client-surname') Фамилия
-              input#client-surname.appointment__text-input(
-                type='text',
-                name='client-surname',
-                placeholder='Фамилия',
-                required,
-                autocomplete='on',
-                autofocus
-              )
+              ul.appointment__fieldset-list--name
+                li.appointment__fieldset-item
+                  label.visually-hidden(for='client-surname') Фамилия
+                  input#client-surname.appointment__text-input(
+                    type='text',
+                    name='client-surname',
+                    placeholder='Фамилия',
+                    required,
+                    autocomplete='on',
+                    autofocus
+                  )
 
-              label.visually-hidden(for='client-firstname') Имя
-              input#client-firstname.appointment__text-input(
-                type='text',
-                name='client-firstname',
-                placeholder='Имя',
-                required,
-                autocomplete='on'
-              )
+                li.appointment__fieldset-item
+                  label.visually-hidden(for='client-firstname') Имя
+                  input#client-firstname.appointment__text-input(
+                    type='text',
+                    name='client-firstname',
+                    placeholder='Имя',
+                    required,
+                    autocomplete='on'
+                  )
 
-              label.visually-hidden(for='client-middlename') Отчество
-              input#client-middlename.appointment__text-input(
-                type='text',
-                name='client-middlename',
-                placeholder='Отчество',
-                required,
-                autocomplete='on'
-              )
+                li.appointment__fieldset-item
+                  label.visually-hidden(for='client-middlename') Отчество
+                  input#client-middlename.appointment__text-input(
+                    type='text',
+                    name='client-middlename',
+                    placeholder='Отчество',
+                    required,
+                    autocomplete='on'
+                  )
 
             fieldset.appointment__fieldset.appointment__fieldset-contacts
               legend.visually-hidden
                 | Телефон и электронная почта
-              label.visually-hidden(for='client-phone') Контактный телефон
-              input#client-phone.appointment__text-input(
-                type='tel',
-                name='client-phone',
-                placeholder='Контактный телефон',
-                required,
-                autocomplete='on'
-              )
-
-              label.visually-hidden(for='client-email') Контактный e-mail
-              input#client-email.appointment__text-input(
-                type='email',
-                name='client-email',
-                placeholder='Контактный e-mail',
-                required,
-                autocomplete='on'
-              )
+              ul.appointment__fieldset-list--contacts
+                li.appointment__fieldset-item.appointment__fieldset-item--phone
+                  label.visually-hidden(for='client-phone') Контактный телефон
+                  input#client-phone.appointment__text-input(
+                    type='tel',
+                    name='client-phone',
+                    placeholder='Контактный телефон',
+                    required,
+                    autocomplete='on'
+                  )
+                li.appointment__fieldset-item
+                  label.visually-hidden(for='client-email') Контактный e-mail
+                  input#client-email.appointment__text-input(
+                    type='email',
+                    name='client-email',
+                    placeholder='Контактный e-mail',
+                    required,
+                    autocomplete='on'
+                  )
 
             fieldset.appointment__fieldset.appointment__fieldset-additional-info
               legend.visually-hidden Дополнительная информация для мастера
@@ -246,7 +252,6 @@ block content
 
             button.button.appointment__submit-button(type='submit')
               | Отправить заявку
-
-            span.decorative-triangle.appointment__decorative-triangle(
-              role='presentation'
-            )
+    span.decorative-triangle.appointment__decorative-triangle(
+      role='presentation'
+    )

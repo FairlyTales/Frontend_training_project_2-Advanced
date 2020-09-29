@@ -14,7 +14,6 @@
 }
 
 .appointment__form {
-  position: relative;
 }
 
 .appointment__fieldset {
@@ -23,6 +22,14 @@
   margin: 0 auto;
 
   border: none;
+}
+
+.appointment__fieldset-list--name {
+  @include mixins.reset-list;
+}
+
+.appointment__fieldset-list--contacts {
+  @include mixins.reset-list;
 }
 
 .appointment__text-input {
@@ -109,10 +116,6 @@
   margin-right: 0;
 
   text-align: center;
-
-  &:nth-child(3) {
-    margin-right: 0;
-  }
 }
 
 .appointment__beard-label {
@@ -277,9 +280,148 @@
 }
 
 .appointment__decorative-triangle {
-  bottom: -73px;
+  bottom: -33px;
 
   border-top: 34px solid #f8f5f2;
-  border-right: 160px solid transparent;
-  border-left: 160px solid transparent;
+  border-right: calc(50vw) solid transparent;
+  border-left: calc(50vw) solid transparent;
+}
+
+@media (min-width: vars.$tablet-width) {
+  .appointment__wrapper {
+    min-width: 768px;
+    max-width: 1200px;
+
+    padding: 0 65px;
+    padding-bottom: 39px;
+    margin: 0 auto;
+    margin-top: 70px;
+  }
+
+  .appointment__fieldset {
+    padding: 0;
+  }
+
+  .appointment__fieldset-name {
+    margin-bottom: 29px;
+  }
+
+  .appointment__fieldset-list--name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .appointment__fieldset-item {
+    flex-grow: 1;
+
+    &--phone {
+      margin-bottom: 35px;
+    }
+  }
+
+  .appointment__fieldset-contacts {
+    margin-bottom: 30px;
+  }
+
+  .appointment__text-input {
+    min-width: 212px;
+    padding: 20px 22px;
+    font-size: 24px;
+  }
+
+  .appointment__textarea {
+    min-height: 212px;
+  }
+
+  .appointment__fieldset-additional-info {
+    margin-bottom: 55px;
+  }
+
+  .appointment__beard-title {
+    position: relative;
+    margin-bottom: 33px;
+
+    font-size: 30px;
+    line-height: 30px;
+
+    // decorative lines next to title
+    &::before,
+    &::after {
+      position: absolute;
+      top: 14px;
+
+      width: calc(17vw);
+      height: 1px;
+
+      content: '';
+
+      background-color: #e5ddd5;
+    }
+    &::before {
+      right: 348px;
+    }
+    &::after {
+      left: 348px;
+    }
+  }
+
+  .appointment__beard-label {
+    font-size: 24px;
+  }
+
+  .appointment__beard-list {
+    justify-content: space-between;
+  }
+
+  .appointment__beard-item {
+  }
+
+  .appointment__icon-beard {
+    padding-top: 30px;
+  }
+
+  // custom radio button
+  .appointment__beard-input + .appointment__beard-label::before {
+    top: -79px;
+    left: 22px;
+  }
+
+  // custom radio button checked symbol
+  .appointment__beard-input:checked + .appointment__beard-label::after {
+    top: -60px;
+    left: 39px;
+  }
+
+  .appointment__additional-services-title {
+    position: relative;
+
+    font-size: 30px;
+    line-height: 30px;
+
+    // decorative lines next to title
+    &::before,
+    &::after {
+      position: absolute;
+      top: 14px;
+
+      width: calc(17vw);
+      height: 1px;
+
+      content: '';
+
+      background-color: #e5ddd5;
+    }
+    &::before {
+      right: 348px;
+    }
+    &::after {
+      left: 348px;
+    }
+  }
+}
+
+@media (min-width: vars.$desktop-width) {
+  .appointment__fieldset-list--contacts {
+  }
 }

@@ -28,11 +28,12 @@ const newsButton = document.querySelector('.news__button-to-all');
 let newsToggleStatus = 0;
 let alwaysShownNews = 2;
 
+//! not in use now because I remembered that calc(50vw) exist. left it here as a reminder for my future self =)
 // variables for responsive decorative triangles
 // page-header always take 100% of the width so we use it to measure the screen width
-const widthMeasurmentBlock = document.querySelector('.page-header');
-const currentWidth = widthMeasurmentBlock.clientWidth;
-const decorativeTriangles = document.querySelectorAll('.decorative-triangle');
+// const widthMeasurmentBlock = document.querySelector('.page-header');
+// const currentWidth = widthMeasurmentBlock.clientWidth;
+// const decorativeTriangles = document.querySelectorAll('.decorative-triangle');
 
 // variables for next/previous buttons; block: news; tablet & desktop versions
 const prevButton = document.querySelector('.reviews__prev-button');
@@ -50,13 +51,16 @@ function removeNoJsFallback() {
   navMenu.classList.remove('main-nav--no-js');
 }
 
+//! not in use now because I remembered that calc(50vw) exist. left it here as a reminder for my future self =)
 // agjust decorativeTriangles to the current screen width
+/*
 function adaptDecorativeTriangles() {
   for (let i = 0; i != decorativeTriangles.length; i++) {
     decorativeTriangles[i].style.borderRightWidth = currentWidth / 2 + 'px';
     decorativeTriangles[i].style.borderLeftWidth = currentWidth / 2 + 'px';
   }
 }
+*/
 
 // removes brackets from .price__table-comment cells in table (photo.hmtl), used in tablet & desktop versions
 function removeBracketsInTable() {
@@ -236,7 +240,6 @@ function expandCollapseNews() {
 function checkDeviceWidth() {
   // cross-version and cross-page features
   removeNoJsFallback();
-  adaptDecorativeTriangles();
 
   // desktop
   if (desktopWidth.matches) {

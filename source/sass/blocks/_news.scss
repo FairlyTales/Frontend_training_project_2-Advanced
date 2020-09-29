@@ -9,8 +9,8 @@
 
 .news__decorative-triangle {
   border-top: 34px solid #252525;
-  border-right: 160px solid transparent;
-  border-left: 160px solid transparent;
+  border-right: calc(50vw) solid transparent;
+  border-left: calc(50vw) solid transparent;
 }
 
 .news__wrapper {
@@ -154,8 +154,8 @@
 @media (min-width: vars.$tablet-width) {
   .news__decorative-triangle {
     border-top: 25px solid vars.$bg-lightgrey;
-    border-right: 384px solid transparent;
-    border-left: 384px solid transparent;
+    border-right: calc(50vw) solid transparent;
+    border-left: calc(50vw) solid transparent;
   }
 
   .news__wrapper {
@@ -219,8 +219,8 @@
 @media (min-width: vars.$desktop-width) {
   .news__decorative-triangle {
     border-top: 63px solid #353535;
-    border-right: 600px solid transparent;
-    border-left: 600px solid transparent;
+    border-right: calc(50vw) solid transparent;
+    border-left: calc(50vw) solid transparent;
   }
 
   .news__wrapper {
