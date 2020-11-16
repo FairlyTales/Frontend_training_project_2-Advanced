@@ -118,7 +118,7 @@ function browserSync() {
     server: {
       baseDir: ['./' + build_folder + '/'],
     },
-    browser: 'chrome',
+    browser: 'C:\\Program Files\\Firefox Developer Edition\\firefox.exe',
     port: 3000,
     notify: false,
   });

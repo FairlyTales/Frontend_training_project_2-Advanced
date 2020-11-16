@@ -16,12 +16,13 @@ block header
           media='(min-width: 1200px)',
           srcset='./img/content_svg/logotype-desktop.svg'
         )
+
         source(
           media='(min-width: 768px)',
-          srcset='img/content_svg/logotype-tablet.svg'
+          srcset='./img/content_svg/logotype-tablet.svg'
         )
         img.page-header__logo-image(
-          src='/img/content_svg/logotype-mobile.svg',
+          src='./img/content_svg/logotype-mobile.svg',
           width='226',
           height='30',
           alt='Логотип барбершопа Бородинский'
@@ -235,18 +236,18 @@ block content
             blockquote.reviews__container
               picture.reviews__author-picture
                 source(
-                  srcset='img/content_img/picture-John_Smith.webp',
+                  srcset='img/content_img/photo-4-mobile.webp',
                   type='image/webp'
                 )
                 img.reviews__author-image(
-                  src='img/content_img/picture-John_Smith.jpg',
+                  src='img/content_img/photo-4-mobile.jpg',
                   width='49',
                   height='48',
                   alt='Фотография Джона Смита',
                   loading='lazy'
                 )
               .reviews__text-wrapper
-                cite.reviews__author-name Джон Смит
+                cite.reviews__author-name Винстон Синий
                 p.reviews__text
                   | Отличную стрижку мне сделали ребята.
 
@@ -254,11 +255,11 @@ block content
             blockquote.reviews__container
               picture.reviews__author-picture
                 source(
-                  srcset='img/content_img/picture-Ivan_Borodaylo.webp',
+                  srcset='img/content_img/photo-3-mobile.webp',
                   type='image/webp'
                 )
                 img.reviews__author-image(
-                  src='img/content_img/picture-Ivan_Borodaylo.jpg',
+                  src='img/content_img/photo-3-mobile.jpg',
                   width='49',
                   height='48',
                   alt='Фотография Ивана Бородайло',
