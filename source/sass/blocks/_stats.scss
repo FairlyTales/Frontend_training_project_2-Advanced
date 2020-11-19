@@ -168,7 +168,10 @@
   }
 
   .stats__slogan {
-    padding: 0 41px;
+    max-width: 370px;
+
+    padding: 0;
+    padding-left: 41px;
 
     font-size: 40px;
     line-height: 40px;

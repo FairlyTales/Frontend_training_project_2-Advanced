@@ -3,6 +3,9 @@
 
 .reviews {
   position: relative;
+
+  padding-bottom: 15px;
+
   color: #000;
   background-color: vars.$bg-light;
 }
@@ -120,6 +123,10 @@
 }
 
 @media (min-width: vars.$tablet-width) {
+  .reviews {
+    padding-bottom: 0;
+  }
+
   // grey line under news block
   .reviews::after {
     position: absolute;

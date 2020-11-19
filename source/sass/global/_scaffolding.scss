@@ -75,7 +75,10 @@ a {
 .decorative-triangle {
   position: absolute;
 
-  display: block;
+  border-right: 49vw solid transparent;
+  border-left: 50vw solid transparent;
+
+  display: none;
   width: 0;
   height: 0;
 }

@@ -13,14 +13,10 @@
 
 .inner-page__decorative-triangle--convex-light {
   border-top: 40px solid #f8f5f2;
-  border-right: calc(50vw) solid transparent;
-  border-left: calc(50vw) solid transparent;
 }
 
 .inner-page__decorative-triangle--convex-dark {
   border-top: 40px solid vars.$bg-lightgrey;
-  border-right: calc(50vw) solid transparent;
-  border-left: calc(50vw) solid transparent;
 }
 
 .inner-page__title {
@@ -55,8 +51,8 @@
 
     border: 0;
     border-top: 40px solid transparent;
-    border-right: calc(50vw) solid #f8f5f2;
-    border-left: calc(50vw) solid #f8f5f2;
+    border-right: 50vw solid #f8f5f2;
+    border-left: 50vw solid #f8f5f2;
   }
 
   .inner-page__wrapper {
