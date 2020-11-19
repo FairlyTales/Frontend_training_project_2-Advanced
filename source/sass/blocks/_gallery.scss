@@ -34,7 +34,7 @@
     top: 401px;
 
     display: block;
-    width: 123px;
+    width: 130px;
     min-height: 27px;
 
     padding: 11px 0;
@@ -56,13 +56,13 @@
   &::after {
     position: absolute;
     top: 401px;
-    left: 167px;
+    left: 174px;
 
     content: '';
 
-    border-top: 25px solid #826550;
+    border-top: 24px solid #826550;
     border-right: 8px solid transparent;
-    border-bottom: 24px solid #826550;
+    border-bottom: 25px solid #826550;
   }
 
   // work-of-the-month has top & bottom paddings different from other gallery items
@@ -175,7 +175,7 @@
   .gallery__item--work-of-the-month {
     &::after {
       top: 35px;
-      left: 164px;
+      left: 171px;
     }
 
     &::before {
@@ -271,15 +271,15 @@
       top: 27px;
       left: 785px;
 
-      border-top: 25px solid #826550;
+      border-top: 24px solid #826550;
       border-right: 0;
-      border-bottom: 24px solid #826550;
+      border-bottom: 25px solid #826550;
       border-left: 8px solid transparent;
     }
 
     &::before {
       top: 27px;
-      left: 793px;
+      left: 792px;
     }
 
     .gallery__image {

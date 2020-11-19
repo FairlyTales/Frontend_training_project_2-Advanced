@@ -10,7 +10,7 @@ block vars
 
 block header
   header.page-header(id=page_id_for_js)
-    a.page-header__logo.page-header__logo
+    a.page-header__logo.page-header__logo(href='index.html')
       picture
         source(
           media='(min-width: 1200px)',
@@ -34,14 +34,16 @@ block header
         ul.main-nav__list.main-nav__list--site.site-list
           li.site-list__item
             a.site-list__link(href='index.html') Главная
+
           li.site-list__item.site-list__item--current-page
             a.site-list__link Наши работы
+
           li.site-list__item
             a.site-list__link(href='form.html') Записаться
+
           li.site-list__item
-            a.site-list__link(href='#') Контакты
-          li.site-list__item
-            a.site-list__link(href='#') HTML Academy
+            a.site-list__link(href='https://fairlytales.github.io') Назад в портфолио
+
         ul.main-nav__list.main-nav__list--user.user-list
           li.user-list__item
             a.user-list__login(href='login.html')
