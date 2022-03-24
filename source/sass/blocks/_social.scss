@@ -46,14 +46,6 @@
   background-image: url('../img/background_img/vk-icon-big.png');
 }
 
-.social__link--facebook {
-  background-image: url('../img/background_img/facebook-icon-big.png');
-}
-
-.social__link--instagram {
-  background-image: url('../img/background_img/insta-icon-big.png');
-}
-
 @media (min-width: vars.$tablet-width) {
   .social__link {
     width: 211px;
